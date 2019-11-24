@@ -75,7 +75,7 @@ export default function PlaceholderPage() {
       <GlobalStyle />
       <PageWrapper>
         <Container>
-          <Heading>New portfolio page under contruction</Heading>
+          <Heading>New portfolio page under construction</Heading>
           <Paragraph>
             You can see my works&nbsp;
             <TextLink href="https://woznyjakub.github.io/portfolio-1" target="_blank" rel="nooperner noreferrer">
