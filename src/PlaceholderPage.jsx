@@ -7,8 +7,9 @@ import media from './utils/media';
 const PageWrapper = styled.div`
   background-color: ${colors.primary};
   color: ${colors.secondary};
-  padding: 1rem;
+  padding: 0 1rem;
   height: 100vh;
+  display: flex;
 `;
 
 const Container = styled.div`
@@ -19,7 +20,6 @@ const Container = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height: 100%;
 `;
 
 const Heading = styled.h1`
