@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import cssReset from './css-reset';
-import media from '../../utils/media'
+import media from '../../../utils/media';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

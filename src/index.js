@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PlaceholderPage from './PlaceholderPage.jsx';
+import RootElement from './RootElement';
 
-ReactDOM.render(<PlaceholderPage />, document.getElementById('root'));
+ReactDOM.render(<RootElement />, document.getElementById('root'));
