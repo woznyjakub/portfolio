@@ -1,17 +1,19 @@
 import { css } from 'styled-components';
 
 export const sizes = {
-    desktop: 1150,
-    tablet: 768,
-    phone: 530,
+  desktopLarge: 1750,
+  desktopMedium: 1500,
+  desktopSmall: 1190,
+  tablet: 760,
+  phone: 530,
 };
 
 export default Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-        @media (min-width: ${sizes[label]}px) {
-            ${css(...args)}
-        }
-    `;
+  acc[label] = (...args) => css`
+    @media (min-width: ${sizes[label]}px) {
+      ${css(...args)}
+    }
+  `;
 
-    return acc;
+  return acc;
 }, {});

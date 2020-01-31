@@ -1,8 +1,9 @@
 import React from 'react';
-// import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { GlobalStyle, PageShell } from './components';
-// import { colors, media } from './utils/colors';
+import { colors } from './utils';
 // import media from './utils/media';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { AboutPage, ContactPage, MainPage, SkillsPage, WorksPage } from './views';
@@ -36,22 +37,25 @@ const pages = [
   },
 ];
 
+const MainWrapper = styled.div`
+  background-color: ${colors.primary};
+  color: ${colors.secondary};
+  min-height: 100vh;
+`;
+
 const RootElement = () => {
   return (
     <Router>
       <GlobalStyle />
-      {/* {pages.map(({ path }, i) => (
-        <Link to={path} key={i}>
-          <div style={{ padding: '1rem' }}>{path}</div>
-        </Link>
-      ))} */}
-      {pages.map(({ name, component: PageComponent, path, exact }) => (
-        <Route exact={exact || false} path={path} key={name}>
-          <PageShell>
-            <PageComponent />
-          </PageShell>
-        </Route>
-      ))}
+      <MainWrapper>
+        {pages.map(({ name, component: PageComponent, path, exact }) => (
+          <Route exact={exact || false} path={path} key={name}>
+            <PageShell>
+              <PageComponent />
+            </PageShell>
+          </Route>
+        ))}
+      </MainWrapper>
     </Router>
   );
 };
