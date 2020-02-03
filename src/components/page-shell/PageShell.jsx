@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainWrapper = styled.div`
+const ExternalWrapper = styled.div`
   min-height: 100vh;
+`;
+
+const InternalWrapper = styled.div`
+  overflow: hidden;
 `;
 
 const Shell = styled.section`
@@ -12,7 +16,11 @@ const Shell = styled.section`
 const PageShell = props => {
   return (
     <Shell {...props}>
-      <MainWrapper>{props.children}</MainWrapper>
+      <ExternalWrapper className="stretch">
+        <InternalWrapper className="container-fluid page-padding stretch">
+          {props.children}
+        </InternalWrapper>
+      </ExternalWrapper>
     </Shell>
   );
 };

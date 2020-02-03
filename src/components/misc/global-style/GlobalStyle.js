@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import cssReset from './cssReset';
 import media from '../../../utils/media';
 
-export const containerGutter = '18px';
+export const containerGutter = 18; // px
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -17,22 +17,23 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   }
   a {
-   color: inherit; 
+    color: inherit; 
   }
 
   .container-fluid {
-    padding-left: ${containerGutter};
-    padding-right: ${containerGutter};
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
   }
 
   .container {
-    padding-left: ${containerGutter};
-    padding-right: ${containerGutter};
+    padding-left: ${containerGutter}px;
+    padding-right: ${containerGutter}px;
     width: 100%;
   }
 
   .page-padding {
-    padding: 4rem 0 1rem;
+    padding: 4rem ${containerGutter}px 1rem;
   }
 
   .stretch {
@@ -57,7 +58,8 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
     }
     .page-padding {
-      padding: 8rem 0 3rem;
+      padding-top: 8rem;
+      padding-bottom: 3rem
     }
   `}
   ${media.desktopSmall`
@@ -67,6 +69,16 @@ const GlobalStyle = createGlobalStyle`
     .container {
       max-width: 1150px;
       margin: 0 auto;
+    }
+    .page-padding {
+      padding-left: ${containerGutter * 2}px;
+      padding-right: ${containerGutter * 2}px;
+    }
+  `}
+  ${media.desktopLarge`
+    .page-padding {
+      padding-left: ${containerGutter * 3}px;
+      padding-right: ${containerGutter * 3}px;
     }
   `}
 `;

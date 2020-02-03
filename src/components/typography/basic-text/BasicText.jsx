@@ -1,16 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from '../../../utils';
 
 const StyledText = styled.span`
-  font-size: 1rem;
+  font-size: 1.25rem;
   ${({ bottomSpace }) => bottomSpace && 'margin-bottom: 1.5rem;'}
 
-  ${({ underlineOnHover }) =>
-    underlineOnHover &&
+  ${({ fillOnHover }) =>
+    // I use gradient because it makes posible to animate
+    // multiple lines of inline element
+    fillOnHover &&
     `
       text-decoration: none;
+      background: linear-gradient(
+        to top, ${colors.secondary}, ${colors.secondary}
+      ) 50% 0% / 100% 0 no-repeat;
+      transition: background-size .3s, color .3s;
+      will-change: background-size, color;
       :hover {
-        text-decoration: underline;
+        color: ${colors.primary};
+        background-position-y: 100%;
+        background-size: 100% 100%;
       }
     `}
 `;

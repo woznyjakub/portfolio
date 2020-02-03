@@ -4,7 +4,7 @@ import { media } from '../../utils';
 import { Heading, BasicText } from '../../components';
 
 const content = {
-  mainTitle: 'Jakub Woźny\nFront-end\ndeveloper',
+  mainTitle: 'Jakub Woźny\nFront-end developer\nportfolio',
   mailAddress: 'jakub_wozny_01@wp.pl',
   mailLinkLabel: 'Mail me',
   menuItems: [
@@ -25,6 +25,7 @@ const content = {
       link: '/about',
     },
   ],
+  copyright: '© Jakub Woźny 2020',
 };
 const Grid = styled.div`
   display: block;
@@ -50,7 +51,7 @@ const MenuWrapper = styled.div`
   height: 100%;
 
   ${media.desktopSmall`
-    min-height: 500px;
+    min-height: 520px;
   `}
   ${media.desktopMedium`
     min-height: 540px;
@@ -110,42 +111,34 @@ const MenuItem = styled.a`
 
 const MainPage = () => {
   return (
-    <div id="main-page" className="stretch" style={{ minHeight: '100vh' }}>
-      <div className="page-padding stretch" style={{ overflow: 'hidden' }}>
-        <div className="container-fluid stretch">
-          <Grid className="stretch">
-            <Intro>
-              <Heading as="h1" bottomSpace>
-                {content.mainTitle}
-              </Heading>
-              <BasicText as="a" href={`mailto:${content.mailAddress}`} underlineOnHover>
-                {content.mailLinkLabel}
-              </BasicText>
-            </Intro>
-            <MainContent>
-              <MenuWrapper>
-                <Menu>
-                  <ul>
-                    {content.menuItems.map(({ label, link }, i, array) => (
-                      <li key={`${link}-${i}`}>
-                        <MenuItem href={link} isFirst={i === 0} isLast={i === array.length - 1}>
-                          {label}
-                        </MenuItem>
-                      </li>
-                    ))}
-                  </ul>
-                </Menu>
-              </MenuWrapper>
-            </MainContent>
-            <AsideContent>
-              <BasicText as="a" href={`mailto:${content.mailAddress}`} underlineOnHover>
-                {content.mailLinkLabel}
-              </BasicText>
-            </AsideContent>
-          </Grid>
-        </div>
-      </div>
-    </div>
+    <Grid className="stretch">
+      <Intro>
+        <Heading as="h1" bottomSpace>
+          {content.mainTitle}
+        </Heading>
+        <BasicText as="a" href={`mailto:${content.mailAddress}`} fillOnHover>
+          {content.mailLinkLabel}
+        </BasicText>
+      </Intro>
+      <MainContent>
+        <MenuWrapper>
+          <Menu>
+            <ul>
+              {content.menuItems.map(({ label, link }, i, array) => (
+                <li key={`${link}-${i}`}>
+                  <MenuItem href={link} isFirst={i === 0} isLast={i === array.length - 1}>
+                    {label}
+                  </MenuItem>
+                </li>
+              ))}
+            </ul>
+          </Menu>
+        </MenuWrapper>
+      </MainContent>
+      <AsideContent>
+        <BasicText>{content.copyright}</BasicText>
+      </AsideContent>
+    </Grid>
   );
 };
 
