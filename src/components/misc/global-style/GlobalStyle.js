@@ -58,8 +58,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
     }
     .page-padding {
-      padding-top: 8rem;
-      padding-bottom: 3rem
+      padding: 8rem ${containerGutter * 2}px 3rem
     }
   `}
   ${media.desktopSmall`
@@ -70,12 +69,6 @@ const GlobalStyle = createGlobalStyle`
       max-width: 1150px;
       margin: 0 auto;
     }
-    .page-padding {
-      padding-left: ${containerGutter * 2}px;
-      padding-right: ${containerGutter * 2}px;
-    }
-  `}
-  ${media.desktopLarge`
     .page-padding {
       padding-left: ${containerGutter * 3}px;
       padding-right: ${containerGutter * 3}px;

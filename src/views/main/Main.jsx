@@ -28,29 +28,30 @@ const content = {
   copyright: '© Jakub Woźny 2020',
 };
 const Grid = styled.div`
-  display: block;
-  ${media.phone`
+  display: flex;
+  flex-direction: column;
+  ${media.desktopSmall`
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
   `}
 `;
 
-const Intro = styled.div``;
-
-const MainContent = styled.div`
+const MainContent = styled.main`
   grid-row-end: span 2;
   position: relative;
+  margin-top: auto;
 `;
 
-const AsideContent = styled.aside``;
-
-const MenuWrapper = styled.div`
+const MenuWrapper = styled.section`
   display: flex;
   align-items: flex-end;
   height: 100%;
 
-  ${media.desktopSmall`
+  ${media.phone`
+    min-height: 350px;
+  `}
+  ${media.tablet`
     min-height: 520px;
   `}
   ${media.desktopMedium`
@@ -64,20 +65,21 @@ const MenuWrapper = styled.div`
 const Menu = styled.nav`
   display: table;
   position: relative;
-  padding: 2rem 0;
+  padding: 4rem 0;
   ${media.phone`
-    margin: 0 auto;
-  `}
-  ${media.tablet`
-    transform: rotate(90deg);
-    text-align: right;
-  `}
-  ${media.desktopSmall`
     position: absolute;
     left: 0; 
     bottom: 0;
     transform-origin: 0% 100%;
     transform: rotate(90deg) translateX(-100%);
+    text-align: right;
+    padding: 0 2rem;
+  `}
+  ${media.tablet`
+    padding: 0 4rem;
+  `}
+  ${media.desktopSmall`
+    padding: 0;
   `}
 `;
 
@@ -86,20 +88,36 @@ const MenuItem = styled.a`
   font-size: 4rem;
   letter-spacing: 1px;
   text-decoration: none;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0;
+  margin: .5rem 0;
+  padding: .5rem 0;
 
   && {
-    ${({ isFirst }) => isFirst && 'margin-top: 0;'}
-    ${({ isLast }) => isLast && 'margin-bottom: 0;'}
+    ${({ isFirst }) =>
+      isFirst &&
+      ` margin-top: 0;
+        padding-top: 0;
+      `}
+    ${({ isLast }) =>
+      isLast &&
+      ` margin-bottom: 0;
+        padding-bottom: 0;
+      `}
   }
 
+  ${media.phone`
+    font-size: 6rem;
+    margin: 2.5rem 0;
+    /* these transforms keep rotated element in line with 
+    other layout elements (verical-align worked unsatisfying)  */
+    transform: translateY(1rem);
+  `};
   ${media.tablet`
     font-size: 8rem;
+    transform: translateY(1.5rem);
   `};
   ${media.desktopSmall`
-    margin: 2.5rem 0;
     letter-spacing: 4px;
+    transform: none;
   `}
   ${media.desktopMedium`
     margin: 4rem 0;
@@ -112,14 +130,11 @@ const MenuItem = styled.a`
 const MainPage = () => {
   return (
     <Grid className="stretch">
-      <Intro>
+      <header>
         <Heading as="h1" bottomSpace>
           {content.mainTitle}
         </Heading>
-        <BasicText as="a" href={`mailto:${content.mailAddress}`} fillOnHover>
-          {content.mailLinkLabel}
-        </BasicText>
-      </Intro>
+      </header>
       <MainContent>
         <MenuWrapper>
           <Menu>
@@ -135,9 +150,15 @@ const MainPage = () => {
           </Menu>
         </MenuWrapper>
       </MainContent>
-      <AsideContent>
-        <BasicText>{content.copyright}</BasicText>
-      </AsideContent>
+      <footer>
+        <p>
+          <BasicText as="a" href={`mailto:${content.mailAddress}`} fillOnHover>
+            {content.mailLinkLabel}
+          </BasicText>
+          <br />
+          <BasicText>{content.copyright}</BasicText>
+        </p>
+      </footer>
     </Grid>
   );
 };

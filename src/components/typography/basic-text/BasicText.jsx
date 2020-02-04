@@ -4,12 +4,17 @@ import { colors } from '../../../utils';
 
 const StyledText = styled.span`
   font-size: 1.25rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  :last-child {
+    margin-bottom: 0;
+  }
   ${({ bottomSpace }) => bottomSpace && 'margin-bottom: 1.5rem;'}
 
   ${({ fillOnHover }) =>
+    fillOnHover &&
     // I use gradient because it makes posible to animate
     // multiple lines of inline element
-    fillOnHover &&
     `
       text-decoration: none;
       background: linear-gradient(

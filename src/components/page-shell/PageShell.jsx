@@ -9,7 +9,7 @@ const InternalWrapper = styled.div`
   overflow: hidden;
 `;
 
-const Shell = styled.section`
+const Shell = styled.div`
   /* background-color: red; */
 `;
 
