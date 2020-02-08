@@ -6,6 +6,7 @@ const StyledText = styled.span`
   font-size: 1.25rem;
   display: inline-block;
   margin-bottom: 0.5rem;
+  line-height: 1.5;
   :last-child {
     margin-bottom: 0;
   }

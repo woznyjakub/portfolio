@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import cssReset from './cssReset';
-import media from '../../../utils/media';
+import { media, colors } from '../../../utils';
 
 export const containerGutter = 18; // px
 
@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    background-color: ${colors.primary};
+    color: ${colors.secondary};
   }
   a {
     color: inherit; 
@@ -39,6 +41,11 @@ const GlobalStyle = createGlobalStyle`
   .stretch {
     display: flex;
     width: 100%;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
   }
 
   ${media.phone`
