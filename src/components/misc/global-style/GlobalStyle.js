@@ -48,6 +48,12 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
   }
 
+  .img-stretched {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   ${media.phone`
     .container {
       max-width: 500px;
