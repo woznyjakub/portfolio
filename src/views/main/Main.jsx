@@ -123,7 +123,7 @@ const MenuItem = styled.a`
     margin: 4rem 0;
   `}
   ${media.desktopLarge`
-    font-size: 12rem;
+    font-size: 10rem;
   `} 
 `;
 
@@ -131,7 +131,7 @@ const MainPage = () => {
   return (
     <Grid className="stretch">
       <header>
-        <Heading as="h1" bottomSpace>
+        <Heading as="h1" gutter="bottom">
           {content.mainTitle}
         </Heading>
       </header>

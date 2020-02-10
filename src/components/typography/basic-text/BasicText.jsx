@@ -10,7 +10,25 @@ const StyledText = styled.span`
   :last-child {
     margin-bottom: 0;
   }
-  ${({ bottomSpace }) => bottomSpace && 'margin-bottom: 1.5rem;'}
+
+  ${({ gutter }) => {
+    const value = gutter === 'left' || gutter === 'right' ? '1em' : '1.5rem';
+    if (gutter) {
+      return `margin-${gutter}: ${value};`;
+    }
+  }}
+
+  ${({ fontSize }) => {
+    let value;
+    switch (fontSize) {
+      case 'smaller':
+        value = '1.125rem';
+        break;
+      default:
+        return;
+    }
+    return `font-size: ${value};`;
+  }}
 
   ${({ fillOnHover }) =>
     fillOnHover &&

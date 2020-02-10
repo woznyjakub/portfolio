@@ -85,6 +85,9 @@ const content = {
       title: 'Challenge 22',
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
+        aliquam delectus! Adipisci nam accusantium illo.
+        Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
       imageUrl: challenge22Image,
       links: [
@@ -119,36 +122,65 @@ const content = {
 };
 
 const Grid = styled.ul`
-  ${media.tablet`
-    padding: 0 3rem;
+  ${media.phone`
+    padding: 0 4rem;
   `}
   ${media.desktopSmall`
     display: grid;
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   `}
 `;
 
-const Card = styled.li``;
+const Card = styled.li`
+  display: grid;
+  grid-template-rows: auto 1fr;
+`;
+
+const TextWrapper = styled.article`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 const WorksPage = () => {
   return (
     <Grid>
       {content.cards.map(({ title, description, imageUrl, links }, i) => (
-        <Card key={`${title}-${i}`}>
+        <Card className="saturate-on-hover-trigger" key={`${title}-${i}`}>
           {imageUrl && (
             <figure>
-              <img className="img-stretched" src={imageUrl} alt={`${title} example screenshot`} />
+              <img
+                className="img-stretched saturate-on-hover-item"
+                src={imageUrl}
+                alt={`${title} example screenshot`}
+              />
             </figure>
           )}
-          <article>
-            {title && <Heading>{title}</Heading>}
-            {description && <BasicText as="p">{description}</BasicText>}
-            {(links || []).map(({ label, url }, i) => (
-              <BasicText as="a" href={url || null} key={`${label}-${i}`}>
-                {label}
+          <TextWrapper>
+            {title && <Heading gutter="bottom">{title}</Heading>}
+            {description && (
+              <BasicText as="p" fontSize="smaller">
+                {description}
               </BasicText>
-            ))}
-          </article>
+            )}
+            <div style={{ marginTop: 'auto' }}>
+              {(links || []).map(({ label, url }, i, array) => (
+                <BasicText
+                  as="a"
+                  className="underline"
+                  href={url || null}
+                  key={`${label}-${i}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  gutter={i < array.length - 1 && 'right'}
+                >
+                  {label}
+                </BasicText>
+              ))}
+            </div>
+          </TextWrapper>
         </Card>
       ))}
     </Grid>

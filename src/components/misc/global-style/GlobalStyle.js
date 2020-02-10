@@ -4,6 +4,18 @@ import { media, colors } from '../../../utils';
 
 export const containerGutter = 18; // px
 
+const repeat = (string, amount) => {
+  const parts = [];
+  for (let i = 0; i < amount; i++) {
+    parts.push(string);
+  }
+  let result = parts.join('');
+  if (result.endsWith(',')) {
+    result = result.slice(0, -1);
+  }
+  return result;
+};
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'caslongrad';
@@ -11,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
   ${cssReset}
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
   body {
     font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -54,6 +66,27 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
   }
 
+  .saturate-on-hover {
+    &-trigger:hover &-item {
+      filter: none;
+    }
+    &-item {
+      filter: saturate(0);
+      transition: filter .2s;
+      will-change: filter;
+    }
+  }
+
+  .underline {
+    text-decoration: none;
+    background-image: linear-gradient(to top, currentColor 1px, transparent 2px);
+    ${'' /* this prevents the letters from being crossed out by underline */}
+    text-shadow: ${repeat(`0px 0px 2px ${colors.primary},`, 15)};
+    && {
+      line-height: 1;
+    }
+  }
+
   ${media.phone`
     .container {
       max-width: 500px;
@@ -75,9 +108,6 @@ const GlobalStyle = createGlobalStyle`
     }
   `}
   ${media.desktopSmall`
-    html {
-      font-size: 16px;
-    }
     .container {
       max-width: 1150px;
       margin: 0 auto;
@@ -85,6 +115,11 @@ const GlobalStyle = createGlobalStyle`
     .page-padding {
       padding-left: ${containerGutter * 3}px;
       padding-right: ${containerGutter * 3}px;
+    }
+  `}
+  ${media.desktopLarge`
+    html {
+      font-size: 16px;
     }
   `}
 `;
