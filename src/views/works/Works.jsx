@@ -122,12 +122,13 @@ const content = {
 };
 
 const Grid = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
   ${media.phone`
     padding: 0 4rem;
   `}
   ${media.desktopSmall`
-    display: grid;
-    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   `}
 `;
@@ -175,6 +176,7 @@ const WorksPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   gutter={i < array.length - 1 && 'right'}
+                  moveUnderlineOnHover
                 >
                   {label}
                 </BasicText>

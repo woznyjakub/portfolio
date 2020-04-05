@@ -1,6 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { colors } from '../../../utils';
+
+const moveUnderline = keyframes`
+  49.999% {
+    background-position: 100%;
+  }
+  50% {
+    background-size: 0%;
+    background-position: 0%;
+  }
+  100% {
+    background-position: 0%;
+  }
+`;
 
 const StyledText = styled.span`
   font-size: 1.25rem;
@@ -34,17 +47,29 @@ const StyledText = styled.span`
     fillOnHover &&
     // I use gradient because it makes posible to animate
     // multiple lines of inline element
-    `
+    css`
       text-decoration: none;
-      background: linear-gradient(
-        to top, ${colors.secondary}, ${colors.secondary}
-      ) 50% 0% / 100% 0 no-repeat;
-      transition: background-size .3s, color .3s;
+      background: linear-gradient(to top, ${colors.secondary}, ${colors.secondary}) 50% 0% / 100% 0
+        no-repeat;
+      transition: background-size 0.3s, color 0.3s;
       will-change: background-size, color;
       :hover {
         color: ${colors.primary};
         background-position-y: 100%;
         background-size: 100% 100%;
+      }
+    `}
+
+  ${({ moveUnderlineOnHover }) =>
+    moveUnderlineOnHover &&
+    css`
+      display: inline;
+      background-repeat: no-repeat;
+      animation-duration: 1s;
+      background-size: 100%;
+      background-position: 100%;
+      :hover {
+        animation-name: ${moveUnderline};
       }
     `}
 `;

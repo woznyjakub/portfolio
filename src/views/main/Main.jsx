@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media } from '../../utils';
 import { Heading, BasicText } from '../../components';
 
@@ -94,12 +94,14 @@ const MenuItem = styled.a`
   && {
     ${({ isFirst }) =>
       isFirst &&
-      ` margin-top: 0;
+      css`
+        margin-top: 0;
         padding-top: 0;
       `}
     ${({ isLast }) =>
       isLast &&
-      ` margin-bottom: 0;
+      css`
+        margin-bottom: 0;
         padding-bottom: 0;
       `}
   }
