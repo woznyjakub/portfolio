@@ -16,7 +16,6 @@ const moveUnderline = keyframes`
 `;
 
 const StyledText = styled.span`
-  font-size: 1.25rem;
   display: inline-block;
   margin-bottom: 0.5rem;
   line-height: 1.5;
@@ -38,7 +37,7 @@ const StyledText = styled.span`
         value = '1.125rem';
         break;
       default:
-        return;
+        value = '1.25rem';
     }
     return `font-size: ${value};`;
   }}
@@ -74,7 +73,7 @@ const StyledText = styled.span`
     `}
 `;
 
-const BasicText = props => {
+const BasicText = (props) => {
   return <StyledText {...props} />;
 };
 

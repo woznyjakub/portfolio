@@ -87,6 +87,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .list-unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+
   ${media.phone`
     .container {
       max-width: 500px;
