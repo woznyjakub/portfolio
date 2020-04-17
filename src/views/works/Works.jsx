@@ -12,6 +12,7 @@ import waxomImage from '../../assets/images/works/waxom.jpg';
 import portfolioOld1Image from '../../assets/images/works/portfolio-old-1.jpg';
 
 const content = {
+  pageTitle: 'Skills',
   cards: [
     {
       title: 'Binary clock app',
@@ -147,45 +148,56 @@ const TextWrapper = styled.article`
 
 const WorksPage = () => {
   return (
-    <Grid>
-      {content.cards.map(({ title, description, imageUrl, links }, i) => (
-        <Card className="saturate-on-hover-trigger" key={`${title}-${i}`}>
-          {imageUrl && (
-            <figure>
-              <img
-                className="img-stretched saturate-on-hover-item"
-                src={imageUrl}
-                alt={`${title} example screenshot`}
-              />
-            </figure>
-          )}
-          <TextWrapper>
-            {title && <Heading gutter="bottom">{title}</Heading>}
-            {description && (
-              <BasicText as="p" fontSize="smaller">
-                {description}
-              </BasicText>
-            )}
-            <div style={{ marginTop: 'auto' }}>
-              {(links || []).map(({ label, url }, i, array) => (
-                <BasicText
-                  as="a"
-                  className="underline"
-                  href={url || null}
-                  key={`${label}-${i}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  gutter={i < array.length - 1 && 'right'}
-                  moveUnderlineOnHover
-                >
-                  {label}
-                </BasicText>
-              ))}
-            </div>
-          </TextWrapper>
-        </Card>
-      ))}
-    </Grid>
+    <div>
+      <header>
+        <Heading as="h1" fontSize="large" gutter="bottom" centered>
+          {content.pageTitle}
+        </Heading>
+      </header>
+      <main>
+        <section>
+          <Grid>
+            {content.cards.map(({ title, description, imageUrl, links }, i) => (
+              <Card className="saturate-on-hover-trigger" key={`${title}-${i}`}>
+                {imageUrl && (
+                  <figure>
+                    <img
+                      className="img-stretched saturate-on-hover-item"
+                      src={imageUrl}
+                      alt={`${title} example screenshot`}
+                    />
+                  </figure>
+                )}
+                <TextWrapper>
+                  {title && <Heading gutter="bottom">{title}</Heading>}
+                  {description && (
+                    <BasicText as="p" fontSize="smaller">
+                      {description}
+                    </BasicText>
+                  )}
+                  <div style={{ marginTop: 'auto' }}>
+                    {(links || []).map(({ label, url }, i, array) => (
+                      <BasicText
+                        as="a"
+                        className="underline"
+                        href={url || null}
+                        key={`${label}-${i}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        gutter={i < array.length - 1 && 'right'}
+                        moveUnderlineOnHover
+                      >
+                        {label}
+                      </BasicText>
+                    ))}
+                  </div>
+                </TextWrapper>
+              </Card>
+            ))}
+          </Grid>
+        </section>
+      </main>
+    </div>
   );
 };
 

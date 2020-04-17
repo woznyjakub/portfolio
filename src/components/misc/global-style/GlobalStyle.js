@@ -92,6 +92,10 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 0;
   }
 
+  .w-100 {
+    width: 100%;
+  }
+
   ${media.phone`
     .container {
       max-width: 500px;

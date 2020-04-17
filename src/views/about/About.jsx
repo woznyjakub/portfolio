@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BasicText } from '../../components';
+import { BasicText, Heading } from '../../components';
 import { media } from '../../utils';
 import officeImageUrl from '../../assets/images/office-1.jpg';
 
@@ -75,44 +75,53 @@ const ImageWrapper = styled.figure`
 
 const AboutPage = () => {
   return (
-    <Grid>
-      <Column>
-        <TextWrapper>
-          <BasicText as="p">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos,
-            quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel velit est
-            necessitatibus aperiam vitae, possimus error?
-          </BasicText>
-          <BasicText as="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae
-            cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam asperiores aspernatur
-            veniam, officiis, ab et unde quae saepe?
-          </BasicText>
-          <BasicText as="p">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos,
-            quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel velit est
-            necessitatibus aperiam vitae, possimus error?
-          </BasicText>
-          <BasicText as="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae
-            cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam asperiores aspernatur
-            veniam, officiis, ab et unde quae saepe?
-          </BasicText>
-          <BasicText as="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae
-            cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam asperiores aspernatur
-            veniam, officiis, ab et unde quae saepe?
-          </BasicText>
-        </TextWrapper>
-      </Column>
-      <Column>
-        <StyckyContainer>
-          <ImageWrapper>
-            <img className="img-fluid" src={officeImageUrl} alt="a programmer's workplace" />
-          </ImageWrapper>
-        </StyckyContainer>
-      </Column>
-    </Grid>
+    <div className="w-100">
+      <main>
+        <section>
+          <Grid>
+            <Column>
+              <TextWrapper>
+                <Heading as="h1" fontSize="large" gutter="bottom" centered>
+                  About
+                </Heading>
+                <BasicText as="p">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium
+                  quos, quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel velit
+                  est necessitatibus aperiam vitae, possimus error?
+                </BasicText>
+                <BasicText as="p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
+                  repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
+                  asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                </BasicText>
+                <BasicText as="p">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium
+                  quos, quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel velit
+                  est necessitatibus aperiam vitae, possimus error?
+                </BasicText>
+                <BasicText as="p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
+                  repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
+                  asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                </BasicText>
+                <BasicText as="p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
+                  repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
+                  asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                </BasicText>
+              </TextWrapper>
+            </Column>
+            <Column>
+              <StyckyContainer>
+                <ImageWrapper>
+                  <img className="img-fluid" src={officeImageUrl} alt="a programmer's workplace" />
+                </ImageWrapper>
+              </StyckyContainer>
+            </Column>
+          </Grid>
+        </section>
+      </main>
+    </div>
   );
 };
 
