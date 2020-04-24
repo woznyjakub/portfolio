@@ -46,6 +46,17 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+  .layout-wrapper {
+    ${
+      '' /* this class forces footer to be on the bottom
+            even when there is not enough content to push it down */
+    }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .page-padding {
     padding: 4rem ${containerGutter}px 1rem;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../utils';
-import { Heading, BasicText } from '../../components';
+import { Heading, BasicText, Footer } from '../../components';
 
 const content = {
   skillsGroups: [
@@ -23,10 +23,6 @@ const content = {
     },
   ],
 };
-
-const Wrapper = styled.div`
-  width: 100%;
-`;
 
 const SkillsList = styled.ul`
   display: grid;
@@ -57,7 +53,7 @@ const NestedListItemText = styled(BasicText)`
 
 const SkillsPage = () => {
   return (
-    <Wrapper>
+    <div className="layout-wrapper">
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
           Skills
@@ -81,7 +77,8 @@ const SkillsPage = () => {
           </SkillsList>
         </section>
       </main>
-    </Wrapper>
+      <Footer />
+    </div>
   );
 };
 

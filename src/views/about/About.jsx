@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BasicText, Heading } from '../../components';
+import { BasicText, Heading, Footer } from '../../components';
 import { media } from '../../utils';
 import officeImageUrl from '../../assets/images/office-1.jpg';
 
@@ -75,7 +75,7 @@ const ImageWrapper = styled.figure`
 
 const AboutPage = () => {
   return (
-    <div className="w-100">
+    <div className="layout-wrapper">
       <main>
         <section>
           <Grid>
@@ -121,6 +121,7 @@ const AboutPage = () => {
           </Grid>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

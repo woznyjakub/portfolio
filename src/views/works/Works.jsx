@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { media } from '../../utils';
-import { Heading, BasicText } from '../../components';
+import { Heading, BasicText, Footer } from '../../components';
 
 import clockImage from '../../assets/images/works/clock.jpg';
 import challenge37Image from '../../assets/images/works/challenge37.jpg';
@@ -12,7 +12,7 @@ import waxomImage from '../../assets/images/works/waxom.jpg';
 import portfolioOld1Image from '../../assets/images/works/portfolio-old-1.jpg';
 
 const content = {
-  pageTitle: 'Skills',
+  pageTitle: 'Works',
   cards: [
     {
       title: 'Binary clock app',
@@ -148,7 +148,7 @@ const TextWrapper = styled.article`
 
 const WorksPage = () => {
   return (
-    <div>
+    <div className="layout-wrapper">
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
           {content.pageTitle}
@@ -197,6 +197,7 @@ const WorksPage = () => {
           </Grid>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
