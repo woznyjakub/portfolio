@@ -22,7 +22,7 @@ const StyledText = styled(BasicText)`
   margin: 0 auto;
 `;
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <StyledText>{content.footerText}</StyledText>
