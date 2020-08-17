@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme, CSSObject } from 'styled-components';
 
 export const sizes = {
   desktopLarge: 1750,
@@ -8,12 +8,25 @@ export const sizes = {
   phone: 530,
 };
 
-export default Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
+// @todo: rewrite types to prettier ones
+interface Media {
+  desktopLarge?: MediaQueryHelper;
+  desktopMedium?: MediaQueryHelper;
+  desktopSmall?: MediaQueryHelper;
+  tablet?: MediaQueryHelper;
+  phone?: MediaQueryHelper;
+}
+
+type MediaQueryHelper = (css: TemplateStringsArray) => {};
+
+const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
+  acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: any) => css`
     @media (min-width: ${sizes[label]}px) {
-      ${css(...args)}
+      ${css(cssStrings, ...interpolations)}
     }
   `;
 
   return acc;
 }, {});
+
+export default media;
