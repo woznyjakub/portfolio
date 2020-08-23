@@ -7,7 +7,7 @@ type FontSize = 'large' | null;
 
 type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
 
-interface HeadingCmpProps {
+interface HeadingCmpProps extends React.ComponentProps<any> {
   fontSize?: FontSize;
   gutter?: Gutter;
   centered?: boolean;
