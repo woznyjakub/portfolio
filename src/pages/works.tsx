@@ -158,8 +158,8 @@ const WorksPage: React.FC = () => {
         <main>
           <section>
             <Grid>
-              {content.cards.map(({ title, description, imageUrl, links }, i) => (
-                <Card className="saturate-on-hover-trigger" key={`${title}-${i}`}>
+              {content.cards.map(({ title, description, imageUrl, links }) => (
+                <Card className="saturate-on-hover-trigger" key={`${title}`}>
                   {imageUrl && (
                     <figure>
                       <img
@@ -182,7 +182,7 @@ const WorksPage: React.FC = () => {
                           as="a"
                           className="underline"
                           href={url || null}
-                          key={`${label}-${i}`}
+                          key={`${label}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           gutter={i < array.length - 1 ? 'right' : null}

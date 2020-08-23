@@ -63,12 +63,12 @@ const SkillsPage: React.FC = () => {
         <main>
           <section>
             <SkillsList className="list-unstyled">
-              {content.skillsGroups.map(({ name, skills }, i) => (
-                <SkillsListItem key={`${name}-${i}`}>
+              {content.skillsGroups.map(({ name, skills }) => (
+                <SkillsListItem key={`${name}`}>
                   <Heading gutter="bottom">{name}</Heading>
                   <ul>
-                    {skills.map((skill, i) => (
-                      <li key={`${skill}-${i}`}>
+                    {skills.map((skill) => (
+                      <li key={`${skill}`}>
                         <NestedListItemText>{skill}</NestedListItemText>
                       </li>
                     ))}

@@ -144,7 +144,7 @@ const IndexPage: React.FC = () => {
             <Menu>
               <ul>
                 {content.menuItems.map(({ label, link }, i, array) => (
-                  <li key={`${link}-${i}`}>
+                  <li key={`${link}`}>
                     <MenuItem href={link} isFirst={i === 0} isLast={i === array.length - 1}>
                       {label}
                     </MenuItem>
