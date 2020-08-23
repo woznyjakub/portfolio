@@ -47,10 +47,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .layout-wrapper {
-    ${
-      '' /* this class forces footer to be on the bottom
-            even when there is not enough content to push it down */
-    }
+    ${'' /* this class forces footer to be on the bottom
+            even when there is not enough content to push it down */}
     width: 100%;
     height: 100%;
     display: flex;
@@ -105,6 +103,10 @@ const GlobalStyle = createGlobalStyle`
 
   .w-100 {
     width: 100%;
+  }
+
+  .m-auto {
+    margin: auto;
   }
 
   ${media.phone`

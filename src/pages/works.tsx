@@ -120,12 +120,15 @@ const content = {
       ],
     },
   ],
+  cardsAltText: 'Something went wrong or this section is empty.',
 };
 
 const Grid = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
+  margin-bottom: auto;
+
   ${media.phone`
     padding: 0 4rem;
   `}
@@ -155,47 +158,47 @@ const WorksPage: React.FC = () => {
             {content.pageTitle}
           </Heading>
         </header>
-        <main>
-          <section>
-            <Grid>
-              {content.cards.map(({ title, description, imageUrl, links }) => (
-                <Card className="saturate-on-hover-trigger" key={`${title}`}>
-                  {imageUrl && (
-                    <figure>
-                      <img
-                        className="img-stretched saturate-on-hover-item"
-                        src={imageUrl}
-                        alt={`${title} example screenshot`}
-                      />
-                    </figure>
-                  )}
-                  <TextWrapper>
-                    {title && <Heading gutter="bottom">{title}</Heading>}
-                    {description && (
-                      <BasicText as="p" fontSize="smaller">
-                        {description}
-                      </BasicText>
+        <main className="stretch m-auto">
+          <section className="stretch">
+            {content.cards.length ? (
+              <Grid>
+                {content.cards.map(({ title, description, imageUrl, links }) => (
+                  <Card className="saturate-on-hover-trigger" key={title}>
+                    {imageUrl && (
+                      <figure>
+                        <img className="img-stretched saturate-on-hover-item" src={imageUrl} alt={`${title || ''} example screenshot`} />
+                      </figure>
                     )}
-                    <div style={{ marginTop: 'auto' }}>
-                      {(links || []).map(({ label, url }, i, array) => (
-                        <BasicText
-                          as="a"
-                          className="underline"
-                          href={url || null}
-                          key={`${label}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          gutter={i < array.length - 1 ? 'right' : null}
-                          moveUnderlineOnHover
-                        >
-                          {label}
+                    <TextWrapper>
+                      {title && <Heading gutter="bottom">{title}</Heading>}
+                      {description && (
+                        <BasicText as="p" fontSize="smaller">
+                          {description}
                         </BasicText>
-                      ))}
-                    </div>
-                  </TextWrapper>
-                </Card>
-              ))}
-            </Grid>
+                      )}
+                      <div style={{ marginTop: 'auto' }}>
+                        {(links || []).map(({ label, url }, i, array) => (
+                          <BasicText
+                            as="a"
+                            className="underline"
+                            href={url || null}
+                            key={label}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            gutter={i < array.length - 1 ? 'right' : null}
+                            moveUnderlineOnHover
+                          >
+                            {label}
+                          </BasicText>
+                        ))}
+                      </div>
+                    </TextWrapper>
+                  </Card>
+                ))}
+              </Grid>
+            ) : (
+              <Heading className="m-auto">{content.cardsAltText}</Heading>
+            )}
           </section>
         </main>
         <Footer />
