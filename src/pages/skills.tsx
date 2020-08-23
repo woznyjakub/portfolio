@@ -51,7 +51,7 @@ const NestedListItemText = styled(BasicText)`
   }
 `;
 
-const SkillsPage = () => {
+const SkillsPage: React.FC = () => {
   return (
     <BasicLayout>
       <div className="layout-wrapper">

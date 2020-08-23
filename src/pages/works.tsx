@@ -146,7 +146,7 @@ const TextWrapper = styled.article`
   justify-content: space-between;
 `;
 
-const WorksPage = () => {
+const WorksPage: React.FC = () => {
   return (
     <BasicLayout>
       <div className="layout-wrapper">
@@ -185,7 +185,7 @@ const WorksPage = () => {
                           key={`${label}-${i}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          gutter={i < array.length - 1 && 'right'}
+                          gutter={i < array.length - 1 ? 'right' : null}
                           moveUnderlineOnHover
                         >
                           {label}

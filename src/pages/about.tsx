@@ -73,7 +73,7 @@ const ImageWrapper = styled.figure`
   `}
 `;
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <BasicLayout>
       <div className="layout-wrapper">

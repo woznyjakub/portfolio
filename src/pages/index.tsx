@@ -27,6 +27,7 @@ const content = {
   ],
   copyright: '© Jakub Woźny 2020',
 };
+
 const Grid = styled.div`
   display: flex;
   flex-direction: column;
@@ -83,7 +84,7 @@ const Menu = styled.nav`
   `}
 `;
 
-const MenuItem = styled.a`
+const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
   display: block;
   font-size: 4rem;
   letter-spacing: 1px;
@@ -129,7 +130,7 @@ const MenuItem = styled.a`
   `} 
 `;
 
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
   return (
     <BasicLayout>
       <Grid className="stretch">

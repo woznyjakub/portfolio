@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BasicLayout } from '../components';
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
     <BasicLayout>
       <div>
