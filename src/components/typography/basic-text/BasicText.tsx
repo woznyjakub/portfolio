@@ -15,7 +15,18 @@ const moveUnderline = keyframes`
   }
 `;
 
-const StyledText = styled.span`
+type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
+
+type FontSize = 'smaller' | null;
+
+interface TextCmpProps {
+  fillOnHover?: boolean;
+  fontSize?: FontSize;
+  gutter?: Gutter;
+  moveUnderlineOnHover?: boolean;
+}
+
+const StyledText = styled.span<TextCmpProps>`
   display: inline-block;
   margin-bottom: 0.5rem;
   line-height: 1.5;
@@ -73,7 +84,7 @@ const StyledText = styled.span`
     `}
 `;
 
-const BasicText = (props) => {
+const BasicText: React.FC<TextCmpProps> = (props) => {
   return <StyledText {...props} />;
 };
 

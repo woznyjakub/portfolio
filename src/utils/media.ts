@@ -17,10 +17,10 @@ interface Media {
   phone?: MediaQueryHelper;
 }
 
-type MediaQueryHelper = (css: TemplateStringsArray) => {};
+type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: any) => {};
 
 const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
-  acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: any) => css`
+  acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: string[]) => css`
     @media (min-width: ${sizes[label]}px) {
       ${css(cssStrings, ...interpolations)}
     }

@@ -124,7 +124,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
     }
     .page-padding {
-      padding: 8rem ${containerGutter * 2}px 3rem
+      padding: 8rem ${containerGutter * 2}px 3rem;
     }
   `}
   ${media.desktopSmall`
