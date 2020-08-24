@@ -105,6 +105,10 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+  .h-100 {
+    height: 100%;
+  }
+
   .m-auto {
     margin: auto;
   }

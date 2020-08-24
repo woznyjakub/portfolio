@@ -22,6 +22,7 @@ const content = {
       skills: ['Git (and Git Flow)', 'Webpack', 'Gulp', 'Adobe Xd', 'Figma', 'Photoshop', 'JIRA'],
     },
   ],
+  skillsGroupsAltText: 'Something went wrong or this section is empty.',
 };
 
 const SkillsList = styled.ul`
@@ -37,10 +38,10 @@ const SkillsList = styled.ul`
 
 const SkillsListItem = styled.li`
   border: 1px solid currentColor;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
 
   ${media.desktopSmall`
-    padding: 2rem;
+    padding: 2rem 2rem 3rem;
   `}
 `;
 
@@ -60,22 +61,26 @@ const SkillsPage: React.FC = () => {
             Skills
           </Heading>
         </header>
-        <main>
-          <section>
-            <SkillsList className="list-unstyled">
-              {content.skillsGroups.map(({ name, skills }) => (
-                <SkillsListItem key={`${name}`}>
-                  <Heading gutter="bottom">{name}</Heading>
-                  <ul>
-                    {skills.map((skill) => (
-                      <li key={`${skill}`}>
-                        <NestedListItemText>{skill}</NestedListItemText>
-                      </li>
-                    ))}
-                  </ul>
-                </SkillsListItem>
-              ))}
-            </SkillsList>
+        <main className="stretch h-100">
+          <section className="m-auto w-100">
+            {content.skillsGroups.length ? (
+              <SkillsList className="list-unstyled">
+                {content.skillsGroups.map(({ name, skills }) => (
+                  <SkillsListItem key={name}>
+                    <Heading gutter="bottom">{name}</Heading>
+                    <ul>
+                      {skills.map((skill) => (
+                        <li key={skill}>
+                          <NestedListItemText>{skill}</NestedListItemText>
+                        </li>
+                      ))}
+                    </ul>
+                  </SkillsListItem>
+                ))}
+              </SkillsList>
+            ) : (
+              <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
+            )}
           </section>
         </main>
         <Footer />
