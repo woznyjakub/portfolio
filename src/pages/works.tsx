@@ -1,15 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import { media } from '../utils';
 import { BasicLayout, Heading, BasicText, Footer } from '../components';
-
-import clockImage from '../assets/images/works/clock.jpg';
-import challenge37Image from '../assets/images/works/challenge37.jpg';
-import challenge35Image from '../assets/images/works/challenge35.jpg';
-import challenge22Image from '../assets/images/works/challenge22.jpg';
-import waxomImage from '../assets/images/works/waxom.jpg';
-import portfolioOld1Image from '../assets/images/works/portfolio-old-1.jpg';
 
 const content = {
   pageTitle: 'Works',
@@ -19,7 +14,7 @@ const content = {
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: clockImage,
+      imageName: 'clock.jpg',
       links: [
         {
           label: 'Repository',
@@ -36,7 +31,7 @@ const content = {
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: challenge37Image,
+      imageName: 'challenge37.jpg',
       links: [
         {
           label: 'Repository',
@@ -53,7 +48,7 @@ const content = {
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: challenge35Image,
+      imageName: 'challenge35.jpg',
       links: [
         {
           label: 'Repository',
@@ -70,7 +65,7 @@ const content = {
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: waxomImage,
+      imageName: 'waxom.jpg',
       links: [
         {
           label: 'Repository',
@@ -90,7 +85,7 @@ const content = {
         Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: challenge22Image,
+      imageName: 'challenge22.jpg',
       links: [
         {
           label: 'Repository',
@@ -107,7 +102,7 @@ const content = {
       description: `Lorem ipsum dolor sit amet, 
         consectetur adipisicing elit. Soluta animi
         aliquam delectus! Adipisci nam accusantium illo.`,
-      imageUrl: portfolioOld1Image,
+      imageName: 'portfolio-old-1.jpg',
       links: [
         {
           label: 'Repository',
@@ -149,7 +144,30 @@ const TextWrapper = styled.article`
   justify-content: space-between;
 `;
 
-const WorksPage: React.FC = () => {
+interface WorksPageProps {
+  data?: {
+    allFile: {
+      edges: GatsbyImageData[];
+    };
+  };
+}
+
+interface GatsbyImageData {
+  node: {
+    childImageSharp: {
+      fluid: {
+        aspectRatio: number;
+        sizes: string;
+        src: string;
+        srcSet: string;
+        tracedSVG?: string;
+        originalName?: string;
+      };
+    };
+  };
+}
+
+const WorksPage: React.FC<WorksPageProps> = ({ data }) => {
   return (
     <BasicLayout>
       <div className="layout-wrapper">
@@ -162,11 +180,21 @@ const WorksPage: React.FC = () => {
           <section className="stretch">
             {content.cards.length ? (
               <Grid>
-                {content.cards.map(({ title, description, imageUrl, links }) => (
+                {content.cards.map(({ title, description, imageName, links }) => (
                   <Card className="saturate-on-hover-trigger" key={title}>
-                    {imageUrl && (
+                    {imageName && (
                       <figure>
-                        <img className="img-stretched saturate-on-hover-item" src={imageUrl} alt={`${title || ''} example screenshot`} />
+                        <Img
+                          className="img-stretched saturate-on-hover-item"
+                          fluid={
+                            // this chain filters image data from graphql by checking
+                            // name and returns its `fluid` object
+                            data.allFile.edges.find((item: GatsbyImageData) => {
+                              return item.node.childImageSharp.fluid.originalName === imageName;
+                            }).node.childImageSharp.fluid
+                          }
+                          alt={`${title || ''} example screenshot`}
+                        />
                       </figure>
                     )}
                     <TextWrapper>
@@ -208,3 +236,20 @@ const WorksPage: React.FC = () => {
 };
 
 export default WorksPage;
+
+export const query = graphql`
+  {
+    allFile(filter: { relativeDirectory: { eq: "works" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+              originalName
+            }
+          }
+        }
+      }
+    }
+  }
+`;
