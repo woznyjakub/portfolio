@@ -17,10 +17,6 @@ const repeat = (string, amount) => {
 };
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'caslongrad';
-    src: url('fonts/CaslonGraD.ttf') format('truetype');
-  }
   ${cssReset}
   html {
     font-size: 13px;
