@@ -7,19 +7,23 @@ const content = {
   skillsGroups: [
     {
       name: 'JavaScript',
-      skills: ['JavaScript ES6/7/8+', 'TypeScript', 'React', 'GatsbyJS', 'Redux'],
+      skills: ['JavaScript ES2020', 'TypeScript', 'React', 'GatsbyJS', 'NextJS', 'Redux', 'RxJS', 'Web components'],
     },
     {
       name: 'CSS',
-      skills: ['CSS', 'Sass', 'Styled Components', 'Less', 'Bootstrap 4'],
+      skills: ['CSS', 'Sass', 'Styled Components', 'Bootstrap 4', 'Material UI'],
     },
     {
       name: 'HTML',
-      skills: ['Semantic HTML', 'Pug', 'Handlebars', 'Accessibility (WCAG 2.1)'],
+      skills: ['Semantic HTML', 'ARIA', 'Pug', 'Accessibility (WCAG 2.1)', 'Knowledge about good SEO practises'],
+    },
+    {
+      name: 'Backend',
+      skills: ['NodeJS', 'NestJS', 'MongoDB'],
     },
     {
       name: 'Other',
-      skills: ['Git (and Git Flow)', 'Webpack', 'Gulp', 'Adobe Xd', 'Figma', 'Photoshop', 'JIRA'],
+      skills: ['Git', 'Webpack', 'Git Flow', 'Adobe Xd', 'Photoshop', 'JIRA, Gitlab'],
     },
   ],
   skillsGroupsAltText: 'Something went wrong or this section is empty.',
