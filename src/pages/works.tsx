@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 
 import { media } from '../utils';
 import { BasicLayout, Heading, BasicText, Footer } from '../components';
-import { GatsbyImage, Files } from '../models/graphql';
+import { GatsbyImage, FileGroup, SingleFileFromGroup } from '../models/graphql';
 
 const content = {
   pageTitle: 'Works',
@@ -145,8 +145,13 @@ const TextWrapper = styled.article`
   justify-content: space-between;
 `;
 
+type WorkImage = SingleFileFromGroup<
+  GatsbyImage<{
+    originalName?: string;
+  }>
+>;
 interface WorksPageProps {
-  data?: Files<GatsbyImage>;
+  data?: FileGroup<GatsbyImage>;
 }
 
 const WorksPage: React.FC<WorksPageProps> = ({ data }) => {
@@ -171,7 +176,7 @@ const WorksPage: React.FC<WorksPageProps> = ({ data }) => {
                           fluid={
                             // this chain filters image data from graphql by checking
                             // name and returns its `fluid` object
-                            data.allFile.edges.find((item: GatsbyImage) => {
+                            data.allFile.edges.find((item: WorkImage) => {
                               return item.node.childImageSharp.fluid.originalName === imageName;
                             }).node.childImageSharp.fluid
                           }

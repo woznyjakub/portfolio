@@ -1,2 +1,3 @@
 export { GatsbyImage } from './GatsbyImage';
-export { Files } from './Files';
+export { FileGroup, SingleFileFromGroup } from './FileGroup';
+export { SingleFile } from './File';

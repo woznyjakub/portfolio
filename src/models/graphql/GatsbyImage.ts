@@ -1,14 +1,7 @@
-export interface GatsbyImage {
-  node: {
-    childImageSharp: {
-      fluid: {
-        aspectRatio: number;
-        sizes: string;
-        src: string;
-        srcSet: string;
-        tracedSVG?: string;
-        originalName?: string;
-      };
-    };
+import { FluidObject } from 'gatsby-image';
+
+export interface GatsbyImage<T = {}> {
+  childImageSharp: {
+    fluid: T & FluidObject;
   };
 }
