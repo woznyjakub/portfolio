@@ -39,13 +39,13 @@ const ImageWrapper = styled.figure`
   max-width: 640px;
   width: 80%;
   margin: 0 auto;
-  padding: 0 0 1rem 1rem;
+  padding: 0 0 2rem 2rem;
   ::before {
     content: '';
     position: absolute;
     left: 0;
-    right: 1rem;
-    top: 1rem;
+    right: 2rem;
+    top: 2rem;
     bottom: 0;
     border: 1px solid currentColor;
     z-index: -1;
