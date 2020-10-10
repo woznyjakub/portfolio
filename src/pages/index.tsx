@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+
 import { media } from '../utils';
-import { BasicLayout, Heading, BasicText } from '../components';
+import { Heading, BasicText } from '../components/typography';
+import { BasicLayout } from '../components/layouts';
 
 const content = {
   mainTitle: 'Jakub Woźny\nFront-end developer\nportfolio',

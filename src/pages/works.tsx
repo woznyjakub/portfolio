@@ -4,7 +4,9 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { media } from '../utils';
-import { BasicLayout, Heading, BasicText, Footer } from '../components';
+import { BasicLayout } from '../components/layouts';
+import { BasicText, Heading } from '../components/typography';
+import { Footer } from '../components/sections';
 import { GatsbyImage, FileGroup, SingleFileFromGroup } from '../models/graphql';
 
 const content = {

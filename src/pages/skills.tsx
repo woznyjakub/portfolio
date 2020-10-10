@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { media } from '../utils';
-import { BasicLayout, Heading, BasicText, Footer } from '../components';
+import { BasicLayout } from '../components/layouts';
+import { BasicText, Heading } from '../components/typography';
+import { Footer } from '../components/sections';
 
 const content = {
   skillsGroups: [

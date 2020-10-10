@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
+
 import { colors } from '../../../utils';
 
 const moveUnderline = keyframes`
@@ -59,8 +60,7 @@ const StyledText = styled.span<TextCmpProps>`
     // multiple lines of inline element
     css`
       text-decoration: none;
-      background: linear-gradient(to top, ${colors.secondary}, ${colors.secondary}) 50% 0% / 100% 0
-        no-repeat;
+      background: linear-gradient(to top, ${colors.secondary}, ${colors.secondary}) 50% 0% / 100% 0 no-repeat;
       transition: background-size 0.3s, color 0.3s;
       will-change: background-size, color;
       :hover {

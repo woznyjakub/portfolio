@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { media } from '../../../utils';
 
 type FontSize = 'large' | null;
-
 type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
 
 interface HeadingCmpProps extends React.ComponentProps<any> {

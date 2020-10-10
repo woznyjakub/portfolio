@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { media } from '../../../utils';
-import { BasicText } from '../..';
+import { BasicText } from '../../typography';
 
 const content = {
   footerText: '© Jakub Woźny 2020',

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { colors } from '../../../utils';
-import { GlobalStyle } from '../..';
+import { GlobalStyle } from '../../misc';
 
 const LayoutWrapper = styled.div`
   min-height: 100vh;

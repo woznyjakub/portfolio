@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { BasicLayout, BasicText, Heading, Footer } from '../components';
+import { BasicLayout } from '../components/layouts';
+import { BasicText, Heading } from '../components/typography';
+import { Footer } from '../components/sections';
 import { media } from '../utils';
 import { SingleFile, GatsbyImage } from '../models/graphql';
 

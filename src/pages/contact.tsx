@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BasicLayout } from '../components';
+import { BasicLayout } from '../components/layouts';
 
 const ContactPage: React.FC = () => {
   return (
