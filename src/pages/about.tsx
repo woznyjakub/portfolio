@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import { BasicLayout, BasicText, Heading, Footer } from '../components';
 import { media } from '../utils';
-import officeImageUrl from '../assets/images/office-1.jpg';
+import { SingleFile, GatsbyImage } from '../models/graphql';
 
 const Grid = styled.div`
   width: 100%;
@@ -73,7 +75,11 @@ const ImageWrapper = styled.figure`
   `}
 `;
 
-const AboutPage: React.FC = () => {
+interface AboutPageProps {
+  data?: SingleFile<GatsbyImage>;
+}
+
+const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
   return (
     <BasicLayout>
       <div className="layout-wrapper">
@@ -86,40 +92,31 @@ const AboutPage: React.FC = () => {
                     About
                   </Heading>
                   <BasicText as="p">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium
-                    quos, quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel
-                    velit est necessitatibus aperiam vitae, possimus error?
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos, quia nihil labore incidunt aliquid odit omnis maxime.
+                    Placeat ipsa vel velit est necessitatibus aperiam vitae, possimus error?
                   </BasicText>
                   <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
-                    repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
-                    asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
+                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
                   </BasicText>
                   <BasicText as="p">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium
-                    quos, quia nihil labore incidunt aliquid odit omnis maxime. Placeat ipsa vel
-                    velit est necessitatibus aperiam vitae, possimus error?
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos, quia nihil labore incidunt aliquid odit omnis maxime.
+                    Placeat ipsa vel velit est necessitatibus aperiam vitae, possimus error?
                   </BasicText>
                   <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
-                    repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
-                    asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
+                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
                   </BasicText>
                   <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum
-                    repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam magnam
-                    asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
+                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
                   </BasicText>
                 </TextWrapper>
               </Column>
               <Column>
                 <StyckyContainer>
                   <ImageWrapper>
-                    <img
-                      className="img-fluid"
-                      src={officeImageUrl}
-                      alt="a programmer's workplace"
-                    />
+                    <Img fluid={data.file.childImageSharp.fluid} alt="a programmer's workplace" />{' '}
                   </ImageWrapper>
                 </StyckyContainer>
               </Column>
@@ -133,3 +130,16 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
+
+export const query = graphql`
+  {
+    file(name: { in: "office-1" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+          originalName
+        }
+      }
+    }
+  }
+`;
