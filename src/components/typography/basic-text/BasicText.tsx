@@ -31,6 +31,7 @@ const StyledText = styled.span<TextCmpProps>`
   display: inline-block;
   margin-bottom: 0.5rem;
   line-height: 1.5;
+  letter-spacing: 0.2px;
   :last-child {
     margin-bottom: 0;
   }

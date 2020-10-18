@@ -15,6 +15,7 @@ interface HeadingCmpProps extends React.ComponentProps<any> {
 const StyledHeading = styled.h2<HeadingCmpProps>`
   white-space: pre-wrap;
   line-height: 1.25;
+  letter-spacing: 0.2px;
 
   ${({ fontSize }) => {
     let value;
