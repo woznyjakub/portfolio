@@ -18,7 +18,7 @@ const moveUnderline = keyframes`
 
 type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
 
-type FontSize = 'smaller' | null;
+type FontSize = 'smaller' | 'larger';
 
 interface TextCmpProps extends React.ComponentProps<any> {
   fillOnHover?: boolean;
@@ -37,9 +37,15 @@ const StyledText = styled.span<TextCmpProps>`
   }
 
   ${({ gutter }) => {
-    const value = gutter === 'left' || gutter === 'right' ? '1em' : '1.5rem';
     if (gutter) {
-      return `margin-${gutter}: ${value};`;
+      const value = gutter === 'left' || gutter === 'right' ? '1em' : '1.5rem';
+      return css`
+        && {
+          margin-${gutter}: ${value};
+        }
+      `;
+    } else if (gutter === null) {
+      return 'margin: 0;';
     }
   }}
 
@@ -48,6 +54,9 @@ const StyledText = styled.span<TextCmpProps>`
     switch (fontSize) {
       case 'smaller':
         value = '1.125rem';
+        break;
+      case 'larger':
+        value = '1.375rem';
         break;
       default:
         value = '1.25rem';
