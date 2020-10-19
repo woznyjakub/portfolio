@@ -6,8 +6,39 @@ import Img from 'gatsby-image';
 import { BasicLayout } from '../components/layouts';
 import { BasicText, Heading } from '../components/typography';
 import { Footer } from '../components/sections';
-import { media } from '../utils';
+import { media, parseTimeToUnitsObject, parseTimeToString } from '../utils';
 import { SingleFile, GatsbyImage } from '../models/graphql';
+
+const currentTimeString = new Date().toISOString();
+
+const content = {
+  jobs: [
+    {
+      companyName: 'NoMonday',
+      location: 'Rybnik, Poland',
+      startDate: {
+        label: 'April 2019',
+        value: '2019-04-08',
+      },
+      endDate: {
+        label: 'May 2020',
+        value: '2020-05-31',
+      },
+    },
+    {
+      companyName: 'SoniqSoft Software House',
+      location: 'Radlin, Poland',
+      startDate: {
+        label: 'June 2020',
+        value: '2020-06-01',
+      },
+      endDate: {
+        label: 'Present',
+        value: currentTimeString,
+      },
+    },
+  ],
+};
 
 const Grid = styled.div`
   width: 100%;
@@ -81,7 +112,17 @@ interface AboutPageProps {
   data?: SingleFile<GatsbyImage>;
 }
 
+const getWorkingExperienceTime = (): number => {
+  return content.jobs.reduce((acc, { startDate, endDate }) => {
+    const [startTime, endTime] = [startDate.value, endDate.value].map((date) => new Date(date).getTime());
+    return acc + endTime - startTime;
+  }, 0);
+};
+
 const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
+  const workingExperienceTime = getWorkingExperienceTime();
+  const workingExperience = parseTimeToUnitsObject(workingExperienceTime);
+
   return (
     <BasicLayout>
       <div className="layout-wrapper">
@@ -93,32 +134,48 @@ const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
                   <Heading as="h1" fontSize="large" gutter="bottom" centered>
                     About
                   </Heading>
-                  <BasicText as="p">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos, quia nihil labore incidunt aliquid odit omnis maxime.
-                    Placeat ipsa vel velit est necessitatibus aperiam vitae, possimus error?
+                  <BasicText as="p" fontSize="larger">
+                    Hi, nice to see you here!
                   </BasicText>
+                  <BasicText as="p">My name is Jakub Woźny and I'm glad to be programmer specialized in front-end development.</BasicText>
                   <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
-                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                    I can develop fully working F-E layer of websites and web applications keeping the lastest standards, design patterns, good pracises and
+                    paying large attention on details.
                   </BasicText>
-                  <BasicText as="p">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima eum accusantium quos, quia nihil labore incidunt aliquid odit omnis maxime.
-                    Placeat ipsa vel velit est necessitatibus aperiam vitae, possimus error?
+                  <BasicText as="p" gutter="bottom">
+                    My front-end adveture began in May 2018 and I enjoy inprove my competences.
                   </BasicText>
+                  <Heading as="h2" gutter="bottom" centered>
+                    Experience
+                  </Heading>
+                  <ul>
+                    {content.jobs.map(({ companyName, location, startDate, endDate }) => (
+                      <li key={`${companyName}_${startDate}`}>
+                        <BasicText as="p" gutter="bottom">
+                          {`${companyName} `}
+                          <BasicText as="small" fontSize="smaller" gutter={null}>
+                            ({location})
+                          </BasicText>
+                          <br />
+                          <time dateTime={startDate.value}>{startDate.label}</time> - <time dateTime={endDate.value}>{endDate.label}</time>
+                        </BasicText>
+                      </li>
+                    ))}
+                  </ul>
+                  <BasicText gutter="bottom">It's {parseTimeToString(workingExperience)}</BasicText>
+                  <Heading as="h2" gutter="bottom" centered>
+                    Beyond the work
+                  </Heading>
                   <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
-                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
-                  </BasicText>
-                  <BasicText as="p">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam earum repudiandae cupiditate eum nemo ex reiciendis sit eveniet eos, ullam
-                    magnam asperiores aspernatur veniam, officiis, ab et unde quae saepe?
+                    I'm motorcycles enthusiast so I like spending time a on ride. I often watch vlogs about traveling and read about curiosities from all over
+                    the world.
                   </BasicText>
                 </TextWrapper>
               </Column>
               <Column>
                 <StyckyContainer>
                   <ImageWrapper>
-                    <Img fluid={data.file.childImageSharp.fluid} alt="a programmer's workplace" />{' '}
+                    <Img fluid={data.file.childImageSharp.fluid} alt="a programmer's workplace" />
                   </ImageWrapper>
                 </StyckyContainer>
               </Column>
