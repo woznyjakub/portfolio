@@ -8,6 +8,7 @@ import { BasicText, Heading } from '../components/typography';
 import { Footer } from '../components/sections';
 import { media, parseTimeToUnitsObject, parseTimeToString } from '../utils';
 import { SingleFile, GatsbyImage } from '../models/graphql';
+import { TimeDuration } from '../models/misc';
 
 const currentTimeString = new Date().toISOString();
 
@@ -108,20 +109,20 @@ const ImageWrapper = styled.figure`
   `}
 `;
 
-interface AboutPageProps {
-  data?: SingleFile<GatsbyImage>;
-}
-
 const getWorkingExperienceTime = (): number => {
   return content.jobs.reduce((acc, { startDate, endDate }) => {
-    const [startTime, endTime] = [startDate.value, endDate.value].map((date) => new Date(date).getTime());
+    const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => new Date(date).getTime());
     return acc + endTime - startTime;
   }, 0);
 };
 
+interface AboutPageProps {
+  data?: SingleFile<GatsbyImage>;
+}
+
 const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
-  const workingExperienceTime = getWorkingExperienceTime();
-  const workingExperience = parseTimeToUnitsObject(workingExperienceTime);
+  const workingExperienceTime: number = getWorkingExperienceTime();
+  const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
   return (
     <BasicLayout>
@@ -143,7 +144,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
                     paying large attention on details.
                   </BasicText>
                   <BasicText as="p" gutter="bottom">
-                    My front-end adveture began in May 2018 and I enjoy inprove my competences.
+                    My front-end adveture began in May 2018 and I perpetually keep my skill improving.
                   </BasicText>
                   <Heading as="h2" gutter="bottom" centered>
                     Experience
@@ -162,13 +163,15 @@ const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
                       </li>
                     ))}
                   </ul>
-                  <BasicText gutter="bottom">It's {parseTimeToString(workingExperience)}</BasicText>
+                  <BasicText gutter="bottom" fontSize="larger">
+                    It's {parseTimeToString(workingExperience)}
+                  </BasicText>
                   <Heading as="h2" gutter="bottom" centered>
                     Beyond the work
                   </Heading>
                   <BasicText as="p">
-                    I'm motorcycles enthusiast so I like spending time a on ride. I often watch vlogs about traveling and read about curiosities from all over
-                    the world.
+                    I'm motorcycles enthusiast so I like spending time a on ride, furthermore, watching some vlogs about traveling and reading about curiosities
+                    from all over the world.
                   </BasicText>
                 </TextWrapper>
               </Column>

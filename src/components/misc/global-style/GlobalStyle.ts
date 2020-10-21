@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .layout-wrapper {
-    ${'' /* this class forces footer to be on the bottom
+    ${'' /* this class forces the footer to be on the bottom
             even when there is not enough content to push it down */}
     width: 100%;
     height: 100%;
