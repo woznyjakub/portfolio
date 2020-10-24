@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { media } from '../utils';
 import { BasicLayout } from '../components/layouts';
 import { BasicText, Heading } from '../components/typography';
-import { Footer } from '../components/sections';
 
 const content = {
   skillsGroups: [
@@ -62,36 +61,33 @@ const NestedListItemText = styled(BasicText)`
 const SkillsPage: React.FC = () => {
   return (
     <BasicLayout>
-      <div className="layout-wrapper">
-        <header>
-          <Heading as="h1" fontSize="large" gutter="bottom" centered>
-            Skills
-          </Heading>
-        </header>
-        <main className="stretch h-100">
-          <section className="m-auto w-100">
-            {content.skillsGroups.length ? (
-              <SkillsList className="list-unstyled">
-                {content.skillsGroups.map(({ name, skills }) => (
-                  <SkillsListItem key={name}>
-                    <Heading gutter="bottom">{name}</Heading>
-                    <ul>
-                      {skills.map((skill) => (
-                        <li key={skill}>
-                          <NestedListItemText>{skill}</NestedListItemText>
-                        </li>
-                      ))}
-                    </ul>
-                  </SkillsListItem>
-                ))}
-              </SkillsList>
-            ) : (
-              <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
-            )}
-          </section>
-        </main>
-        <Footer />
-      </div>
+      <header>
+        <Heading as="h1" fontSize="large" gutter="bottom" centered>
+          Skills
+        </Heading>
+      </header>
+      <main className="stretch h-100">
+        <section className="m-auto w-100">
+          {content.skillsGroups.length ? (
+            <SkillsList className="list-unstyled">
+              {content.skillsGroups.map(({ name, skills }) => (
+                <SkillsListItem key={name}>
+                  <Heading gutter="bottom">{name}</Heading>
+                  <ul>
+                    {skills.map((skill) => (
+                      <li key={skill}>
+                        <NestedListItemText>{skill}</NestedListItemText>
+                      </li>
+                    ))}
+                  </ul>
+                </SkillsListItem>
+              ))}
+            </SkillsList>
+          ) : (
+            <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
+          )}
+        </section>
+      </main>
     </BasicLayout>
   );
 };

@@ -6,7 +6,6 @@ import Img from 'gatsby-image';
 import { media } from '../utils';
 import { BasicLayout } from '../components/layouts';
 import { BasicText, Heading } from '../components/typography';
-import { Footer } from '../components/sections';
 import { GatsbyImage, FileGroup, SingleFileFromGroup } from '../models/graphql';
 
 const content = {
@@ -159,67 +158,64 @@ interface WorksPageProps {
 const WorksPage: React.FC<WorksPageProps> = ({ data }) => {
   return (
     <BasicLayout>
-      <div className="layout-wrapper">
-        <header>
-          <Heading as="h1" fontSize="large" gutter="bottom" centered>
-            {content.pageTitle}
-          </Heading>
-        </header>
-        <main className="stretch m-auto">
-          <section className="stretch">
-            {content.cards.length ? (
-              <Grid>
-                {content.cards.map(({ title, description, imageName, links }) => (
-                  <Card className="saturate-on-hover-trigger" key={title}>
-                    {imageName && (
-                      <figure>
-                        <Img
-                          className="img-stretched saturate-on-hover-item"
-                          fluid={
-                            // this chain filters image data from graphql by checking
-                            // name and returns its `fluid` object
-                            data.allFile.edges.find((item: WorkImage) => {
-                              return item.node.childImageSharp.fluid.originalName === imageName;
-                            }).node.childImageSharp.fluid
-                          }
-                          alt={`${title || ''} example screenshot`}
-                        />
-                      </figure>
+      <header>
+        <Heading as="h1" fontSize="large" gutter="bottom" centered>
+          {content.pageTitle}
+        </Heading>
+      </header>
+      <main className="stretch m-auto">
+        <section className="stretch">
+          {content.cards.length ? (
+            <Grid>
+              {content.cards.map(({ title, description, imageName, links }) => (
+                <Card className="saturate-on-hover-trigger" key={title}>
+                  {imageName && (
+                    <figure>
+                      <Img
+                        className="img-stretched saturate-on-hover-item"
+                        fluid={
+                          // this chain filters image data from graphql by checking
+                          // name and returns its `fluid` object
+                          data.allFile.edges.find((item: WorkImage) => {
+                            return item.node.childImageSharp.fluid.originalName === imageName;
+                          }).node.childImageSharp.fluid
+                        }
+                        alt={`${title || ''} example screenshot`}
+                      />
+                    </figure>
+                  )}
+                  <TextWrapper>
+                    {title && <Heading gutter="bottom">{title}</Heading>}
+                    {description && (
+                      <BasicText as="p" fontSize="smaller">
+                        {description}
+                      </BasicText>
                     )}
-                    <TextWrapper>
-                      {title && <Heading gutter="bottom">{title}</Heading>}
-                      {description && (
-                        <BasicText as="p" fontSize="smaller">
-                          {description}
+                    <div style={{ marginTop: 'auto' }}>
+                      {(links || []).map(({ label, url }, i, array) => (
+                        <BasicText
+                          as="a"
+                          className="underline"
+                          href={url || null}
+                          key={label}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          gutter={i < array.length - 1 ? 'right' : null}
+                          moveUnderlineOnHover
+                        >
+                          {label}
                         </BasicText>
-                      )}
-                      <div style={{ marginTop: 'auto' }}>
-                        {(links || []).map(({ label, url }, i, array) => (
-                          <BasicText
-                            as="a"
-                            className="underline"
-                            href={url || null}
-                            key={label}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            gutter={i < array.length - 1 ? 'right' : null}
-                            moveUnderlineOnHover
-                          >
-                            {label}
-                          </BasicText>
-                        ))}
-                      </div>
-                    </TextWrapper>
-                  </Card>
-                ))}
-              </Grid>
-            ) : (
-              <Heading className="m-auto">{content.cardsAltText}</Heading>
-            )}
-          </section>
-        </main>
-        <Footer />
-      </div>
+                      ))}
+                    </div>
+                  </TextWrapper>
+                </Card>
+              ))}
+            </Grid>
+          ) : (
+            <Heading className="m-auto">{content.cardsAltText}</Heading>
+          )}
+        </section>
+      </main>
     </BasicLayout>
   );
 };

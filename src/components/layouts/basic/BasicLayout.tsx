@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { colors } from '../../../utils';
 import { GlobalStyle } from '../../misc';
+import { Footer } from '../../../components/sections';
+import { OptionalWrapper } from '../../../containers/misc';
 
 const LayoutWrapper = styled.div`
   min-height: 100vh;
@@ -14,13 +16,25 @@ const MainWrapper = styled.div`
   min-height: 100vh;
 `;
 
-const BasicLayout: React.FC = ({ children }) => {
+const FooterPusher: React.FC = ({ children }) => <div className="layout-wrapper">{children}</div>;
+
+interface BasicLayoutCmpProps {
+  isFooter?: boolean;
+}
+
+/**
+ * @param isFooter determitates whether the default footer should be used.
+ */
+const BasicLayout: React.FC<BasicLayoutCmpProps> = ({ children, isFooter = true }) => {
   return (
-    <MainWrapper>
+    <MainWrapper className="stretch">
       <GlobalStyle />
-      <LayoutWrapper className="stretch">
-        <div className="container-fluid page-padding stretch">{children}</div>
-      </LayoutWrapper>
+      <div className="container-fluid page-padding stretch">
+        <OptionalWrapper condition={isFooter} Component={FooterPusher}>
+          {children}
+          {isFooter && <Footer />}
+        </OptionalWrapper>
+      </div>
     </MainWrapper>
   );
 };

@@ -134,7 +134,7 @@ const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
 
 const IndexPage: React.FC = () => {
   return (
-    <BasicLayout>
+    <BasicLayout isFooter={false}>
       <Grid className="stretch">
         <header>
           <Heading as="h1" gutter="bottom">
