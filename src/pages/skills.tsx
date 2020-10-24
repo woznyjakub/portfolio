@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { media } from '../utils';
@@ -58,7 +58,7 @@ const NestedListItemText = styled(BasicText)`
   }
 `;
 
-const SkillsPage: React.FC = () => {
+const SkillsPage: FC = () => {
   return (
     <BasicLayout>
       <header>

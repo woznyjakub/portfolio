@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -155,7 +155,7 @@ interface WorksPageProps {
   data?: FileGroup<GatsbyImage>;
 }
 
-const WorksPage: React.FC<WorksPageProps> = ({ data }) => {
+const WorksPage: FC<WorksPageProps> = ({ data }) => {
   return (
     <BasicLayout>
       <header>

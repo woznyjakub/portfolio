@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { BasicLayout } from '../components/layouts';
 
-const ContactPage: React.FC = () => {
+const ContactPage: FC = () => {
   return (
     <BasicLayout>
       <div>

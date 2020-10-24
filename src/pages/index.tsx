@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { css } from 'styled-components';
 
 import { media } from '../utils';
@@ -132,7 +132,7 @@ const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
   `} 
 `;
 
-const IndexPage: React.FC = () => {
+const IndexPage: FC = () => {
   return (
     <BasicLayout isFooter={false}>
       <Grid className="stretch">

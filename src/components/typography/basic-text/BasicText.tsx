@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
 import { colors } from '../../../utils';
@@ -94,7 +94,7 @@ const StyledText = styled.span<TextCmpProps>`
     `}
 `;
 
-const BasicText: React.FC<TextCmpProps> = (props) => {
+const BasicText: FC<TextCmpProps> = (props) => {
   return <StyledText {...props} />;
 };
 

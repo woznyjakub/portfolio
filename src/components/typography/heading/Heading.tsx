@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { media } from '../../../utils';
@@ -53,7 +53,7 @@ const StyledHeading = styled.h2<HeadingCmpProps>`
   `}
 `;
 
-const Heading: React.FC<HeadingCmpProps> = (props) => {
+const Heading: FC<HeadingCmpProps> = (props) => {
   return <StyledHeading {...props} />;
 };
 

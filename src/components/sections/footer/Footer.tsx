@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { media } from '../../../utils';
@@ -22,7 +22,7 @@ const StyledText = styled(BasicText)`
   margin: 0 auto;
 `;
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <StyledFooter>
       <StyledText>{content.footerText}</StyledText>

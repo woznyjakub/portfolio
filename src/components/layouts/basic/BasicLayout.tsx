@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { colors } from '../../../utils';
@@ -16,7 +16,7 @@ const MainWrapper = styled.div`
   min-height: 100vh;
 `;
 
-const FooterPusher: React.FC = ({ children }) => <div className="layout-wrapper">{children}</div>;
+const FooterPusher: FC = ({ children }) => <div className="layout-wrapper">{children}</div>;
 
 interface BasicLayoutCmpProps {
   isFooter?: boolean;
@@ -25,7 +25,7 @@ interface BasicLayoutCmpProps {
 /**
  * @param isFooter determitates whether the default footer should be used.
  */
-const BasicLayout: React.FC<BasicLayoutCmpProps> = ({ children, isFooter = true }) => {
+const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true }) => {
   return (
     <MainWrapper className="stretch">
       <GlobalStyle />

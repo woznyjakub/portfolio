@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { BasicLayout } from '../components/layouts';
 import SEO from '../components/seo';
 
-const NotFoundPage: React.FC = () => (
+const NotFoundPage: FC = () => (
   <BasicLayout>
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>

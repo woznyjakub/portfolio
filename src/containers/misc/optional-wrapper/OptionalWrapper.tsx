@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, FC } from 'react';
 
 interface OptionalWrapperCmpProps {
   condition: boolean;
@@ -7,7 +7,7 @@ interface OptionalWrapperCmpProps {
   children?: any;
 }
 
-const OptionalWrapper: React.FC<OptionalWrapperCmpProps> = ({ condition, Component, children }) => {
+const OptionalWrapper: FC<OptionalWrapperCmpProps> = ({ condition, Component, children }) => {
   return condition ? <Component>{children}</Component> : children;
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -119,7 +119,7 @@ interface AboutPageProps {
   data?: SingleFile<GatsbyImage>;
 }
 
-const AboutPage: React.FC<AboutPageProps> = ({ data }) => {
+const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const workingExperienceTime: number = getWorkingExperienceTime();
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
