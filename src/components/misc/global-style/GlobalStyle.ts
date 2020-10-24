@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import cssReset from './cssReset';
 import { media, colors } from '../../../utils';
 
-export const containerGutter = 18; // px
+export const containerGutter = 28; // px
 
 const repeat = (string, amount) => {
   const parts = [];

@@ -34,20 +34,17 @@ const content = {
 const SkillsList = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1rem;
-  max-width: 800px;
+  grid-gap: 2.25rem;
+  max-width: 1200px;
   margin: 0 auto;
   ${media.phone`
     grid-template-columns: repeat(2, 1fr);
   `};
-`;
-
-const SkillsListItem = styled.li`
-  border: 1px solid currentColor;
-  padding: 1rem 1rem 2rem;
-
-  ${media.desktopSmall`
-    padding: 2rem 2rem 3rem;
+  ${media.tablet`
+    grid-template-columns: repeat(3, 1fr);
+  `};
+  ${media.desktopLarge`
+    grid-gap: 4rem;
   `}
 `;
 
@@ -55,7 +52,7 @@ const NestedListItemText = styled(BasicText)`
   line-height: 1.2;
   && {
     margin-bottom: 0.5rem;
-  }
+  }c
 `;
 
 const SkillsPage: FC = () => {
@@ -71,8 +68,10 @@ const SkillsPage: FC = () => {
           {content.skillsGroups.length ? (
             <SkillsList className="list-unstyled">
               {content.skillsGroups.map(({ name, skills }) => (
-                <SkillsListItem key={name}>
-                  <Heading gutter="bottom">{name}</Heading>
+                <li key={name}>
+                  <Heading gutter="bottom" fontSize="larger">
+                    {name}
+                  </Heading>
                   <ul>
                     {skills.map((skill) => (
                       <li key={skill}>
@@ -80,7 +79,7 @@ const SkillsPage: FC = () => {
                       </li>
                     ))}
                   </ul>
-                </SkillsListItem>
+                </li>
               ))}
             </SkillsList>
           ) : (

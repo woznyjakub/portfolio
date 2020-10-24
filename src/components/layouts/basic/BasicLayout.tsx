@@ -24,7 +24,10 @@ const ButtonWrapper = styled.div`
     padding-left: 4rem;
     padding-right: 4rem;
   `}
-  ${media.tablet`
+  ${media.desktopMedium`
+    padding-bottom: 2.5rem;
+  `}
+  ${media.desktopLarge`
     padding-bottom: 3.5rem;
   `}
 `;

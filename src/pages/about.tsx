@@ -70,7 +70,6 @@ const StyckyContainer = styled.div`
 const ImageWrapper = styled.figure`
   position: relative;
   max-width: 640px;
-  width: 80%;
   margin: 0 auto;
   padding: 0 0 2rem 2rem;
   ::before {

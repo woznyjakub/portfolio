@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { media } from '../../../utils';
 
-type FontSize = 'large' | null;
+type FontSize = 'large' | 'larger';
 type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
 
 interface HeadingCmpProps extends React.ComponentProps<any> {
@@ -20,6 +20,9 @@ const StyledHeading = styled.h2<HeadingCmpProps>`
   ${({ fontSize }) => {
     let value;
     switch (fontSize) {
+      case 'larger':
+        value = '2rem';
+        break;
       case 'large':
         value = '3rem';
         break;
@@ -42,6 +45,9 @@ const StyledHeading = styled.h2<HeadingCmpProps>`
     ${({ fontSize }) => {
       let value;
       switch (fontSize) {
+        case 'larger':
+          value = '2.5rem';
+          break;
         case 'large':
           value = '4rem';
           break;
