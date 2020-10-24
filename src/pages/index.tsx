@@ -40,6 +40,13 @@ const Grid = styled.div`
   `}
 `;
 
+const StyledHeader = styled.header`
+  padding-top: 1.5rem;
+  ${media.tablet`
+    padding-top: 4rem;
+  `}
+`;
+
 const MainContent = styled.main`
   grid-row-end: span 2;
   position: relative;
@@ -136,11 +143,11 @@ const IndexPage: FC = () => {
   return (
     <BasicLayout isFooter={false}>
       <Grid className="stretch">
-        <header>
+        <StyledHeader>
           <Heading as="h1" gutter="bottom">
             {content.mainTitle}
           </Heading>
-        </header>
+        </StyledHeader>
         <MainContent>
           <MenuWrapper>
             <Menu>

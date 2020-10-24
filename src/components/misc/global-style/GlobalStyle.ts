@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .page-padding {
-    padding: 4rem ${containerGutter}px 1rem;
+    padding: 2.5rem ${containerGutter}px 1rem;
   }
 
   .stretch {
@@ -127,7 +127,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
     }
     .page-padding {
-      padding: 8rem ${containerGutter * 2}px 3rem;
+      padding: 3rem ${containerGutter * 2}px 3rem;
     }
   `}
   ${media.desktopSmall`

@@ -60,7 +60,7 @@ const NestedListItemText = styled(BasicText)`
 
 const SkillsPage: FC = () => {
   return (
-    <BasicLayout>
+    <BasicLayout isReturnButton>
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
           Skills
