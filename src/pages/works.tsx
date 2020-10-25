@@ -31,6 +31,19 @@ const content = {
       ],
     },
     {
+      title: 'This page',
+      description: `Static page which is used as my card.`,
+      technologies: 'TypeScript, React, GatsbyJS, Styled Components and GraphQL',
+      releaseDate: 'October 2020',
+      imageName: 'portfolio.jpg',
+      links: [
+        {
+          label: 'Repository',
+          url: 'https://github.com/woznyjakub/portfolio',
+        },
+      ],
+    },
+    {
       title: 'Challenge 37',
       description: `Static page made for learing GatsbyJS advanced CSS.`,
       technologies: 'GatsbyJS, React and Styled Components',
@@ -44,6 +57,23 @@ const content = {
         {
           label: 'Preview',
           url: 'https://woznyjakub.github.io/challenge37-gatsbyjs-version/',
+        },
+      ],
+    },
+    {
+      title: 'My very first portfolio page',
+      description: `Static page made to show my works. It helped me get my first job!`,
+      technologies: 'GatsbyJS, React, Styled Components and GraphQL',
+      releaseDate: 'February 2019',
+      imageName: 'portfolio-old-1.jpg',
+      links: [
+        {
+          label: 'Repository',
+          url: 'https://github.com/woznyjakub/portfolio-1',
+        },
+        {
+          label: 'Preview',
+          url: 'https://woznyjakub.github.io/portfolio-1/',
         },
       ],
     },
@@ -95,23 +125,6 @@ const content = {
         {
           label: 'Preview',
           url: 'https://woznyjakub.github.io/challenge22/',
-        },
-      ],
-    },
-    {
-      title: 'My very first portfolio page',
-      description: `Static page made to show my works. It helped me get my first job!`,
-      technologies: 'GatsbyJS, React, Styled Components and GraphQL',
-      releaseDate: 'February 2019',
-      imageName: 'portfolio-old-1.jpg',
-      links: [
-        {
-          label: 'Repository',
-          url: 'https://github.com/woznyjakub/portfolio-1',
-        },
-        {
-          label: 'Preview',
-          url: 'https://woznyjakub.github.io/portfolio-1/',
         },
       ],
     },
@@ -174,7 +187,7 @@ const WorksPage: FC<WorksPageProps> = ({ data }) => {
                         className="img-stretched saturate-on-hover-item"
                         fluid={
                           // this chain filters image data from graphql by checking
-                          // name and returns its `fluid` object
+                          // its name and returns its `fluid` object
                           data.allFile.edges.find((item: WorkImage) => {
                             return item.node.childImageSharp.fluid.originalName === imageName;
                           }).node.childImageSharp.fluid
