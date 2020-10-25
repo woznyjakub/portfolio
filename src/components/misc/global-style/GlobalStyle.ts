@@ -21,11 +21,26 @@ const GlobalStyle = createGlobalStyle`
   ${cssReset}
   html {
     font-size: 13px;
+    min-height: -webkit-fill-available;
   }
   body {
     font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     background-color: ${colors.primary};
     color: ${colors.secondary};
+    min-height: -webkit-fill-available;
+  }
+  ${
+    ''
+    /**
+     * this is solution for known issue with `100vh`
+     * on mobile https://chanind.github.io/javascript/2019/09/28/avoid-100vh-on-mobile-web.html
+     * and cooperated with
+     * `min-height: 100vh;min-height: -webkit-fill-available;` (100vh as alternative)
+     * on the first div in Layout component
+     */
+  }
+  html, body, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
   }
   a {
     color: inherit; 
