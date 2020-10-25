@@ -10,12 +10,14 @@ import { GatsbyImage, FileGroup, SingleFileFromGroup } from '../models/graphql';
 
 const content = {
   pageTitle: 'Works',
+  releaseDateText: 'Release date:',
+  technologyText: 'Used technologies:',
   cards: [
     {
       title: 'Binary clock app',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `React app that recreates binary clock working mechanism.`,
+      technologies: 'React, Styled Components',
+      releaseDate: 'February 2019',
       imageName: 'clock.jpg',
       links: [
         {
@@ -30,9 +32,9 @@ const content = {
     },
     {
       title: 'Challenge 37',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `Static page made for learing GatsbyJS advanced CSS.`,
+      technologies: 'GatsbyJS, React and Styled Components',
+      releaseDate: 'January 2019',
       imageName: 'challenge37.jpg',
       links: [
         {
@@ -47,9 +49,9 @@ const content = {
     },
     {
       title: 'Challenge 35',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `Static page project that helped me learn HTML and CSS basics, and resolving basic JS development problems.`,
+      technologies: 'HTML, Sass and jQuery',
+      releaseDate: 'October 2018',
       imageName: 'challenge35.jpg',
       links: [
         {
@@ -64,9 +66,9 @@ const content = {
     },
     {
       title: 'Waxom',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `Static page made for Webpack, HTML and CSS training.`,
+      technologies: 'HTML, Sass, vanilla JS and Webpack',
+      releaseDate: 'January 2019',
       imageName: 'waxom.jpg',
       links: [
         {
@@ -81,12 +83,9 @@ const content = {
     },
     {
       title: 'Challenge 22',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.
-        Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `Static page made for HTML and CSS training.`,
+      technologies: 'HTML, Sass and vanilla JS',
+      releaseDate: 'October 2018',
       imageName: 'challenge22.jpg',
       links: [
         {
@@ -101,9 +100,9 @@ const content = {
     },
     {
       title: 'My very first portfolio page',
-      description: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Soluta animi
-        aliquam delectus! Adipisci nam accusantium illo.`,
+      description: `Static page made to show my works. It helped me get my first job!`,
+      technologies: 'GatsbyJS, React, Styled Components and GraphQL',
+      releaseDate: 'February 2019',
       imageName: 'portfolio-old-1.jpg',
       links: [
         {
@@ -167,7 +166,7 @@ const WorksPage: FC<WorksPageProps> = ({ data }) => {
         <section className="stretch">
           {content.cards.length ? (
             <Grid>
-              {content.cards.map(({ title, description, imageName, links }) => (
+              {content.cards.map(({ title, description, imageName, links, technologies, releaseDate }) => (
                 <Card className="saturate-on-hover-trigger" key={title}>
                   {imageName && (
                     <figure>
@@ -188,7 +187,12 @@ const WorksPage: FC<WorksPageProps> = ({ data }) => {
                     {title && <Heading gutter="bottom">{title}</Heading>}
                     {description && (
                       <BasicText as="p" fontSize="smaller">
-                        {description}
+                        <BasicText>{description}</BasicText>
+                        <BasicText>
+                          {`${content.technologyText} ${technologies}`}
+                          <br />
+                          {`${content.releaseDateText} ${releaseDate}`}
+                        </BasicText>
                       </BasicText>
                     )}
                     <div style={{ marginTop: 'auto' }}>
