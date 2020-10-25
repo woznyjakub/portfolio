@@ -11,20 +11,20 @@ const content = {
   mailLinkLabel: 'Mail me',
   menuItems: [
     {
-      label: 'Contact',
-      link: '/contact',
-    },
-    {
-      label: 'Skills',
-      link: '/skills',
+      label: 'About',
+      link: '/about',
     },
     {
       label: 'Works',
       link: '/works',
     },
     {
-      label: 'About',
-      link: '/about',
+      label: 'Skills',
+      link: '/skills',
+    },
+    {
+      label: 'Contact',
+      link: '/contact',
     },
   ],
   copyright: '© Jakub Woźny 2020',
@@ -93,6 +93,13 @@ const Menu = styled.nav`
   `}
 `;
 
+const List = styled.ul`
+  ${media.phone`
+    display: flex;
+    flex-direction: column-reverse;
+  `}
+`;
+
 const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
   display: block;
   font-size: 4rem;
@@ -105,20 +112,20 @@ const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
     ${({ isFirst }) =>
       isFirst &&
       css`
-        margin-top: 0;
-        padding-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
       `}
     ${({ isLast }) =>
       isLast &&
       css`
-        margin-bottom: 0;
-        padding-bottom: 0;
+        margin-top: 0;
+        padding-top: 0;
       `}
   }
 
   ${media.phone`
     font-size: 6rem;
-    margin: 2.5rem 0;
+    margin: 1.25rem 0;
     /* these transforms keep rotated element in line with 
     other layout elements (verical-align worked unsatisfying)  */
     transform: translateY(1rem);
@@ -132,7 +139,7 @@ const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
     transform: none;
   `}
   ${media.desktopMedium`
-    margin: 4rem 0;
+    margin: 2rem 0;
   `}
   ${media.desktopLarge`
     font-size: 10rem;
@@ -151,7 +158,7 @@ const IndexPage: FC = () => {
         <MainContent>
           <MenuWrapper>
             <Menu>
-              <ul>
+              <List>
                 {content.menuItems.map(({ label, link }, i, array) => (
                   <li key={`${link}`}>
                     <MenuItem href={link} isFirst={i === 0} isLast={i === array.length - 1}>
@@ -159,7 +166,7 @@ const IndexPage: FC = () => {
                     </MenuItem>
                   </li>
                 ))}
-              </ul>
+              </List>
             </Menu>
           </MenuWrapper>
         </MainContent>
