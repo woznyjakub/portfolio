@@ -3,16 +3,17 @@ import styled, { keyframes, css } from 'styled-components';
 
 import { colors } from '../../../utils';
 
+// `background-position-y` must be set to `100%` to work properly on safari
 const moveUnderline = keyframes`
   49.999% {
-    background-position: 100%;
+    background-position-x: 100%;
   }
   50% {
     background-size: 0%;
-    background-position: 0%;
+    background-position-x: 0%;
   }
   100% {
-    background-position: 0%;
+    background-position-x: 0%;
   }
 `;
 
@@ -87,7 +88,7 @@ const StyledText = styled.span<TextCmpProps>`
       background-repeat: no-repeat;
       animation-duration: 1s;
       background-size: 100%;
-      background-position: 100%;
+      background-position: 100% 100%;
       :hover {
         animation-name: ${moveUnderline};
       }
