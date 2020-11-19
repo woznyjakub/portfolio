@@ -1,1 +1,1 @@
-export { default as BasicText } from './BasicText';
+export * from './BasicText';

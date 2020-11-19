@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export default css`
+export const cssReset = css`
   /* http://meyerweb.com/eric/tools/css/reset/
      v2.0-modified | 20110126
      License: none (public domain)

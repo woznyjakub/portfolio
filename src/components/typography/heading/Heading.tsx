@@ -59,8 +59,6 @@ const StyledHeading = styled.h2<HeadingCmpProps>`
   `}
 `;
 
-const Heading: FC<HeadingCmpProps> = (props) => {
+export const Heading: FC<HeadingCmpProps> = (props) => {
   return <StyledHeading {...props} />;
 };
-
-export default Heading;

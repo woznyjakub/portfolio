@@ -7,8 +7,6 @@ interface OptionalWrapperCmpProps {
   children?: any;
 }
 
-const OptionalWrapper: FC<OptionalWrapperCmpProps> = ({ condition, Component, children }) => {
+export const OptionalWrapper: FC<OptionalWrapperCmpProps> = ({ condition, Component, children }) => {
   return condition ? <Component>{children}</Component> : children;
 };
-
-export default OptionalWrapper;

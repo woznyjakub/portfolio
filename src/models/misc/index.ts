@@ -1,1 +1,1 @@
-export { TimeDuration } from './TimeDuration';
+export * from './TimeDuration';

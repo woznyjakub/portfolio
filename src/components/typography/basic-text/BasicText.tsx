@@ -95,8 +95,6 @@ const StyledText = styled.span<TextCmpProps>`
     `}
 `;
 
-const BasicText: FC<TextCmpProps> = (props) => {
+export const BasicText: FC<TextCmpProps> = (props) => {
   return <StyledText {...props} />;
 };
-
-export default BasicText;

@@ -1,3 +1,3 @@
-export { GatsbyImage } from './GatsbyImage';
-export { FileGroup, SingleFileFromGroup } from './FileGroup';
-export { SingleFile } from './File';
+export * from './GatsbyImage';
+export * from './FileGroup';
+export * from './File';

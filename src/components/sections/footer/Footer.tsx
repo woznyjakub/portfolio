@@ -22,12 +22,10 @@ const StyledText = styled(BasicText)`
   margin: 0 auto;
 `;
 
-const Footer: FC = () => {
+export const Footer: FC = () => {
   return (
     <StyledFooter>
       <StyledText>{content.footerText}</StyledText>
     </StyledFooter>
   );
 };
-
-export default Footer;

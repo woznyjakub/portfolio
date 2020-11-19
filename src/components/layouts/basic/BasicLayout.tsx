@@ -50,7 +50,7 @@ interface BasicLayoutCmpProps {
   isReturnButton?: boolean;
 }
 
-const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton }) => {
+export const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton }) => {
   return (
     <MainWrapper className="stretch">
       <GlobalStyle />
@@ -64,5 +64,3 @@ const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isRet
     </MainWrapper>
   );
 };
-
-export default BasicLayout;

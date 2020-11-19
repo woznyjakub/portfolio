@@ -19,7 +19,7 @@ interface Media {
 
 type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: any) => {};
 
-const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
+export const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
   acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: string[]) => css`
     @media (min-width: ${sizes[label]}px) {
       ${css(cssStrings, ...interpolations)}
@@ -28,5 +28,3 @@ const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
 
   return acc;
 }, {});
-
-export default media;

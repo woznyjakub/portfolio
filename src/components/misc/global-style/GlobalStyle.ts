@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import cssReset from './cssReset';
+import { cssReset } from './cssReset';
 import { media, colors } from '../../../utils';
 
 export const containerGutter = 28; // px
@@ -17,7 +17,7 @@ const repeat = (string, amount) => {
   return result;
 };
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${cssReset}
   html {
     font-size: 13px;
@@ -161,5 +161,3 @@ const GlobalStyle = createGlobalStyle`
     }
   `}
 `;
-
-export default GlobalStyle;
