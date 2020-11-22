@@ -2,7 +2,10 @@ import moment from 'moment';
 
 import { TimeDuration } from '../models/misc';
 
-// parses time period time to year, months and days
+/**
+ * parses time period miliseconds value to year, months and days
+ * @param time time period miliseconds value
+ */
 export const parseTimeToUnitsObject = (time: number): TimeDuration => {
   const timeDuration = moment.duration(time);
 
@@ -12,6 +15,10 @@ export const parseTimeToUnitsObject = (time: number): TimeDuration => {
   };
 };
 
+/**
+ * parse TimeDuration object to string that can be
+ * @param time Object value year
+ */
 export const parseTimeToString = (time: TimeDuration): string => {
   const dateString = Object.keys(time).reduce((acc, timeUnitName: string, i, array) => {
     const value: number = time[timeUnitName];
