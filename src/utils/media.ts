@@ -1,6 +1,14 @@
-import { css, DefaultTheme, CSSObject } from 'styled-components';
+import { css } from 'styled-components';
 
-export const sizes = {
+/**
+ * media query breakpoints names
+ */
+type MediaName = 'phone' | 'tablet' | 'desktopSmall' | 'desktopMedium' | 'desktopLarge';
+
+/**
+ * media query breakpoints values in px
+ */
+export const sizes: Record<MediaName, number> = {
   desktopLarge: 1750,
   desktopMedium: 1500,
   desktopSmall: 1190,
@@ -8,18 +16,28 @@ export const sizes = {
   phone: 530,
 };
 
-// @todo: rewrite types to prettier ones
-interface Media {
-  desktopLarge?: MediaQueryHelper;
-  desktopMedium?: MediaQueryHelper;
-  desktopSmall?: MediaQueryHelper;
-  tablet?: MediaQueryHelper;
-  phone?: MediaQueryHelper;
-}
+/**
+ * map of breakpoint name
+ */
+type CSSMediaQuery = Partial<Record<MediaName, MediaQueryHelper>>;
 
+/**
+ * media query helper prepared to be used as `tagged template`
+ */
 type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: any) => {};
 
-export const media: Media = Object.keys(sizes).reduce((acc: {}, label: string) => {
+/**
+ * Media query helper for styled components.
+ *
+ * @example:
+ * const StyledComponent = styled.div`
+ *   [...]
+ *   ${media.tablet`
+ *     margin-right: 0;
+ *   `}
+ * `;
+ */
+export const media = Object.keys(sizes).reduce((acc: CSSMediaQuery, label: string) => {
   acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: string[]) => css`
     @media (min-width: ${sizes[label]}px) {
       ${css(cssStrings, ...interpolations)}
