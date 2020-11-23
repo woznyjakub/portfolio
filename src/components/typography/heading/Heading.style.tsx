@@ -25,7 +25,7 @@ export const StyledHeading = styled.h2<HeadingCmpProps>`
   }}
 
   ${({ gutter }) => {
-    const value = gutter === 'left' || gutter === 'right' ? '1.5em' : '1rem';
+    const value = ['left', 'right'].includes(gutter) ? '1.5em' : '1rem';
     if (gutter) {
       return `margin-${gutter}: ${value};`;
     }

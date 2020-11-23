@@ -29,7 +29,7 @@ export const StyledText = styled.span<TextCmpProps>`
 
   ${({ gutter }) => {
     if (gutter) {
-      const value = gutter === 'left' || gutter === 'right' ? '1em' : '1.5rem';
+      const value = ['left', 'right'].includes(gutter) ? '1em' : '1.5rem';
       return css`
         && {
           margin-${gutter}: ${value};
