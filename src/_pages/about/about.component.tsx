@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
-import { media, parseTimeToUnitsObject, parseTimeToString } from '../../utils';
-import { SingleFile, GatsbyImage } from '../../models/graphql';
+import { parseTimeToUnitsObject, parseTimeToString } from '../../utils';
 import { TimeDuration } from '../../models/misc';
+
+import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
+import { AboutPageProps } from './about.model';
 
 const currentTimeString = new Date().toISOString();
 
@@ -39,83 +40,12 @@ const content = {
   ],
 };
 
-const Grid = styled.div`
-  width: 100%;
-  ${media.phone`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  `}
-`;
-
-const Column = styled.div`
-  padding-bottom: 2rem;
-  ${media.phone`
-    padding-left: 1rem;
-    padding-right: 1rem;
-  `}
-`;
-
-const TextWrapper = styled.article`
-  max-width: 350px;
-  margin: 0 auto;
-  hyphens: auto;
-`;
-
-const StyckyContainer = styled.div`
-  position: sticky;
-  top: 8%;
-`;
-
-const ImageWrapper = styled.figure`
-  position: relative;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 0 2rem 2rem;
-  ::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 2rem;
-    top: 2rem;
-    bottom: 0;
-    border: 1px solid currentColor;
-    z-index: -1;
-    will-change: transform;
-    transition: transform 0.3s;
-  }
-  :hover {
-    ::before {
-      transform: translate(1rem, -1rem);
-    }
-  }
-  ${media.phone`
-    margin-right: 0;
-  `}
-  ${media.desktopSmall`
-    margin-right: auto;
-    padding: 0 0 3rem 3rem;
-    ::before {
-      right: 3rem;
-      top: 3rem;
-    }
-    :hover {
-      ::before {
-        transform: translate(1.5rem, -1.5rem);
-      }
-    }
-  `}
-`;
-
 const getWorkingExperienceTime = (): number => {
   return content.jobs.reduce((acc, { startDate, endDate }) => {
     const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => new Date(date).getTime());
     return acc + endTime - startTime;
   }, 0);
 };
-
-interface AboutPageProps {
-  data?: SingleFile<GatsbyImage>;
-}
 
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const workingExperienceTime: number = getWorkingExperienceTime();

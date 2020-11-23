@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
-import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { media } from '../../utils';
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
-import { GatsbyImage, FileGroup, SingleFileFromGroup } from '../../models/graphql';
+
+import { WorkImage, WorksPageProps } from './works.model';
+import { Grid, Card, TextWrapper } from './works.style';
 
 const content = {
   pageTitle: 'Works',
@@ -131,41 +130,6 @@ const content = {
   ],
   cardsAltText: 'Something went wrong or this section is empty.',
 };
-
-const Grid = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
-  margin-bottom: auto;
-
-  ${media.phone`
-    padding: 0 4rem;
-  `}
-  ${media.desktopSmall`
-    grid-template-columns: repeat(2, 1fr);
-  `}
-`;
-
-const Card = styled.li`
-  display: grid;
-  grid-template-rows: auto 1fr;
-`;
-
-const TextWrapper = styled.article`
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-type WorkImage = SingleFileFromGroup<
-  GatsbyImage<{
-    originalName?: string;
-  }>
->;
-interface WorksPageProps {
-  data?: FileGroup<GatsbyImage>;
-}
 
 const WorksPage: FC<WorksPageProps> = ({ data }) => {
   return (
