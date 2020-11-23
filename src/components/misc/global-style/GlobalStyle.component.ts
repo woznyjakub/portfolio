@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { cssReset } from './cssReset';
+import { cssReset } from './cssReset.style';
 import { media, colors } from '../../../utils';
 
 export const containerGutter = 28; // px

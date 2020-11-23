@@ -1,1 +1,1 @@
-export * from './BasicText';
+export * from './BasicText.component';

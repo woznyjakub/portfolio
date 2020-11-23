@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
 import { colors } from '../../../utils';
 
+import { TextCmpProps } from './BasicText.model';
+
 // `background-position-y` must be set to `100%` to work properly on safari
-const moveUnderline = keyframes`
+export const moveUnderline = keyframes`
   49.999% {
     background-position-x: 100%;
   }
@@ -17,18 +18,7 @@ const moveUnderline = keyframes`
   }
 `;
 
-type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
-
-type FontSize = 'smaller' | 'larger';
-
-interface TextCmpProps extends React.ComponentProps<any> {
-  fillOnHover?: boolean;
-  fontSize?: FontSize;
-  gutter?: Gutter;
-  moveUnderlineOnHover?: boolean;
-}
-
-const StyledText = styled.span<TextCmpProps>`
+export const StyledText = styled.span<TextCmpProps>`
   display: inline-block;
   margin-bottom: 0.5rem;
   line-height: 1.5;
@@ -94,7 +84,3 @@ const StyledText = styled.span<TextCmpProps>`
       }
     `}
 `;
-
-export const BasicText: FC<TextCmpProps> = (props) => {
-  return <StyledText {...props} />;
-};

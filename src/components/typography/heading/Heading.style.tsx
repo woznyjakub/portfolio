@@ -1,18 +1,10 @@
-import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { media } from '../../../utils';
 
-type FontSize = 'large' | 'larger';
-type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
+import { HeadingCmpProps } from './Heading.model';
 
-interface HeadingCmpProps extends React.ComponentProps<any> {
-  fontSize?: FontSize;
-  gutter?: Gutter;
-  centered?: boolean;
-}
-
-const StyledHeading = styled.h2<HeadingCmpProps>`
+export const StyledHeading = styled.h2<HeadingCmpProps>`
   white-space: pre-wrap;
   line-height: 1.25;
   letter-spacing: 0.2px;
@@ -58,7 +50,3 @@ const StyledHeading = styled.h2<HeadingCmpProps>`
     }}
   `}
 `;
-
-export const Heading: FC<HeadingCmpProps> = (props) => {
-  return <StyledHeading {...props} />;
-};

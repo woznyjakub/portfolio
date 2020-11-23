@@ -1,37 +1,16 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
 
-import { colors, media } from '../../../utils';
 import { GlobalStyle } from '../../misc';
-import { Footer } from '../../../components/sections';
-import { BasicText } from '../../../components/typography';
+import { Footer } from '../../sections';
+import { BasicText } from '../../typography';
 import { OptionalWrapper } from '../../../containers/misc';
+
+import { MainWrapper, ButtonWrapper } from './BasicLayout.style';
+import { BasicLayoutCmpProps } from './BasicLayout.model';
 
 const content = {
   returnButtonText: 'Menu',
 };
-
-const MainWrapper = styled.div`
-  background-color: ${colors.primary};
-  color: ${colors.secondary};
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-`;
-
-const ButtonWrapper = styled.div`
-  padding-bottom: 1.5rem;
-  text-align: right;
-  ${media.phone`
-    padding-left: 4rem;
-    padding-right: 4rem;
-  `}
-  ${media.desktopMedium`
-    padding-bottom: 2.5rem;
-  `}
-  ${media.desktopLarge`
-    padding-bottom: 3.5rem;
-  `}
-`;
 
 const FooterPusher: FC = ({ children }) => <div className="layout-wrapper">{children}</div>;
 
@@ -44,11 +23,6 @@ const ReturnButton: FC = () => {
     </ButtonWrapper>
   );
 };
-
-interface BasicLayoutCmpProps {
-  isFooter?: boolean;
-  isReturnButton?: boolean;
-}
 
 export const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton }) => {
   return (
