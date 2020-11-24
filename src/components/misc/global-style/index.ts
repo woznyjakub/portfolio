@@ -1,1 +1,1 @@
-export * from './GlobalStyle.component';
+export * from './GlobalStyle';

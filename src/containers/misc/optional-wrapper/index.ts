@@ -1,1 +1,1 @@
-export * from './OptionalWrapper.component';
+export * from './OptionalWrapper';
