@@ -1,0 +1,28 @@
+{
+  "pageName": "skills",
+  "content": {
+    "skillsGroups": [
+      {
+        "name": "JavaScript",
+        "skills": ["JavaScript ES2020", "TypeScript", "React", "GatsbyJS", "NextJS", "Redux", "RxJS", "Web components"]
+      },
+      {
+        "name": "CSS",
+        "skills": ["CSS", "Sass", "Styled Components", "Bootstrap 4", "Material UI"]
+      },
+      {
+        "name": "HTML",
+        "skills": ["Semantic HTML", "ARIA", "Pug", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
+      },
+      {
+        "name": "Backend",
+        "skills": ["NodeJS", "NestJS", "MongoDB"]
+      },
+      {
+        "name": "Other",
+        "skills": ["Git", "Webpack", "Git Flow", "Adobe Xd", "Photoshop", "JIRA, Gitlab"]
+      }
+    ],
+    "skillsGroupsAltText": "Something went wrong or this section is empty."
+  }
+}

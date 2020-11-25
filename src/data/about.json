@@ -1,0 +1,31 @@
+{
+  "pageName": "about",
+  "content": {
+    "jobs": [
+      {
+        "l": "NoMonday",
+        "location": "Rybnik, Poland",
+        "startDate": {
+          "label": "April 2019",
+          "value": "2019-04-08"
+        },
+        "endDate": {
+          "label": "May 2020",
+          "value": "2020-05-31"
+        }
+      },
+      {
+        "companyName": "SoniqSoft Software House",
+        "location": "Radlin, Poland",
+        "startDate": {
+          "label": "June 2020",
+          "value": "2020-06-01"
+        },
+        "endDate": {
+          "label": "Present",
+          "value": "current"
+        }
+      }
+    ]
+  }
+}

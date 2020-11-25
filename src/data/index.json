@@ -1,0 +1,15 @@
+{
+  "pageName": "index",
+  "content": {
+    "mainTitle": "Jakub Woźny\nFront-end developer\nportfolio",
+    "mailAddress": "jakub_wozny_01@wp.pl",
+    "mailLinkLabel": "Mail me",
+    "menuItems": [
+      { "label": "About", "link": "/about" },
+      { "label": "Works", "link": "/works" },
+      { "label": "Skills", "link": "/skills" },
+      { "label": "Contact", "link": "/contact" }
+    ],
+    "copyright": "© Jakub Woźny 2020"
+  }
+}
