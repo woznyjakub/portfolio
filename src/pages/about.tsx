@@ -12,5 +12,24 @@ export const query = graphql`
         }
       }
     }
+    allDataJson(filter: { pageName: { eq: "about" } }) {
+      nodes {
+        pageName
+        content {
+          jobs {
+            companyName
+            location
+            startDate {
+              label
+              value
+            }
+            endDate {
+              label
+              value
+            }
+          }
+        }
+      }
+    }
   }
 `;

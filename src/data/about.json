@@ -3,7 +3,7 @@
   "content": {
     "jobs": [
       {
-        "l": "NoMonday",
+        "companyName": "NoMonday",
         "location": "Rybnik, Poland",
         "startDate": {
           "label": "April 2019",

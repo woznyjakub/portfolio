@@ -7,49 +7,34 @@ import { parseTimeToUnitsObject, parseTimeToString } from '../../utils';
 import { TimeDuration } from '../../models/misc';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
-import { AboutPageProps } from './about.model';
+import { AboutPageProps, Job, CurrentDatePlaceholder } from './about.model';
 
 const currentTimeString = new Date().toISOString();
 
-const content = {
-  jobs: [
-    {
-      companyName: 'NoMonday',
-      location: 'Rybnik, Poland',
-      startDate: {
-        label: 'April 2019',
-        value: '2019-04-08',
-      },
-      endDate: {
-        label: 'May 2020',
-        value: '2020-05-31',
-      },
-    },
-    {
-      companyName: 'SoniqSoft Software House',
-      location: 'Radlin, Poland',
-      startDate: {
-        label: 'June 2020',
-        value: '2020-06-01',
-      },
-      endDate: {
-        label: 'Present',
-        value: currentTimeString,
-      },
-    },
-  ],
+/**
+ * replaces date value when it is `current` string, then replace it with real current date value
+ * @param date timestamp
+ */
+const replaceDatePlaceholder = (date: string | CurrentDatePlaceholder): string => {
+  return date === 'current' ? currentTimeString : date;
 };
 
-const getWorkingExperienceTime = (): number => {
-  return content.jobs.reduce((acc, { startDate, endDate }) => {
-    const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => new Date(date).getTime());
-    return acc + endTime - startTime;
+const getWorkingExperienceTime = (dataArray: Job[]): number => {
+  return dataArray.reduce((acc, { startDate, endDate }: Job) => {
+    const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => {
+      return new Date(replaceDatePlaceholder(date)).getTime();
+    });
+    const singleJobExperienceTime = endTime - startTime;
+    return acc + singleJobExperienceTime;
   }, 0);
 };
 
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
-  const workingExperienceTime: number = getWorkingExperienceTime();
+  const { content } = data.allDataJson.nodes[0];
+  const workingExperienceTime: number = getWorkingExperienceTime(content.jobs);
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
+
+  console.log(data);
 
   return (
     <BasicLayout isReturnButton>
@@ -76,18 +61,28 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                   Experience
                 </Heading>
                 <ul>
-                  {content.jobs.map(({ companyName, location, startDate, endDate }) => (
-                    <li key={`${companyName}_${startDate}`}>
-                      <BasicText as="p" gutter="bottom">
-                        {`${companyName} `}
-                        <BasicText as="small" fontSize="smaller" gutter={null}>
-                          ({location})
+                  {content.jobs.map(({ companyName, location, startDate, endDate }) => {
+                    // endDate may be `current` string placeholder
+                    const parsedEndDate = replaceDatePlaceholder(endDate.value);
+                    return (
+                      <li key={`${companyName}_${startDate}`}>
+                        <BasicText as="p" gutter="bottom">
+                          {`${companyName} `}
+                          <BasicText as="small" fontSize="smaller" gutter={null}>
+                            ({location})
+                          </BasicText>
+                          <br />
+                          <time dateTime={startDate.value} title={startDate.value}>
+                            {startDate.label}
+                          </time>
+                          {' - '}
+                          <time dateTime={parsedEndDate} title={parsedEndDate}>
+                            {endDate.label}
+                          </time>
                         </BasicText>
-                        <br />
-                        <time dateTime={startDate.value}>{startDate.label}</time> - <time dateTime={endDate.value}>{endDate.label}</time>
-                      </BasicText>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
                 </ul>
                 <BasicText gutter="bottom" fontSize="larger">
                   It's {parseTimeToString(workingExperience)}
