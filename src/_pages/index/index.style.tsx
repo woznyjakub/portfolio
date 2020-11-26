@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { media } from '../../utils';
+import { media, Font } from '../../utils';
 
 export const Grid = styled.div`
   display: flex;
@@ -73,6 +73,7 @@ export const List = styled.ul`
 `;
 
 export const MenuItem = styled.a<{ isFirst: boolean; isLast: boolean }>`
+  font-family: ${Font.SECONDARY};
   display: block;
   font-size: 4rem;
   letter-spacing: 1px;

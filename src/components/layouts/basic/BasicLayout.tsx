@@ -4,6 +4,7 @@ import { GlobalStyle } from '../../misc';
 import { Footer } from '../../sections';
 import { BasicText } from '../../typography';
 import { OptionalWrapper } from '../../../containers/misc';
+import { Font } from '../../../utils';
 
 import { MainWrapper, ButtonWrapper } from './BasicLayout.style';
 import { BasicLayoutCmpProps } from './BasicLayout.model';
@@ -17,7 +18,7 @@ const FooterPusher: FC = ({ children }) => <div className="layout-wrapper">{chil
 const ReturnButton: FC = () => {
   return (
     <ButtonWrapper>
-      <BasicText as="a" href="/" className="underline" moveUnderlineOnHover>
+      <BasicText as="a" href="/" className="underline" font={Font.SECONDARY} moveUnderlineOnHover>
         {content.returnButtonText}
       </BasicText>
     </ButtonWrapper>

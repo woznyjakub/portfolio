@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
-import { parseTimeToUnitsObject, parseTimeToString } from '../../utils';
+import { parseTimeToUnitsObject, parseTimeToString, Font } from '../../utils';
 import { TimeDuration } from '../../models/misc';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
@@ -64,25 +64,25 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                     const parsedEndDate = replaceDatePlaceholder(endDate.value);
                     return (
                       <li key={`${companyName}_${startDate}`}>
-                        <BasicText as="p" gutter="bottom">
+                        <BasicText as="p" gutter="bottom" font={Font.SECONDARY}>
                           {`${companyName} `}
-                          <BasicText as="small" fontSize="smaller" gutter={null}>
+                          <BasicText as="small" fontSize="smaller" gutter={null} font={Font.PRIMARY}>
                             ({location})
                           </BasicText>
                           <br />
-                          <time dateTime={startDate.value} title={startDate.value}>
+                          <BasicText dateTime={startDate.value} title={startDate.value} font={Font.PRIMARY}>
                             {startDate.label}
-                          </time>
+                          </BasicText>
                           {' - '}
-                          <time dateTime={parsedEndDate} title={parsedEndDate}>
+                          <BasicText dateTime={parsedEndDate} title={parsedEndDate} font={Font.PRIMARY}>
                             {endDate.label}
-                          </time>
+                          </BasicText>
                         </BasicText>
                       </li>
                     );
                   })}
                 </ul>
-                <BasicText gutter="bottom" fontSize="larger">
+                <BasicText gutter="bottom" fontSize="larger" font={Font.SECONDARY}>
                   It's {parseTimeToString(workingExperience)}
                 </BasicText>
                 <Heading as="h2" gutter="bottom" centered>

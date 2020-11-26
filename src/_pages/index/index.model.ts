@@ -1,6 +1,6 @@
 import { JsonTextData } from '../../models/graphql';
 
-export interface MenuItem {
+export interface MenuItemData {
   label: string;
   link: string;
 }
@@ -9,7 +9,7 @@ export interface TextContent {
   mainTitle: string;
   mailAddress: string;
   mailLinkLabel: string;
-  menuItems: MenuItem[];
+  menuItems: MenuItemData[];
   copyrightText: string;
 }
 export interface IndexPageProps {

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { cssReset } from './cssReset.style';
-import { media, Color } from '../../../utils';
+import { media, Color, Font } from '../../../utils';
 
 export const containerGutter = 28; // px
 
@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: -webkit-fill-available;
   }
   body {
-    font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-family: ${Font.PRIMARY};
     background-color: ${Color.PRIMARY};
     color: ${Color.SECONDARY};
     min-height: -webkit-fill-available;

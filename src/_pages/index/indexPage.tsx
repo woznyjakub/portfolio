@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { Heading, BasicText } from '../../components/typography';
 import { BasicLayout } from '../../components/layouts';
+import { Font } from '../../utils';
 
 import { Grid, StyledHeader, MainContent, MenuWrapper, Menu, List, MenuItem } from './index.style';
 import { IndexPageProps } from './index.model';
@@ -33,11 +34,11 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
         </MainContent>
         <footer>
           <p>
-            <BasicText as="a" href={`mailto:${content.mailAddress}`} fillOnHover>
+            <BasicText as="a" href={`mailto:${content.mailAddress}`} font={Font.SECONDARY} fillOnHover>
               {content.mailLinkLabel}
             </BasicText>
             <br />
-            <BasicText>{content.copyrightText}</BasicText>
+            <BasicText font={Font.SECONDARY}>{content.copyrightText}</BasicText>
           </p>
         </footer>
       </Grid>

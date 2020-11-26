@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { BasicLayout } from '../../components/layouts';
 import { Heading } from '../../components/typography';
+import { Font } from '../../utils';
 
 import { SkillsList, NestedListItemText } from './skills.style';
 import { SkillsPageProps } from './skills.model';
@@ -27,7 +28,7 @@ const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
                   <ul>
                     {skills.map((skill) => (
                       <li key={skill}>
-                        <NestedListItemText>{skill}</NestedListItemText>
+                        <NestedListItemText font={Font.SECONDARY}>{skill}</NestedListItemText>
                       </li>
                     ))}
                   </ul>

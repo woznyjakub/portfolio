@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import { Font } from '../../../utils';
+
 import { StyledFooter, StyledText } from './Footer.style';
 
 const content = {
@@ -9,7 +11,7 @@ const content = {
 export const Footer: FC = () => {
   return (
     <StyledFooter>
-      <StyledText>{content.footerText}</StyledText>
+      <StyledText font={Font.SECONDARY}>{content.footerText}</StyledText>
     </StyledFooter>
   );
 };

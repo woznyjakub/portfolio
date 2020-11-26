@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
+import { Font } from '../../utils';
 
 import { WorkImage, WorksPageProps } from './works.model';
 import { Grid, Card, TextWrapper } from './works.style';
@@ -59,6 +60,7 @@ const WorksPage: FC<WorksPageProps> = ({ data }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           gutter={i < array.length - 1 ? 'right' : null}
+                          font={Font.SECONDARY}
                           moveUnderlineOnHover
                         >
                           {label}

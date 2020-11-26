@@ -4,8 +4,10 @@ import { Color } from '../../../utils';
 
 import { TextCmpProps } from './BasicText.model';
 
-// `background-position-y` must be set to `100%` to work properly on safari
 export const moveUnderline = keyframes`
+  ${
+    '' // `background-position-y` must be set to `100%` to work properly on safari
+  }
   49.999% {
     background-position-x: 100%;
   }
@@ -26,6 +28,9 @@ export const StyledText = styled.span<TextCmpProps>`
   :last-child {
     margin-bottom: 0;
   }
+  ${({ font }) => css`
+    font-family: ${font};
+  `}
 
   ${({ gutter }) => {
     if (gutter) {
