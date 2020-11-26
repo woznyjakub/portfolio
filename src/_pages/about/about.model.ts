@@ -1,4 +1,5 @@
 import { SingleFile, GatsbyImage } from '../../models/graphql';
+import { JsonTextData } from '../../models/graphql';
 
 export type CurrentDatePlaceholder = 'current';
 
@@ -17,17 +18,8 @@ export interface Job {
   endDate: JobDate<CurrentDatePlaceholder>;
 }
 export interface TextContent {
-  allDataJson: {
-    nodes: [
-      {
-        pageName: string;
-        content: {
-          jobs: Job[];
-        };
-      },
-    ];
-  };
+  jobs: Job[];
 }
 export interface AboutPageProps {
-  data?: SingleFile<GatsbyImage> & TextContent;
+  data: SingleFile<GatsbyImage> & JsonTextData<TextContent>;
 }
