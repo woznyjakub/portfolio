@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-import { colors } from '../../../utils';
+import { Color } from '../../../utils';
 
 import { TextCmpProps } from './BasicText.model';
 
@@ -61,11 +61,11 @@ export const StyledText = styled.span<TextCmpProps>`
     // multiple lines of inline element
     css`
       text-decoration: none;
-      background: linear-gradient(to top, ${colors.secondary}, ${colors.secondary}) 50% 0% / 100% 0 no-repeat;
+      background: linear-gradient(to top, ${Color.SECONDARY}, ${Color.SECONDARY}) 50% 0% / 100% 0 no-repeat;
       transition: background-size 0.3s, color 0.3s;
       will-change: background-size, color;
       :hover {
-        color: ${colors.primary};
+        color: ${Color.PRIMARY};
         background-position-y: 100%;
         background-size: 100% 100%;
       }

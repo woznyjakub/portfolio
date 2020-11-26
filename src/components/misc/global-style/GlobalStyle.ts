@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { cssReset } from './cssReset.style';
-import { media, colors } from '../../../utils';
+import { media, Color } from '../../../utils';
 
 export const containerGutter = 28; // px
 
@@ -25,8 +25,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'caslongrad', -apple-system, BlinkMacSystemFont, Roboto, 'Liberation Sans', Ubuntu, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-    background-color: ${colors.primary};
-    color: ${colors.secondary};
+    background-color: ${Color.PRIMARY};
+    color: ${Color.SECONDARY};
     min-height: -webkit-fill-available;
   }
   ${
@@ -102,7 +102,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     background-image: linear-gradient(to top, currentColor 1px, transparent 2px);
     ${'' /* this prevents the letters from being crossed out by underline */}
-    text-shadow: ${repeat(`0px 0px 2px ${colors.primary},`, 15)};
+    text-shadow: ${repeat(`0px 0px 2px ${Color.PRIMARY},`, 15)};
     && {
       line-height: 1;
     }

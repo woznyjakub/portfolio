@@ -1,7 +1,7 @@
 /**
  * constant for theme colors
  */
-export const colors = {
-  primary: '#000',
-  secondary: '#fff',
+export const Color = {
+  PRIMARY: '#000',
+  SECONDARY: '#fff',
 };

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-import { colors, media } from '../../../utils';
+import { Color, media } from '../../../utils';
 
 export const MainWrapper = styled.div`
-  background-color: ${colors.primary};
-  color: ${colors.secondary};
+  background-color: ${Color.PRIMARY};
+  color: ${Color.SECONDARY};
   min-height: 100vh;
   min-height: -webkit-fill-available;
 `;
