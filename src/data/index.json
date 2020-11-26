@@ -10,6 +10,6 @@
       { "label": "Skills", "link": "/skills" },
       { "label": "Contact", "link": "/contact" }
     ],
-    "copyright": "© Jakub Woźny 2020"
+    "copyrightText": "© Jakub Woźny 2020"
   }
 }

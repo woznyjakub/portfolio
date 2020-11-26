@@ -4,33 +4,10 @@ import { Heading, BasicText } from '../../components/typography';
 import { BasicLayout } from '../../components/layouts';
 
 import { Grid, StyledHeader, MainContent, MenuWrapper, Menu, List, MenuItem } from './index.style';
+import { IndexPageProps } from './index.model';
 
-const content = {
-  mainTitle: 'Jakub Woźny\nFront-end developer\nportfolio',
-  mailAddress: 'jakub_wozny_01@wp.pl',
-  mailLinkLabel: 'Mail me',
-  menuItems: [
-    {
-      label: 'About',
-      link: '/about',
-    },
-    {
-      label: 'Works',
-      link: '/works',
-    },
-    {
-      label: 'Skills',
-      link: '/skills',
-    },
-    {
-      label: 'Contact',
-      link: '/contact',
-    },
-  ],
-  copyright: '© Jakub Woźny 2020',
-};
-
-const IndexPage: FC = () => {
+const IndexPage: FC<IndexPageProps> = ({ data }) => {
+  const { content } = data.allDataJson.nodes[0];
   return (
     <BasicLayout isFooter={false}>
       <Grid className="stretch">
@@ -60,7 +37,7 @@ const IndexPage: FC = () => {
               {content.mailLinkLabel}
             </BasicText>
             <br />
-            <BasicText>{content.copyright}</BasicText>
+            <BasicText>{content.copyrightText}</BasicText>
           </p>
         </footer>
       </Grid>
