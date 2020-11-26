@@ -11,5 +11,5 @@ export interface TextContent {
 }
 
 export interface SkillsPageProps {
-  data?: JsonTextData<TextContent>;
+  data: JsonTextData<TextContent>;
 }

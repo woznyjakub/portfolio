@@ -1,5 +1,4 @@
-import { SingleFile, GatsbyImage } from '../../models/graphql';
-import { JsonTextData } from '../../models/graphql';
+import { SingleFile, GatsbyImage, JsonTextData } from '../../models/graphql';
 
 export type CurrentDatePlaceholder = 'current';
 
