@@ -16,5 +16,27 @@ export const query = graphql`
         }
       }
     }
+    allDataJson(filter: { pageName: { eq: "works" } }) {
+      nodes {
+        pageName
+        content {
+          pageTitle
+          releaseDateText
+          technologyText
+          cards {
+            title
+            description
+            technologies
+            releaseDate
+            imageName
+            links {
+              label
+              url
+            }
+          }
+          cardsAltText
+        }
+      }
+    }
   }
 `;
