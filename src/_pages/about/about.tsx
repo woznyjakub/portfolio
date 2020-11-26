@@ -34,8 +34,6 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const workingExperienceTime: number = getWorkingExperienceTime(content.jobs);
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
-  console.log(data);
-
   return (
     <BasicLayout isReturnButton>
       <main>
