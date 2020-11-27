@@ -24,7 +24,7 @@ export const StyledText = styled.span<TextCmpProps>`
   display: inline-block;
   margin-bottom: 0.5rem;
   line-height: 1.5;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.7px;
   :last-child {
     margin-bottom: 0;
   }
