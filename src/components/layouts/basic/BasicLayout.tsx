@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { GlobalStyle } from '../../misc';
 import { Footer } from '../../sections';

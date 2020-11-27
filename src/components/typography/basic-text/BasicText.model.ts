@@ -1,9 +1,11 @@
+import { ComponentProps } from 'react';
+
 import { Font } from '../../../utils';
 
 export type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
 export type FontSize = 'smaller' | 'larger';
 
-export interface TextCmpProps extends React.ComponentProps<any> {
+export interface TextCmpProps extends ComponentProps<any> {
   fillOnHover?: boolean;
   fontSize?: FontSize;
   gutter?: Gutter;

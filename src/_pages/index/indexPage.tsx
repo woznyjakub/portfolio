@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { Heading, BasicText } from '../../components/typography';
 import { BasicLayout } from '../../components/layouts';

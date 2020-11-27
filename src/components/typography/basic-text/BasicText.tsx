@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { StyledText } from './BasicText.style';
 import { TextCmpProps } from './BasicText.model';

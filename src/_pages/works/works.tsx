@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
