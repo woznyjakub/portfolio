@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/portfolio`,
   siteMetadata: {
     title: `Jakub Woźny front-end developer — portfolio`,
     description: ``,
@@ -6,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
