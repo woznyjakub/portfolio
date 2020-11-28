@@ -10,7 +10,7 @@ import { SkillsPageProps } from './skills.model';
 const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
   const { content } = data.allDataJson.nodes[0];
   return (
-    <BasicLayout isReturnButton>
+    <BasicLayout title="Skills" isReturnButton>
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
           Skills

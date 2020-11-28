@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
 import { BasicLayout } from '../../components/layouts';
-import SEO from '../../components/seo';
 
 const NotFoundPage: FC = () => (
-  <BasicLayout>
-    <SEO title="404: Not found" />
+  <BasicLayout title="Page not found">
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </BasicLayout>

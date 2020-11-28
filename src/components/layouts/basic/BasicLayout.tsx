@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { GlobalStyle } from '../../misc';
+import { Head, GlobalStyle } from '../../misc';
 import { Footer } from '../../sections';
 import { BasicText } from '../../typography';
 import { OptionalWrapper } from '../../../containers/misc';
@@ -13,7 +13,9 @@ const content = {
   returnButtonText: 'Menu',
 };
 
-const FooterPusher: FC = ({ children }) => <div className="layout-wrapper">{children}</div>;
+const FooterPusher: FC = ({ children }) => {
+  return <div className="layout-wrapper">{children}</div>;
+};
 
 const ReturnButton: FC = () => {
   return (
@@ -25,9 +27,10 @@ const ReturnButton: FC = () => {
   );
 };
 
-export const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton }) => {
+export const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton, title }) => {
   return (
     <MainWrapper className="stretch">
+      <Head title={title} />
       <GlobalStyle />
       <div className="container-fluid page-padding stretch">
         <OptionalWrapper condition={isFooter} Component={FooterPusher}>

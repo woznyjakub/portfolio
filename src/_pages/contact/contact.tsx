@@ -4,7 +4,7 @@ import { BasicLayout } from '../../components/layouts';
 
 const ContactPage: FC = () => {
   return (
-    <BasicLayout isReturnButton>
+    <BasicLayout title="Contact" isReturnButton>
       <div>
         <p>TEST: page contact</p>
       </div>
