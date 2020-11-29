@@ -1,4 +1,4 @@
-import { JsonTextData } from '../../models/graphql';
+import { SingleJson, PageTextContent } from '../../models/graphql';
 
 export interface MenuItemData {
   label: string;
@@ -13,5 +13,5 @@ export interface TextContent {
   copyrightText: string;
 }
 export interface IndexPageProps {
-  data: JsonTextData<TextContent>;
+  data: SingleJson<PageTextContent<TextContent>>;
 }

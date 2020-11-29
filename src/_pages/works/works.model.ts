@@ -1,4 +1,4 @@
-import { GatsbyImage, FileGroup, SingleFileFromGroup, JsonTextData } from '../../models/graphql';
+import { GatsbyImage, FileGroup, SingleFileFromGroup, SingleJson, PageTextContent } from '../../models/graphql';
 
 export type WorkImage = SingleFileFromGroup<
   GatsbyImage<{
@@ -28,5 +28,5 @@ export interface TextContent {
   cardsAltText: string;
 }
 export interface WorksPageProps {
-  data: FileGroup<GatsbyImage> & JsonTextData<TextContent>;
+  data: FileGroup<GatsbyImage> & SingleJson<PageTextContent<TextContent>>;
 }

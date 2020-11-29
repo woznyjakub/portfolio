@@ -30,7 +30,7 @@ const getWorkingExperienceTime = (dataArray: Job[]): number => {
 };
 
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
-  const { content } = data.allDataJson.nodes[0];
+  const { content } = data.dataJson;
   const workingExperienceTime: number = getWorkingExperienceTime(content.jobs);
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
@@ -42,7 +42,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
             <Column>
               <TextWrapper>
                 <Heading as="h1" fontSize="large" gutter="bottom" centered>
-                  About
+                  {content.pageTitle}
                 </Heading>
                 <BasicText as="p" fontSize="larger">
                   Hi, nice to see you here!

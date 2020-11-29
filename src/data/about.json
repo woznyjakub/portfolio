@@ -1,6 +1,8 @@
 {
+  "dataType": "pagedata",
   "pageName": "about",
   "content": {
+    "pageTitle": "About",
     "jobs": [
       {
         "companyName": "NoMonday",

@@ -7,3 +7,9 @@ export interface FileGroup<TFile> {
     edges: SingleFileFromGroup<TFile>[];
   };
 }
+
+export interface JsonGroup<D> {
+  allDataJson: {
+    nodes: D;
+  };
+}

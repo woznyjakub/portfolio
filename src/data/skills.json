@@ -1,6 +1,8 @@
 {
+  "dataType": "pagedata",
   "pageName": "skills",
   "content": {
+    "pageTitle": "Skills",
     "skillsGroups": [
       {
         "name": "JavaScript",

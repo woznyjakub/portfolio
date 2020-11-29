@@ -8,7 +8,7 @@ import { Grid, StyledHeader, MainContent, MenuWrapper, Menu, List, MenuItem } fr
 import { IndexPageProps } from './index.model';
 
 const IndexPage: FC<IndexPageProps> = ({ data }) => {
-  const { content } = data.allDataJson.nodes[0];
+  const { content } = data.dataJson;
   return (
     <BasicLayout isFooter={false}>
       <Grid className="stretch">

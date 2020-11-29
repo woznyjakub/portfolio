@@ -1,4 +1,4 @@
-import { JsonTextData } from '../../models/graphql';
+import { SingleJson, PageTextContent } from '../../models/graphql';
 
 export interface SkillItem {
   name: string;
@@ -11,5 +11,5 @@ export interface TextContent {
 }
 
 export interface SkillsPageProps {
-  data: JsonTextData<TextContent>;
+  data: SingleJson<PageTextContent<TextContent>>;
 }

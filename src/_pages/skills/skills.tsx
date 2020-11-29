@@ -8,7 +8,7 @@ import { SkillsList, NestedListItemText } from './skills.style';
 import { SkillsPageProps } from './skills.model';
 
 const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
-  const { content } = data.allDataJson.nodes[0];
+  const { content } = data.dataJson;
   return (
     <BasicLayout title="Skills" isReturnButton>
       <header>

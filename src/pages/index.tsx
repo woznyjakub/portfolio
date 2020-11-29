@@ -4,19 +4,16 @@ export { default } from '../_pages/index';
 
 export const query = graphql`
   {
-    allDataJson(filter: { pageName: { eq: "index" } }) {
-      nodes {
-        pageName
-        content {
-          mainTitle
-          mailAddress
-          mailLinkLabel
-          menuItems {
-            label
-            link
-          }
-          copyrightText
+    dataJson(dataType: { eq: "pagedata" }, pageName: { eq: "index" }) {
+      content {
+        mainTitle
+        mailAddress
+        mailLinkLabel
+        menuItems {
+          label
+          link
         }
+        copyrightText
       }
     }
   }

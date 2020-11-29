@@ -9,7 +9,7 @@ import { WorkImage, WorksPageProps } from './works.model';
 import { Grid, Card, TextWrapper } from './works.style';
 
 const WorksPage: FC<WorksPageProps> = ({ data }) => {
-  const { content } = data.allDataJson.nodes[0];
+  const { content } = data.dataJson;
   return (
     <BasicLayout title="Works" isReturnButton>
       <header>

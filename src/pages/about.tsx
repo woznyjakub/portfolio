@@ -12,21 +12,19 @@ export const query = graphql`
         }
       }
     }
-    allDataJson(filter: { pageName: { eq: "about" } }) {
-      nodes {
-        pageName
-        content {
-          jobs {
-            companyName
-            location
-            startDate {
-              label
-              value
-            }
-            endDate {
-              label
-              value
-            }
+    dataJson(dataType: { eq: "pagedata" }, pageName: { eq: "about" }) {
+      content {
+        pageTitle
+        jobs {
+          companyName
+          location
+          startDate {
+            label
+            value
+          }
+          endDate {
+            label
+            value
           }
         }
       }

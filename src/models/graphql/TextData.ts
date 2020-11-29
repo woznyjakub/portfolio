@@ -1,10 +1,4 @@
-export interface TextContent<D> {
+export interface PageTextContent<D> {
   pageName: string;
   content: D;
-}
-
-export interface JsonTextData<D> {
-  allDataJson: {
-    nodes: TextContent<D>[];
-  };
 }

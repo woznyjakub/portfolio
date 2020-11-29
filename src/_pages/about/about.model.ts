@@ -1,4 +1,4 @@
-import { SingleFile, GatsbyImage, JsonTextData } from '../../models/graphql';
+import { SingleFile, GatsbyImage, SingleJson, PageTextContent } from '../../models/graphql';
 
 export type CurrentDatePlaceholder = 'current';
 
@@ -17,8 +17,9 @@ export interface Job {
   endDate: JobDate<CurrentDatePlaceholder>;
 }
 export interface TextContent {
+  pageTitle: string;
   jobs: Job[];
 }
 export interface AboutPageProps {
-  data: SingleFile<GatsbyImage> & JsonTextData<TextContent>;
+  data: SingleFile<GatsbyImage> & SingleJson<PageTextContent<TextContent>>;
 }
