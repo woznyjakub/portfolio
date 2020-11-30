@@ -35,7 +35,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
   return (
-    <BasicLayout title="About" isReturnButton>
+    <BasicLayout title={content.pageTitle} isReturnButton>
       <main>
         <section>
           <Grid>

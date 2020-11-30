@@ -6,6 +6,7 @@ export interface SkillItem {
 }
 
 export interface TextContent {
+  pageTitle: string;
   skillsGroups: SkillItem[];
   skillsGroupsAltText: string;
 }

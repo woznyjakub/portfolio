@@ -11,7 +11,7 @@ import { Grid, Card, TextWrapper } from './works.style';
 const WorksPage: FC<WorksPageProps> = ({ data }) => {
   const { content } = data.dataJson;
   return (
-    <BasicLayout title="Works" isReturnButton>
+    <BasicLayout title={content.pageTitle} isReturnButton>
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
           {content.pageTitle}
