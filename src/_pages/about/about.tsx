@@ -9,7 +9,8 @@ import { TimeDuration } from '../../models/misc';
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
 import { AboutPageProps, Job, CurrentDatePlaceholder } from './about.model';
 
-const currentTimeString = new Date().toISOString();
+// get current date in format YYYY-MM-DD and cut smaller than a day values
+const currentTimeString = new Date().toISOString().replace(/T.*/, '');
 
 /**
  * replaces date value when it is `current` string, then replace it with real current date value
