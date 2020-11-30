@@ -8,7 +8,7 @@ export const Head: FC<HeadCpmProps> = ({ title }) => {
   const data: SiteMetadataResponse = useStaticQuery(
     graphql`
       {
-        dataJson(dataType: { ne: null }) {
+        dataJson(dataType: { eq: "metadata" }) {
           siteMetaData {
             title
             description
