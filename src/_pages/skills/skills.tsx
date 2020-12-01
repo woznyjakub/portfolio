@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import { BasicLayout } from '../../components/layouts';
+import { BasicPage } from '../../containers/pages';
 import { Heading } from '../../components/typography';
+import { BasicPageTextContent } from '../../models/graphql';
 import { Font } from '../../utils';
 
 import { SkillsList, NestedListItemText } from './skills.style';
@@ -9,38 +10,36 @@ import { SkillsPageProps } from './skills.model';
 
 const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
   const { content } = data.dataJson;
+
+  const basicPageContent: BasicPageTextContent = {
+    pageTitle: content.pageTitle,
+  };
+
   return (
-    <BasicLayout title={content.pageTitle} isReturnButton>
-      <header>
-        <Heading as="h1" fontSize="large" gutter="bottom" centered>
-          Skills
-        </Heading>
-      </header>
-      <main className="stretch h-100">
-        <section className="m-auto w-100">
-          {content.skillsGroups.length ? (
-            <SkillsList className="list-unstyled">
-              {content.skillsGroups.map(({ name, skills }) => (
-                <li key={name}>
-                  <Heading gutter="bottom" fontSize="larger">
-                    {name}
-                  </Heading>
-                  <ul>
-                    {skills.map((skill) => (
-                      <li key={skill}>
-                        <NestedListItemText font={Font.SECONDARY}>{skill}</NestedListItemText>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </SkillsList>
-          ) : (
-            <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
-          )}
-        </section>
-      </main>
-    </BasicLayout>
+    <BasicPage content={basicPageContent}>
+      <BasicPage.Section>
+        {content.skillsGroups.length ? (
+          <SkillsList className="list-unstyled">
+            {content.skillsGroups.map(({ name, skills }) => (
+              <li key={name}>
+                <Heading gutter="bottom" fontSize="larger">
+                  {name}
+                </Heading>
+                <ul>
+                  {skills.map((skill) => (
+                    <li key={skill}>
+                      <NestedListItemText font={Font.SECONDARY}>{skill}</NestedListItemText>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </SkillsList>
+        ) : (
+          <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
+        )}
+      </BasicPage.Section>
+    </BasicPage>
   );
 };
 
