@@ -8,22 +8,18 @@ import { TimeDuration } from '../../models/misc';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
 import { AboutPageProps, Job, CurrentDatePlaceholder } from './about.model';
-
-// get current date in format YYYY-MM-DD and cut smaller than a day values
-const currentTimeString = new Date().toISOString().replace(/T.*/, '');
-
 /**
  * replaces date value when it is `current` string, then replace it with real current date value
  * @param date timestamp
  */
-const replaceDatePlaceholder = (date: string | CurrentDatePlaceholder): string => {
+const replaceDatePlaceholder = (date: string | CurrentDatePlaceholder, currentTimeString: string): string => {
   return date === 'current' ? currentTimeString : date;
 };
 
-const getWorkingExperienceTime = (dataArray: Job[]): number => {
+const getWorkingExperienceTime = (dataArray: Job[], currentTimeString: string): number => {
   return dataArray.reduce((acc, { startDate, endDate }: Job) => {
     const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => {
-      return new Date(replaceDatePlaceholder(date)).getTime();
+      return new Date(replaceDatePlaceholder(date, currentTimeString)).getTime();
     });
     const singleJobExperienceTime = endTime - startTime;
     return acc + singleJobExperienceTime;
@@ -32,7 +28,10 @@ const getWorkingExperienceTime = (dataArray: Job[]): number => {
 
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const { content } = data.dataJson;
-  const workingExperienceTime: number = getWorkingExperienceTime(content.jobs);
+  // get current date in format YYYY-MM-DD and cut smaller than a day values
+  const currentTimeString = new Date().toISOString().replace(/T.*/, '');
+
+  const workingExperienceTime: number = getWorkingExperienceTime(content.jobs, currentTimeString);
   const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
 
   return (
@@ -62,7 +61,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                 <ul>
                   {content.jobs.map(({ companyName, location, startDate, endDate }) => {
                     // endDate may be `current` string placeholder
-                    const parsedEndDate = replaceDatePlaceholder(endDate.value);
+                    const parsedEndDate = replaceDatePlaceholder(endDate.value, currentTimeString);
                     return (
                       <li key={`${companyName}_${startDate}`}>
                         <BasicText as="p" gutter="bottom" font={Font.SECONDARY}>
