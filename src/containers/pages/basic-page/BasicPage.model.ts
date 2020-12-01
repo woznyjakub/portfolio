@@ -1,11 +1,9 @@
 import { ComponentType } from 'react';
 
-interface PageContent {
-  pageTitle: string;
-}
+import { BasicPageTextContent } from '../../../models/graphql';
 
 export interface BasicPageCmpProps {
-  content: PageContent;
+  content: BasicPageTextContent;
 }
 
 export interface NestedComponents {

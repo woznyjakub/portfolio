@@ -8,3 +8,7 @@ export interface ErrorPageContent {
   errorCode: string;
   errorMessage: string;
 }
+
+export interface BasicPageTextContent {
+  pageTitle: string;
+}
