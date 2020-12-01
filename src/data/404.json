@@ -1,5 +1,9 @@
 {
   "dataType": "pagedata",
   "pageName": "404",
-  "content": {}
+  "content": {
+    "pageTitle": "Page not found",
+    "errorCode": "404",
+    "errorMessage": "You just hit a route that doesn't exist..."
+  }
 }

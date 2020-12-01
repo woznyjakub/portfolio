@@ -1,12 +1,10 @@
 import { FC } from 'react';
 
-import { BasicLayout } from '../../components/layouts';
+import { ErrorPage } from '../../containers/pages';
+import { ErrorCmpProps } from '../../models/pages';
 
-const NotFoundPage: FC = () => (
-  <BasicLayout title="Page not found">
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </BasicLayout>
-);
+const NotFoundPage: FC<ErrorCmpProps> = ({ data }) => {
+  return <ErrorPage data={data} />;
+};
 
 export default NotFoundPage;
