@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import { BasicLayout } from '../../components/layouts';
-import { FeaturedErrorNumber } from '../../components/typography';
-import { ErrorPageWrapper } from '../../containers/misc';
-import { ErrorCmpProps } from '../../models/pages';
-import { Heading } from '../../components/typography';
+import { BasicLayout } from '../../../components/layouts';
+import { FeaturedErrorNumber } from '../../../components/typography';
+import { ErrorPageWrapper } from '../../../containers/misc';
+import { ErrorCmpProps } from '../../../models/pages';
+import { Heading } from '../../../components/typography';
 
 import { HeadingWrapper } from './ErrorPage.style';
 
