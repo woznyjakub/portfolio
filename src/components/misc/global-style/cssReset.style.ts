@@ -447,4 +447,8 @@ export const cssReset = css`
     color: #000;
     padding: 0.2em 0;
   }
+
+  a:link {
+    text-decoration: none;
+  }
 `;

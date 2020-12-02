@@ -1,5 +1,25 @@
 {
   "dataType": "pagedata",
   "pageName": "contact",
-  "content": {}
+  "content": {
+    "pageTitle": "Contact",
+    "contactDatalistLabel": "Stay in touch on:",
+    "contactData": [
+      {
+        "label": "Mail",
+        "href": "mailto:jakub_wozny_01@wp.pl",
+        "iconName": "envelope"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/jakub-wo%C5%BAny-98840b17a/",
+        "iconName": "linked-in"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/woznyjakub",
+        "iconName": "github"
+      }
+    ]
+  }
 }

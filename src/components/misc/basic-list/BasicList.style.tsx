@@ -6,6 +6,7 @@ export const StyledList = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2.25rem;
+  padding: 2.25rem 0;
   max-width: 1200px;
   margin: 0 auto;
   ${media.phone`
@@ -16,5 +17,6 @@ export const StyledList = styled.ul`
   `};
   ${media.desktopLarge`
     grid-gap: 4rem;
+    padding: 4rem 0;
   `}
 `;
