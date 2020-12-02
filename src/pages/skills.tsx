@@ -6,6 +6,7 @@ export const query = graphql`
   {
     dataJson(dataType: { eq: "pagedata" }, pageName: { eq: "skills" }) {
       content {
+        pageTitle
         skillsGroups {
           name
           skills

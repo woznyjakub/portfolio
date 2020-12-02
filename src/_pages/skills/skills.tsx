@@ -2,10 +2,11 @@ import { FC } from 'react';
 
 import { BasicPage } from '../../containers/pages';
 import { Heading } from '../../components/typography';
+import { BasicList } from '../../components/misc';
 import { BasicPageTextContent } from '../../models/graphql';
 import { Font } from '../../utils';
 
-import { SkillsList, NestedListItemText } from './skills.style';
+import { NestedListItemText } from './skills.style';
 import { SkillsPageProps } from './skills.model';
 
 const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
@@ -19,9 +20,9 @@ const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
     <BasicPage content={basicPageContent}>
       <BasicPage.Section>
         {content.skillsGroups.length ? (
-          <SkillsList className="list-unstyled">
+          <BasicList>
             {content.skillsGroups.map(({ name, skills }) => (
-              <li key={name}>
+              <BasicList.Item key={name}>
                 <Heading gutter="bottom" fontSize="larger">
                   {name}
                 </Heading>
@@ -32,9 +33,9 @@ const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
                     </li>
                   ))}
                 </ul>
-              </li>
+              </BasicList.Item>
             ))}
-          </SkillsList>
+          </BasicList>
         ) : (
           <Heading className="m-auto">{content.skillsGroupsAltText}</Heading>
         )}
