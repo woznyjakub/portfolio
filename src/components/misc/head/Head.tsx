@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Title, Meta } from 'react-head';
+import { Title, Meta, Link } from 'react-head';
 
 import { HeadCpmProps, SiteMetadataResponse } from './Head.model';
 
@@ -13,6 +13,7 @@ export const Head: FC<HeadCpmProps> = ({ title }) => {
             title
             description
             author
+            canonicalUrl
           }
         }
         file(name: { eq: "og-image-small" }) {
@@ -22,7 +23,7 @@ export const Head: FC<HeadCpmProps> = ({ title }) => {
     `,
   );
 
-  const { title: metaTitle, description, author } = data.dataJson.siteMetaData;
+  const { title: metaTitle, description, author, canonicalUrl } = data.dataJson.siteMetaData;
   const { publicURL: ogImageUrl } = data.file;
   return (
     <>
@@ -32,6 +33,7 @@ export const Head: FC<HeadCpmProps> = ({ title }) => {
       </Title>
       <Meta name="description" content={description} />
       <Meta name="author" content={author} />
+      <Link rel="canonical" href={canonicalUrl} />
 
       <Meta name="og:title" content={metaTitle} />
       <Meta name="og:description" content={description} />
