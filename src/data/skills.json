@@ -6,7 +6,7 @@
     "skillsGroups": [
       {
         "name": "JavaScript",
-        "skills": ["JavaScript ES2020", "TypeScript", "React", "GatsbyJS", "NextJS", "Redux", "RxJS", "Web components"]
+        "skills": ["JavaScript ES2020", "TypeScript", "React", "GatsbyJS", "NextJS", "Redux", "Web components"]
       },
       {
         "name": "CSS",
@@ -14,15 +14,15 @@
       },
       {
         "name": "HTML",
-        "skills": ["Semantic HTML", "ARIA", "Pug", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
+        "skills": ["Semantic HTML", "Pug", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
       },
       {
         "name": "Backend",
-        "skills": ["NodeJS", "NestJS", "MongoDB"]
+        "skills": ["NodeJS", "ExpressJS", "Basic exprerience with databases (Postgres)", "Prisma (ORM)"]
       },
       {
         "name": "Other",
-        "skills": ["Git", "Webpack", "Git Flow", "Adobe Xd", "Photoshop", "JIRA, Gitlab"]
+        "skills": ["Git", "Webpack", "Git Flow", "Adobe Xd, Photoshop", "JIRA, GitLab", "Ability to effectively search for information"]
       }
     ],
     "skillsGroupsAltText": "Something went wrong or this section is empty."
