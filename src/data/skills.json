@@ -22,7 +22,15 @@
       },
       {
         "name": "Other",
-        "skills": ["Git", "Webpack", "Git Flow", "Adobe Xd, Photoshop", "JIRA, GitLab", "Ability to effectively search for information"]
+        "skills": [
+          "Git",
+          "Experience with unit testing",
+          "Webpack",
+          "Adobe Xd, Photoshop",
+          "JIRA, GitLab",
+          "Git Flow",
+          "Ability to effectively search for information"
+        ]
       }
     ],
     "skillsGroupsAltText": "Something went wrong or this section is empty."
