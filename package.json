@@ -36,12 +36,12 @@
     "build": "gatsby build",
     "develop": "gatsby develop -o",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby clean && npm run develop",
-    "serve": "gatsby clean && gatsby build --prefix-paths && gatsby serve --prefix-paths",
+    "start": "gatsby clean && yarn develop",
+    "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy:thisrepo": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
-    "deploy:main": "gatsby clean &&gatsby build && gh-pages -d public -b master"
+    "deploy:main": "gatsby clean && gatsby build && gh-pages -d public -b master"
   },
   "repository": {
     "type": "git",
