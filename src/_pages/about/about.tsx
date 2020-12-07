@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
@@ -29,10 +29,19 @@ const getWorkingExperienceTime = (dataArray: Job[], currentTimeString: string): 
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const { content } = data.dataJson;
   // get current date in format YYYY-MM-DD and cut smaller than a day values
-  const currentTimeString = new Date().toISOString().replace(/T.*/, '');
+  const [currentTimeString, setCurrentTimeString] = useState(null);
 
-  const workingExperienceTime: number = getWorkingExperienceTime(content.jobs, currentTimeString);
-  const workingExperience: TimeDuration = parseTimeToUnitsObject(workingExperienceTime);
+  /**
+   * currentTimeString must be rendered on client side to prevent keeping deploy date as the 'current' one
+   */
+  const workingExperienceTime: number = currentTimeString && getWorkingExperienceTime(content.jobs, currentTimeString);
+  const workingExperience: TimeDuration = currentTimeString && parseTimeToUnitsObject(workingExperienceTime);
+
+  useEffect(() => {
+    // get current date in format YYYY-MM-DD and cut smaller than a day values
+    const date = new Date().toISOString().replace(/T.*/, '');
+    setCurrentTimeString(date);
+  }, []);
 
   return (
     <BasicLayout title={content.pageTitle} isReturnButton>
@@ -82,9 +91,11 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                     );
                   })}
                 </ul>
-                <BasicText gutter="bottom" fontSize="larger" font={Font.SECONDARY}>
-                  It's {parseTimeToString(workingExperience)}
-                </BasicText>
+                {currentTimeString && (
+                  <BasicText gutter="bottom" fontSize="larger" font={Font.SECONDARY}>
+                    It's {parseTimeToString(workingExperience)}
+                  </BasicText>
+                )}
                 <Heading as="h2" gutter="bottom" centered>
                   Beyond the work
                 </Heading>
