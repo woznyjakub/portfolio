@@ -62,7 +62,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                   paying large attention on details.
                 </BasicText>
                 <BasicText as="p" gutter="bottom">
-                  My front-end adveture began in May 2018 and I perpetually keep my skills improving.
+                  My programming adveture began in May 2018 and I perpetually keep my skills improving.
                 </BasicText>
                 <Heading as="h2" gutter="bottom" centered>
                   Experience
@@ -100,7 +100,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                   Beyond the work
                 </Heading>
                 <BasicText as="p">
-                  I'm motorcycles enthusiast so I like spending time a on ride, furthermore, watching some vlogs about traveling and reading about curiosities
+                  I'm motorcycles enthusiast so I like spending time on a ride, furthermore, watching some vlogs about traveling and reading about curiosities
                   from all over the world.
                 </BasicText>
               </TextWrapper>
