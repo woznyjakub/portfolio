@@ -7,6 +7,19 @@
     "technologyText": "Used technologies:",
     "cards": [
       {
+        "title": "This page",
+        "description": "Static page which is used as my card.",
+        "technologies": "TypeScript, React, GatsbyJS, Styled Components and GraphQL",
+        "releaseDate": "November 2020",
+        "imageName": "portfolio.jpg",
+        "links": [
+          {
+            "label": "Repository",
+            "url": "https://github.com/woznyjakub/portfolio"
+          }
+        ]
+      },
+      {
         "title": "Binary clock app",
         "description": "React app that recreates binary clock working mechanism.",
         "technologies": "React, Styled Components",
@@ -20,19 +33,6 @@
           {
             "label": "Preview",
             "url": "https://woznyjakub.github.io/binary-clock-app/"
-          }
-        ]
-      },
-      {
-        "title": "This page",
-        "description": "Static page which is used as my card.",
-        "technologies": "TypeScript, React, GatsbyJS, Styled Components and GraphQL",
-        "releaseDate": "November 2020",
-        "imageName": "portfolio.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/portfolio"
           }
         ]
       },
