@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { BasicLayout } from '../../../components/layouts';
 import { FeaturedErrorNumber } from '../../../components/typography';
-import { ErrorPageWrapper } from '../../../containers/misc';
+import { ErrorPageWrapper } from '../../../components/wrappers';
 import { ErrorCmpProps } from '../../../models/pages';
 import { Heading } from '../../../components/typography';
 

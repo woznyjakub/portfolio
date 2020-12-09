@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Head, GlobalStyle } from '../../misc';
 import { Footer } from '../../sections';
 import { BasicText } from '../../typography';
-import { OptionalWrapper } from '../../../containers/misc';
+import { OptionalWrapper } from '../../../components/wrappers';
 import { Font } from '../../../utils';
 
 import { MainWrapper, ButtonWrapper } from './BasicLayout.style';
