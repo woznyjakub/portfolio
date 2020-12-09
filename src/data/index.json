@@ -3,7 +3,7 @@
   "pageName": "index",
   "content": {
     "mainTitle": "Jakub Woźny\nFront-end developer\nportfolio",
-    "mailAddress": "jakub_wozny_01@wp.pl",
+    "mailAddress": "jakub.wozny.01@gmail.com",
     "mailLinkLabel": "Mail me",
     "menuItems": [
       { "label": "About", "link": "/about" },
