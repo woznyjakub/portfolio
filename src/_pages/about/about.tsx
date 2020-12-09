@@ -56,13 +56,13 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                 <BasicText as="p" fontSize="larger">
                   Hi, nice to see you here!
                 </BasicText>
-                <BasicText as="p">My name is Jakub Woźny and I'm glad to be programmer specialized in front-end development.</BasicText>
+                <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in front-end development.</BasicText>
                 <BasicText as="p">
-                  I can develop fully working F-E layer of websites and web applications keeping the lastest standards, design patterns, good pracises and
-                  paying large attention on details.
+                  I can develop fully working FE layers of websites and web applications, keeping up with the latest standards and design patterns, following
+                  good practises and paying attention to details.
                 </BasicText>
                 <BasicText as="p" gutter="bottom">
-                  My programming adveture began in May 2018 and I perpetually keep my skills improving.
+                  My programming career started in May 2018 and I’ve been improving my skills ever since.
                 </BasicText>
                 <Heading as="h2" gutter="bottom" centered>
                   Experience
@@ -97,11 +97,11 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                   </BasicText>
                 )}
                 <Heading as="h2" gutter="bottom" centered>
-                  Beyond the work
+                  Beyond my work
                 </Heading>
                 <BasicText as="p">
-                  I'm motorcycles enthusiast so I like spending time on a ride, furthermore, watching some vlogs about traveling and reading about curiosities
-                  from all over the world.
+                  I'm a motorcycle enthusiast, so I love spending my free time riding and exploring new places. And besides that, I also enjoy watching travel
+                  vlogs and reading about fascinating facts about the world that we live in.
                 </BasicText>
               </TextWrapper>
             </Column>

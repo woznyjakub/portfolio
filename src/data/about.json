@@ -5,18 +5,6 @@
     "pageTitle": "About",
     "jobs": [
       {
-        "companyName": "NoMonday",
-        "location": "Rybnik, Poland",
-        "startDate": {
-          "label": "April 2019",
-          "value": "2019-04-08"
-        },
-        "endDate": {
-          "label": "May 2020",
-          "value": "2020-05-31"
-        }
-      },
-      {
         "companyName": "SoniqSoft Software House",
         "location": "Radlin, Poland",
         "startDate": {
@@ -26,6 +14,18 @@
         "endDate": {
           "label": "Present",
           "value": "current"
+        }
+      },
+      {
+        "companyName": "NoMonday",
+        "location": "Rybnik, Poland",
+        "startDate": {
+          "label": "April 2019",
+          "value": "2019-04-08"
+        },
+        "endDate": {
+          "label": "May 2020",
+          "value": "2020-05-31"
         }
       }
     ]
