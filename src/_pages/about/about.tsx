@@ -39,7 +39,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
 
   useEffect(() => {
     // get current date in format YYYY-MM-DD and cut smaller than a day values
-    const date = new Date().toISOString().replace(/T.*/, '');
+    const date = new Date().toISOString().split('T')[0];
     setCurrentTimeString(date);
   }, []);
 
@@ -58,8 +58,8 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                 </BasicText>
                 <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in front-end development.</BasicText>
                 <BasicText as="p">
-                  I can develop fully working FE layers of websites and web applications, keeping up with the latest standards and design patterns, following
-                  good practises and paying attention to details.
+                  I can develop fully working FE layers of websites and web applications, keeping up with the latest standards, good practises and paying
+                  attention to details. I also have back-end side experience.
                 </BasicText>
                 <BasicText as="p" gutter="bottom">
                   My programming career started in May 2018 and I’ve been improving my skills ever since.

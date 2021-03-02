@@ -6,31 +6,23 @@
     "skillsGroups": [
       {
         "name": "JavaScript",
-        "skills": ["JavaScript ES2020", "TypeScript", "React", "GatsbyJS", "NextJS", "Redux", "Web components"]
+        "skills": ["JavaScript ES2021", "TypeScript", "React", "Redux", "NextJS", "GatsbyJS"]
       },
       {
         "name": "CSS",
-        "skills": ["CSS", "Sass", "Styled Components", "Bootstrap 4", "Material UI"]
+        "skills": ["CSS", "Sass", "Styled Components", "Bootstrap 5", "Material UI"]
       },
       {
         "name": "HTML",
-        "skills": ["Semantic HTML", "Pug", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
+        "skills": ["Semantic HTML", "HTML preprocessors", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
       },
       {
         "name": "Backend",
-        "skills": ["NodeJS", "ExpressJS", "Basic exprerience with databases (Postgres)", "Prisma (ORM)"]
+        "skills": ["NodeJS", "ExpressJS", "RESTful APIs creation", "Basic exprerience with MySQL, Postgres and MongoDB databases", "TypeORM and Prisma"]
       },
       {
         "name": "Other",
-        "skills": [
-          "Git",
-          "Experience with unit testing",
-          "Webpack",
-          "Adobe Xd, Photoshop",
-          "JIRA, GitLab",
-          "Git Flow",
-          "Ability to effectively search for information"
-        ]
+        "skills": ["Git", "Unit testing", "Webpack", "Adobe Xd, Photoshop", "JIRA, GitLab", "Git Flow", "Ability to effectively search for information"]
       }
     ],
     "skillsGroupsAltText": "Something went wrong or this section is empty."
