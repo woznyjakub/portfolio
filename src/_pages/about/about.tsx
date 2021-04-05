@@ -93,7 +93,7 @@ const AboutPage: FC<AboutPageProps> = ({ data }) => {
                 </ul>
                 {currentTimeString && (
                   <BasicText gutter="bottom" fontSize="larger" font={Font.SECONDARY}>
-                    It's {parseTimeToString(workingExperience)}
+                    It's {parseTimeToString(workingExperience)} now.
                   </BasicText>
                 )}
                 <Heading as="h2" gutter="bottom" centered>

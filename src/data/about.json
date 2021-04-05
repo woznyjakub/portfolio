@@ -5,6 +5,18 @@
     "pageTitle": "About",
     "jobs": [
       {
+        "companyName": "Future Processing",
+        "location": "Gliwice, Poland",
+        "startDate": {
+          "label": "April 2021",
+          "value": "2021-04-01"
+        },
+        "endDate": {
+          "label": "Present",
+          "value": "current"
+        }
+      },
+      {
         "companyName": "SoniqSoft Software House",
         "location": "Radlin, Poland",
         "startDate": {
@@ -12,8 +24,8 @@
           "value": "2020-06-01"
         },
         "endDate": {
-          "label": "Present",
-          "value": "current"
+          "label": "March 2021",
+          "value": "2021-03-31"
         }
       },
       {

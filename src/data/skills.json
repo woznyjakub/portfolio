@@ -18,11 +18,18 @@
       },
       {
         "name": "Backend",
-        "skills": ["NodeJS", "ExpressJS", "RESTful APIs creation", "Basic exprerience with MySQL, Postgres and MongoDB databases", "TypeORM and Prisma"]
+        "skills": [
+          "NodeJS",
+          "ExpressJS",
+          "NestJS",
+          "RESTful APIs creation",
+          "Basic exprerience with MySQL, Postgres and MongoDB databases",
+          "TypeORM and Prisma"
+        ]
       },
       {
         "name": "Other",
-        "skills": ["Git", "Unit testing", "Webpack", "Adobe Xd, Photoshop", "JIRA, GitLab", "Git Flow", "Ability to effectively search for information"]
+        "skills": ["Git", "Unit testing", "Webpack", "Adobe Xd, Photoshop", "JIRA, GitLab", "Git Flow"]
       }
     ],
     "skillsGroupsAltText": "Something went wrong or this section is empty."

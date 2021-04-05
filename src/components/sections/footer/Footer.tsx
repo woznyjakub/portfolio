@@ -5,7 +5,7 @@ import { Font } from '../../../utils';
 import { StyledFooter, StyledText } from './Footer.style';
 
 const content = {
-  footerText: '© Jakub Woźny 2020',
+  footerText: '© Jakub Woźny 2021',
 };
 
 export const Footer: FC = () => {
