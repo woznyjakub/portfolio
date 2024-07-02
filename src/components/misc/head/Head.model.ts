@@ -1,4 +1,4 @@
-import { SingleFile, SingleJson } from '../../../models/graphql';
+import { SingleFile, SingleJson } from '../../../interfaces/graphql';
 
 export interface HeadCpmProps {
   title?: string;

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
 import { parseTimeToUnitsObject, parseTimeToString, Font } from '../../utils';
-import { TimeDuration } from '../../models/misc';
+import { TimeDuration } from '../../interfaces/misc';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
 import { AboutPageProps, Job, CurrentDatePlaceholder } from './about.model';

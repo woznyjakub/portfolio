@@ -1,4 +1,4 @@
-import { SingleJson, PageTextContent } from '../../models/graphql';
+import { SingleJson, PageTextContent } from '../../interfaces/graphql';
 
 export interface MenuItemData {
   label: string;

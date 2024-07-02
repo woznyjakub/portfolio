@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 
-import { BasicPageTextContent } from '../../../models/graphql';
+import { BasicPageTextContent } from '../../../interfaces/graphql';
 
 export interface BasicPageCmpProps {
   content: BasicPageTextContent;

@@ -1,4 +1,4 @@
-import { GatsbyImage, FileGroup, SingleFileFromGroup, SingleJson, PageTextContent } from '../../models/graphql';
+import { GatsbyImage, FileGroup, SingleFileFromGroup, SingleJson, PageTextContent } from '../../interfaces/graphql';
 
 export type WorkImage = SingleFileFromGroup<
   GatsbyImage<{

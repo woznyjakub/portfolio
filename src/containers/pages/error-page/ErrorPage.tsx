@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { BasicLayout } from '../../../components/layouts';
 import { FeaturedErrorNumber } from '../../../components/typography';
 import { ErrorPageWrapper } from '../../../components/wrappers';
-import { ErrorCmpProps } from '../../../models/pages';
+import { ErrorCmpProps } from '../../../interfaces/pages';
 import { Heading } from '../../../components/typography';
 
 import { HeadingWrapper } from './ErrorPage.style';

@@ -1,4 +1,4 @@
-import { SingleFile, GatsbyImage, SingleJson, PageTextContent } from '../../models/graphql';
+import { SingleFile, GatsbyImage, SingleJson, PageTextContent } from '../../interfaces/graphql';
 
 export type CurrentDatePlaceholder = 'current';
 

@@ -1,6 +1,6 @@
-import moment from 'moment';
+import * as moment from 'moment';
 
-import { TimeDuration } from '../models/misc';
+import { TimeDuration } from '../interfaces/misc';
 
 /**
  * parses time period miliseconds value to year, months and days

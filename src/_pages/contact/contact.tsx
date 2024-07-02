@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { BasicPage } from '../../containers/pages';
 import { BasicList } from '../../components/misc';
 import { BasicText, Heading } from '../../components/typography';
-import { BasicPageTextContent } from '../../models/graphql';
+import { BasicPageTextContent } from '../../interfaces/graphql';
 
 import { ContactPageProps } from './contact.model';
 import { ContactItemWrapper, StyledIcon } from './contact.style';

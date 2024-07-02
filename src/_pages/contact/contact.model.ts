@@ -1,4 +1,4 @@
-import { SingleJson, PageTextContent, SingleFile, FileGroup } from '../../models/graphql';
+import { SingleJson, PageTextContent, SingleFile, FileGroup } from '../../interfaces/graphql';
 
 export interface ContactDataItem {
   label: string;
