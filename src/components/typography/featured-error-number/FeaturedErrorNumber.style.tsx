@@ -1,4 +1,3 @@
-import { ComponentProps } from 'react';
 import styled from 'styled-components';
 
 import { Font, media } from '../../../utils';

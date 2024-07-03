@@ -1,7 +1,7 @@
 import { FluidObject } from 'gatsby-image';
 
-export interface GatsbyImage<T = {}> {
+export type GatsbyImage<T = {}> = {
   childImageSharp: {
     fluid: T & FluidObject;
   };
-}
+};

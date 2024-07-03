@@ -1,15 +1,15 @@
-export interface SingleFileFromGroup<TFile> {
+export type SingleFileFromGroup<TFile> = {
   node: TFile;
-}
+};
 
-export interface FileGroup<TFile> {
+export type FileGroup<TFile> = {
   allFile: {
     edges: SingleFileFromGroup<TFile>[];
   };
-}
+};
 
-export interface JsonGroup<D> {
+export type JsonGroup<D> = {
   allDataJson: {
     nodes: D;
   };
-}
+};

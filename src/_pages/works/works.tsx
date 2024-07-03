@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Img from 'gatsby-image';
 
 import { BasicPage } from '../../containers/pages';
@@ -6,18 +5,18 @@ import { BasicText, Heading } from '../../components/typography';
 import { BasicPageTextContent } from '../../interfaces/graphql';
 import { Font } from '../../utils';
 
-import { WorkImage, WorksPageProps } from './works.model';
+import { WorkImage, WorksPageData } from './works.interface';
 import { Grid, Card, TextWrapper } from './works.style';
 
-const WorksPage: FC<WorksPageProps> = ({ data }) => {
+type WorkCardProps = {
+  data: WorksPageData;
+};
+
+const WorksPage = ({ data }: WorkCardProps) => {
   const { content } = data.dataJson;
 
-  const basicPageContent: BasicPageTextContent = {
-    pageTitle: content.pageTitle,
-  };
-
   return (
-    <BasicPage content={basicPageContent}>
+    <BasicPage title={content.pageTitle}>
       <BasicPage.Section>
         {content.cards.length ? (
           <Grid>

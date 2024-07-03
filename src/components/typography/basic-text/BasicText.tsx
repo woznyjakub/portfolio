@@ -1,8 +1,18 @@
-import { FC } from 'react';
-
+import { Font } from '../../../utils';
 import { StyledText } from './BasicText.style';
-import { TextCmpProps } from './BasicText.model';
+import { StyledComponentProps } from '../../../interfaces/misc';
 
-export const BasicText: FC<TextCmpProps> = (props) => {
+type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
+type FontSize = 'smaller' | 'larger';
+
+export type TextCmpProps = StyledComponentProps<{
+  fillOnHover?: boolean;
+  fontSize?: FontSize;
+  gutter?: Gutter;
+  moveUnderlineOnHover?: boolean;
+  font?: Font;
+}>;
+
+export const BasicText = (props: TextCmpProps) => {
   return <StyledText {...props} />;
 };

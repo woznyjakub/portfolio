@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactNode } from 'react';
 
 import { Head, GlobalStyle } from '../../misc';
 import { Footer } from '../../sections';
@@ -7,17 +7,16 @@ import { OptionalWrapper } from '../../../components/wrappers';
 import { Font } from '../../../utils';
 
 import { MainWrapper, ButtonWrapper } from './BasicLayout.style';
-import { BasicLayoutCmpProps } from './BasicLayout.model';
 
 const content = {
   returnButtonText: 'Menu',
 };
 
-const FooterPusher: FC = ({ children }) => {
+const FooterPusher = ({ children }) => {
   return <div className="layout-wrapper">{children}</div>;
 };
 
-const ReturnButton: FC = () => {
+const ReturnButton = () => {
   return (
     <ButtonWrapper>
       <BasicText as="a" href="/" className="underline" font={Font.SECONDARY} moveUnderlineOnHover>
@@ -27,7 +26,14 @@ const ReturnButton: FC = () => {
   );
 };
 
-export const BasicLayout: FC<BasicLayoutCmpProps> = ({ children, isFooter = true, isReturnButton, title }) => {
+type BasicLayoutCmpProps = {
+  isFooter?: boolean;
+  isReturnButton?: boolean;
+  children: ReactNode;
+  title?: string;
+};
+
+export const BasicLayout = ({ children, isFooter = true, isReturnButton, title }: BasicLayoutCmpProps) => {
   return (
     <MainWrapper className="stretch">
       <Head title={title} />

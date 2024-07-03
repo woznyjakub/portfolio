@@ -1,23 +1,20 @@
-import { FC } from 'react';
-
 import { BasicPage } from '../../containers/pages';
 import { BasicList } from '../../components/misc';
 import { BasicText, Heading } from '../../components/typography';
-import { BasicPageTextContent } from '../../interfaces/graphql';
 
-import { ContactPageProps } from './contact.model';
 import { ContactItemWrapper, StyledIcon } from './contact.style';
+import { ContactPageData } from './contact.interface';
 
-const ContactPage: FC<ContactPageProps> = ({ data }) => {
+type ContactPageProps = {
+  data: ContactPageData;
+};
+
+const ContactPage = ({ data }: ContactPageProps) => {
   const { content } = data.dataJson;
   const { edges: icons } = data.allFile;
 
-  const basicPageContent: BasicPageTextContent = {
-    pageTitle: content.pageTitle,
-  };
-
   return (
-    <BasicPage content={basicPageContent}>
+    <BasicPage title={content.pageTitle}>
       <BasicPage.Section>
         <Heading gutter="bottom" centered>
           {content.contactDatalistLabel}

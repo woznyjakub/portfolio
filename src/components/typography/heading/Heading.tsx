@@ -1,8 +1,15 @@
-import { FC } from 'react';
-
 import { StyledHeading } from './Heading.style';
-import { HeadingCmpProps } from './Heading.model';
+import { StyledComponentProps } from '../../../interfaces/misc';
 
-export const Heading: FC<HeadingCmpProps> = (props) => {
+export type FontSize = 'large' | 'larger';
+export type Gutter = 'top' | 'right' | 'bottom' | 'left' | null;
+
+export type HeadingProps = StyledComponentProps<{
+  fontSize?: FontSize;
+  gutter?: Gutter;
+  centered?: boolean;
+}>;
+
+export const Heading = (props: HeadingProps) => {
   return <StyledHeading {...props} />;
 };

@@ -1,4 +1,4 @@
-export interface TimeDuration {
+export type TimeDuration = {
   years?: number;
   months?: number;
-}
+};

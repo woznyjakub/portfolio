@@ -1,14 +1,14 @@
-export interface PageTextContent<D> {
+export type PageTextContent<T> = {
   pageName: string;
-  content: D;
-}
+  content: T;
+};
 
-export interface ErrorPageContent {
+export type ErrorPageContent = {
   pageTitle: string;
   errorCode: string;
   errorMessage: string;
-}
+};
 
-export interface BasicPageTextContent {
+export type BasicPageTextContent = {
   pageTitle: string;
-}
+};

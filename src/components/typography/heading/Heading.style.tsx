@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 import { media, Font } from '../../../utils';
 
-import { HeadingCmpProps } from './Heading.model';
+import { HeadingProps } from './Heading';
 
-export const StyledHeading = styled.h2<HeadingCmpProps>`
+export const StyledHeading = styled.h2<HeadingProps>`
   font-family: ${Font.SECONDARY};
   white-space: pre-wrap;
   line-height: 1.25;

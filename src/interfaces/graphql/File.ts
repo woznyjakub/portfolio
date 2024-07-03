@@ -1,6 +1,6 @@
-export interface SingleFile<TFile> {
+export type SingleFile<TFile> = {
   file: TFile;
-}
-export interface SingleJson<TJson> {
+};
+export type SingleDataJson<TJson> = {
   dataJson: TJson;
-}
+};

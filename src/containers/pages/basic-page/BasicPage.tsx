@@ -1,16 +1,22 @@
-import { ComponentType, FC, ReactNode } from 'react';
+import { FC } from 'react';
 
 import { Heading } from '../../../components/typography';
 import { BasicLayout } from '../../../components/layouts';
 
-import { BasicPageCmpProps, NestedComponents } from './BasicPage.model';
+type BasicPageCmpProps = {
+  title: string;
+};
 
-const BasicPage: FC<BasicPageCmpProps> & NestedComponents = ({ children, content }) => {
+type NestedComponents = {
+  Section: FC;
+};
+
+const BasicPage: FC<BasicPageCmpProps> & NestedComponents = ({ children, title }) => {
   return (
-    <BasicLayout title={content.pageTitle} isReturnButton>
+    <BasicLayout title={title} isReturnButton>
       <header>
         <Heading as="h1" fontSize="large" gutter="bottom" centered>
-          {content.pageTitle}
+          {title}
         </Heading>
       </header>
       <main className="stretch h-100">{children}</main>
@@ -18,7 +24,7 @@ const BasicPage: FC<BasicPageCmpProps> & NestedComponents = ({ children, content
   );
 };
 
-const BasicPageSection: FC = ({ children }) => {
+const BasicPageSection = ({ children }) => {
   return <section className="m-auto w-100">{children}</section>;
 };
 

@@ -1,14 +1,17 @@
-import { FC } from 'react';
-
 import { Heading, BasicText } from '../../components/typography';
 import { BasicLayout } from '../../components/layouts';
 import { Font } from '../../utils';
 
 import { Grid, StyledHeader, MainContent, MenuWrapper, Menu, List, MenuItem } from './index.style';
-import { IndexPageProps } from './index.model';
+import { IndexPageData } from './index.interface';
 
-const IndexPage: FC<IndexPageProps> = ({ data }) => {
+type IndexPageProps = {
+  data: IndexPageData;
+};
+
+const IndexPage = ({ data }: IndexPageProps) => {
   const { content } = data.dataJson;
+
   return (
     <BasicLayout isFooter={false}>
       <Grid className="stretch">

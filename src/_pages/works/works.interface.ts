@@ -1,4 +1,4 @@
-import { GatsbyImage, FileGroup, SingleFileFromGroup, SingleJson, PageTextContent } from '../../interfaces/graphql';
+import { GatsbyImage, FileGroup, SingleFileFromGroup, SingleDataJson, PageTextContent } from '../../interfaces/graphql';
 
 export type WorkImage = SingleFileFromGroup<
   GatsbyImage<{
@@ -6,27 +6,26 @@ export type WorkImage = SingleFileFromGroup<
   }>
 >;
 
-export interface LinkData {
+type LinkData = {
   label: string;
   url: string;
-}
+};
 
-export interface WorkCard {
+type WorkCard = {
   title: string;
   description: string;
   technologies: string;
   releaseDate: string;
   imageName: string;
   links: LinkData[];
-}
+};
 
-export interface TextContent {
+type TextContent = {
   pageTitle: string;
   releaseDateText: string;
   technologyText: string;
   cards: WorkCard[];
   cardsAltText: string;
-}
-export interface WorksPageProps {
-  data: FileGroup<GatsbyImage> & SingleJson<PageTextContent<TextContent>>;
-}
+};
+
+export type WorksPageData = FileGroup<GatsbyImage> & SingleDataJson<PageTextContent<TextContent>>;

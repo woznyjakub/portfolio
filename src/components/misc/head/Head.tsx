@@ -1,10 +1,25 @@
-import { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Title, Meta, Link } from 'react-head';
 
-import { HeadCpmProps, SiteMetadataResponse } from './Head.model';
+import { SingleFile, SingleDataJson } from '../../../interfaces/graphql';
 
-export const Head: FC<HeadCpmProps> = ({ title }) => {
+type SiteMetadata = {
+  title: string;
+  description: string;
+  author: string;
+  canonicalUrl: string;
+};
+
+type SiteMetadataResponse = SingleDataJson<{ siteMetaData: SiteMetadata }> &
+  SingleFile<{
+    publicURL: string;
+  }>;
+
+type HeadProps = {
+  title?: string;
+};
+
+export const Head = ({ title }: HeadProps) => {
   const data: SiteMetadataResponse = useStaticQuery(
     graphql`
       {

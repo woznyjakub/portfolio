@@ -6,6 +6,7 @@ export const query = graphql`
   {
     dataJson(dataType: { eq: "pagedata" }, pageName: { eq: "404" }) {
       content {
+        pageTitle
         errorCode
         errorMessage
       }

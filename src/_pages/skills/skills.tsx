@@ -1,23 +1,18 @@
-import { FC } from 'react';
-
 import { BasicPage } from '../../containers/pages';
 import { Heading } from '../../components/typography';
 import { BasicList } from '../../components/misc';
-import { BasicPageTextContent } from '../../interfaces/graphql';
 import { Font } from '../../utils';
 
 import { NestedListItemText } from './skills.style';
-import { SkillsPageProps } from './skills.model';
+import { SkillsPageData } from './skills.interface';
 
-const SkillsPage: FC<SkillsPageProps> = ({ data }) => {
+type SkillsPageProps = { data: SkillsPageData };
+
+const SkillsPage = ({ data }: SkillsPageProps) => {
   const { content } = data.dataJson;
 
-  const basicPageContent: BasicPageTextContent = {
-    pageTitle: content.pageTitle,
-  };
-
   return (
-    <BasicPage content={basicPageContent}>
+    <BasicPage title={content.pageTitle}>
       <BasicPage.Section>
         {content.skillsGroups.length ? (
           <BasicList>

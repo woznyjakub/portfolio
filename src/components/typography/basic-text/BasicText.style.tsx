@@ -2,7 +2,7 @@ import styled, { keyframes, css } from 'styled-components';
 
 import { Color } from '../../../utils';
 
-import { TextCmpProps } from './BasicText.model';
+import { TextCmpProps } from './BasicText';
 
 export const moveUnderline = keyframes`
   ${

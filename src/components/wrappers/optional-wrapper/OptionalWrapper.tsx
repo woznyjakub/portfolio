@@ -1,7 +1,11 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
-import { OptionalWrapperCmpProps } from './OptionalWrapper.model';
+type OptionalWrapperCmpProps = {
+  condition: boolean;
+  Component: FC<{ children?: ReactNode }>;
+  children: ReactNode;
+};
 
-export const OptionalWrapper: FC<OptionalWrapperCmpProps> = ({ condition, Component, children }) => {
-  return condition ? <Component>{children}</Component> : children;
+export const OptionalWrapper = ({ condition, Component, children }: OptionalWrapperCmpProps) => {
+  return condition ? <Component>{children}</Component> : <>{children}</>;
 };

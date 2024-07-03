@@ -1,24 +1,25 @@
-import { FC } from 'react';
-
 import { BasicLayout } from '../../../components/layouts';
 import { FeaturedErrorNumber } from '../../../components/typography';
 import { ErrorPageWrapper } from '../../../components/wrappers';
-import { ErrorCmpProps } from '../../../interfaces/pages';
 import { Heading } from '../../../components/typography';
 
 import { HeadingWrapper } from './ErrorPage.style';
 
-export const ErrorPage: FC<ErrorCmpProps> = ({ data }) => {
-  const { content } = data.dataJson;
+type ErrorCmpProps = {
+  title: string;
+  errorCode: string;
+  errorMessage: string;
+};
 
+export const ErrorPage = ({ title, errorCode, errorMessage }: ErrorCmpProps) => {
   return (
-    <BasicLayout title={content.pageTitle} isReturnButton>
+    <BasicLayout title={title} isReturnButton>
       <ErrorPageWrapper>
         <main>
           <section>
-            <FeaturedErrorNumber as="h1">{content.errorCode}</FeaturedErrorNumber>
+            <FeaturedErrorNumber as="h1">{errorCode}</FeaturedErrorNumber>
             <HeadingWrapper>
-              <Heading as="p">{content.errorMessage}</Heading>
+              <Heading as="p">{errorMessage}</Heading>
             </HeadingWrapper>
           </section>
         </main>

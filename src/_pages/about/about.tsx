@@ -7,7 +7,12 @@ import { parseTimeToUnitsObject, parseTimeToString, Font } from '../../utils';
 import { TimeDuration } from '../../interfaces/misc';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
-import { AboutPageProps, Job, CurrentDatePlaceholder } from './about.model';
+import { CurrentDatePlaceholder, AboutPageData, Job } from './about.interface';
+
+type AboutPageProps = {
+  data: AboutPageData;
+};
+
 /**
  * replaces date value when it is `current` string, then replace it with real current date value
  * @param date timestamp
@@ -26,7 +31,7 @@ const getWorkingExperienceTime = (dataArray: Job[], currentTimeString: string): 
   }, 0);
 };
 
-const AboutPage: FC<AboutPageProps> = ({ data }) => {
+const AboutPage = ({ data }: AboutPageProps) => {
   const { content } = data.dataJson;
   // get current date in format YYYY-MM-DD and cut smaller than a day values
   const [currentTimeString, setCurrentTimeString] = useState(null);
