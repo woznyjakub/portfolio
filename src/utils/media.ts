@@ -1,14 +1,6 @@
 import { css } from 'styled-components';
 
-/**
- * media query breakpoints names
- */
-type MediaName = 'phone' | 'tablet' | 'desktopSmall' | 'desktopMedium' | 'desktopLarge';
-
-/**
- * media query breakpoints values in px
- */
-export const sizes: Record<MediaName, number> = {
+const breakpoints = {
   desktopLarge: 1750,
   desktopMedium: 1500,
   desktopSmall: 1190,
@@ -17,14 +9,14 @@ export const sizes: Record<MediaName, number> = {
 };
 
 /**
- * map of breakpoint name
- */
-type CSSMediaQuery = Partial<Record<MediaName, MediaQueryHelper>>;
-
-/**
  * media query helper prepared to be used as `tagged template`
  */
-type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: any) => {};
+type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: unknown[]) => {};
+
+/**
+ * map of breakpoint name
+ */
+type CSSMediaQuery = Partial<Record<keyof typeof breakpoints, MediaQueryHelper>>;
 
 /**
  * Media query helper for styled components.
@@ -37,9 +29,9 @@ type MediaQueryHelper = (css: TemplateStringsArray, ...interpolations: any) => {
  *   `}
  * `;
  */
-export const media = Object.keys(sizes).reduce((acc: CSSMediaQuery, label: string) => {
+export const media = Object.keys(breakpoints).reduce((acc: CSSMediaQuery, label: string) => {
   acc[label] = (cssStrings: TemplateStringsArray, ...interpolations: string[]) => css`
-    @media (min-width: ${sizes[label]}px) {
+    @media (min-width: ${breakpoints[label]}px) {
       ${css(cssStrings, ...interpolations)}
     }
   `;

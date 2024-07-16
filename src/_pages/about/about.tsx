@@ -72,7 +72,7 @@ const AboutPage = ({ data }: AboutPageProps) => {
             <Column>
               <StyckyContainer>
                 <ImageWrapper>
-                  <Img fluid={data.file.childImageSharp.fluid} alt="a programmer's workplace" />
+                  <Img fluid={data.file.childImageSharp.fluid} alt="A programmer's workplace" />
                 </ImageWrapper>
               </StyckyContainer>
             </Column>
