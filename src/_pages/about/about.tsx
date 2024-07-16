@@ -35,6 +35,7 @@ const AboutPage = ({ data }: AboutPageProps) => {
                 <BasicText as="p" gutter="bottom">
                   My programming career started in May 2018, and I've been improving my skills ever since.
                 </BasicText>
+
                 <Heading as="h2" gutter="bottom" centered>
                   Experience
                 </Heading>
@@ -60,6 +61,10 @@ const AboutPage = ({ data }: AboutPageProps) => {
                     );
                   })}
                 </ul>
+                <BasicText as="p" gutter="bottom">
+                  I'm on sabbatical since 2023, but open to new opportunities and challenges.
+                </BasicText>
+
                 <Heading as="h2" gutter="bottom" centered>
                   Beyond my work
                 </Heading>

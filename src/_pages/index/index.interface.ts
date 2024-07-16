@@ -7,7 +7,7 @@ type MenuItemData = {
 
 type TextContent = {
   mainTitle: string;
-  mailAddress: string;
+  emailAddress: string;
   mailLinkLabel: string;
   menuItems: MenuItemData[];
   copyrightText: string;

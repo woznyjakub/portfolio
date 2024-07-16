@@ -2,8 +2,8 @@
   "dataType": "pagedata",
   "pageName": "index",
   "content": {
-    "mainTitle": "Jakub Woźny\nFront-end developer\nportfolio",
-    "mailAddress": "jakub.wozny.01@gmail.com",
+    "mainTitle": "Jakub Woźny\nFull Stack developer\nportfolio",
+    "emailAddress": "jakub.wozny.01@gmail.com",
     "mailLinkLabel": "Mail me",
     "menuItems": [
       { "label": "About", "link": "/about" },

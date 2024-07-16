@@ -7,7 +7,7 @@ export const query = graphql`
     dataJson(dataType: { eq: "pagedata" }, pageName: { eq: "index" }) {
       content {
         mainTitle
-        mailAddress
+        emailAddress
         mailLinkLabel
         menuItems {
           label
