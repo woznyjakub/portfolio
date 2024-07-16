@@ -21,11 +21,11 @@ const WorksPage = ({ data }: WorkCardProps) => {
         {content.cards.length ? (
           <Grid>
             {content.cards.map(({ title, description, imageName, links, technologies, releaseDate }) => (
-              <Card className="saturate-on-hover-trigger" key={title}>
+              <Card key={title}>
                 {imageName && (
                   <figure>
                     <Img
-                      className="img-stretched saturate-on-hover-item"
+                      className="img-stretched"
                       fluid={
                         // this chain filters image data from graphql by checking
                         // its name and returns its `fluid` object

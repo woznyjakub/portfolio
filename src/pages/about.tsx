@@ -31,23 +31,3 @@ export const query = graphql`
     }
   }
 `;
-
-// {
-//   dataJson(pageName: {eq: "about"}) {
-//     pageName
-//     content {
-//       jobs {
-//         companyName
-//         location
-//         startDate {
-//           label
-//           value
-//         }
-//         endDate {
-//           label
-//           value
-//         }
-//       }
-//     }
-//   }
-// }

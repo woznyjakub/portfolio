@@ -1,52 +1,18 @@
-import { FC, useEffect, useState } from 'react';
 import Img from 'gatsby-image';
 
 import { BasicLayout } from '../../components/layouts';
 import { BasicText, Heading } from '../../components/typography';
-import { parseTimeToUnitsObject, parseTimeToString, Font } from '../../utils';
-import { TimeDuration } from '../../interfaces/misc';
+import { Font } from '../../utils';
 
 import { Grid, Column, TextWrapper, StyckyContainer, ImageWrapper } from './about.style';
-import { CurrentDatePlaceholder, AboutPageData, Job } from './about.interface';
+import { AboutPageData } from './about.interface';
 
 type AboutPageProps = {
   data: AboutPageData;
 };
 
-/**
- * replaces date value when it is `current` string, then replace it with real current date value
- * @param date timestamp
- */
-const replaceDatePlaceholder = (date: string | CurrentDatePlaceholder, currentTimeString: string): string => {
-  return date === 'current' ? currentTimeString : date;
-};
-
-const getWorkingExperienceTime = (dataArray: Job[], currentTimeString: string): number => {
-  return dataArray.reduce((acc, { startDate, endDate }: Job) => {
-    const [startTime, endTime] = [startDate.value, endDate.value].map((date: string) => {
-      return new Date(replaceDatePlaceholder(date, currentTimeString)).getTime();
-    });
-    const singleJobExperienceTime = endTime - startTime;
-    return acc + singleJobExperienceTime;
-  }, 0);
-};
-
 const AboutPage = ({ data }: AboutPageProps) => {
   const { content } = data.dataJson;
-  // get current date in format YYYY-MM-DD and cut smaller than a day values
-  const [currentTimeString, setCurrentTimeString] = useState(null);
-
-  /**
-   * currentTimeString must be rendered on client side to prevent keeping deploy date as the 'current' one
-   */
-  const workingExperienceTime: number = currentTimeString && getWorkingExperienceTime(content.jobs, currentTimeString);
-  const workingExperience: TimeDuration = currentTimeString && parseTimeToUnitsObject(workingExperienceTime);
-
-  useEffect(() => {
-    // get current date in format YYYY-MM-DD and cut smaller than a day values
-    const date = new Date().toISOString().split('T')[0];
-    setCurrentTimeString(date);
-  }, []);
 
   return (
     <BasicLayout title={content.pageTitle} isReturnButton>
@@ -61,21 +27,19 @@ const AboutPage = ({ data }: AboutPageProps) => {
                 <BasicText as="p" fontSize="larger">
                   Hi, nice to see you here!
                 </BasicText>
-                <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in front-end development.</BasicText>
+                <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in full-stack web development.</BasicText>
                 <BasicText as="p">
-                  I can develop fully working FE layers of websites and web applications, keeping up with the latest standards, good practises and paying
-                  attention to details. I also have back-end side experience.
+                  I can create fully functional web applications and websites, working on both the front-end and back-end sides while adhering to the latest
+                  standards and best practices and paying close attention to detail.
                 </BasicText>
                 <BasicText as="p" gutter="bottom">
-                  My programming career started in May 2018 and I’ve been improving my skills ever since.
+                  My programming career started in May 2018, and I've been improving my skills ever since.
                 </BasicText>
                 <Heading as="h2" gutter="bottom" centered>
                   Experience
                 </Heading>
                 <ul>
                   {content.jobs.map(({ companyName, location, startDate, endDate }) => {
-                    // endDate may be `current` string placeholder
-                    const parsedEndDate = replaceDatePlaceholder(endDate.value, currentTimeString);
                     return (
                       <li key={`${companyName}_${startDate}`}>
                         <BasicText as="p" gutter="bottom" font={Font.SECONDARY}>
@@ -88,7 +52,7 @@ const AboutPage = ({ data }: AboutPageProps) => {
                             {startDate.label}
                           </BasicText>
                           {' - '}
-                          <BasicText as="time" dateTime={parsedEndDate} title={parsedEndDate} font={Font.PRIMARY}>
+                          <BasicText as="time" dateTime={endDate.value} title={endDate.value} font={Font.PRIMARY}>
                             {endDate.label}
                           </BasicText>
                         </BasicText>
@@ -96,17 +60,12 @@ const AboutPage = ({ data }: AboutPageProps) => {
                     );
                   })}
                 </ul>
-                {currentTimeString && (
-                  <BasicText gutter="bottom" fontSize="larger" font={Font.SECONDARY}>
-                    It's {parseTimeToString(workingExperience)} now.
-                  </BasicText>
-                )}
                 <Heading as="h2" gutter="bottom" centered>
                   Beyond my work
                 </Heading>
                 <BasicText as="p">
                   I'm a motorcycle enthusiast, so I love spending my free time riding and exploring new places. And besides that, I also enjoy watching travel
-                  vlogs and reading about fascinating facts about the world that we live in.
+                  vlogs and reading about fascinating facts about the world we live in.
                 </BasicText>
               </TextWrapper>
             </Column>

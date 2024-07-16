@@ -1,13 +1,13 @@
 import { GatsbyImage, PageTextContent, SingleDataJson, SingleFile } from '../../interfaces/graphql';
 
-export type CurrentDatePlaceholder = 'current';
+type CurrentDatePlaceholder = 'current';
 
 type JobDate<T = string> = {
   label: string;
   value: string | T;
 };
 
-export type Job = {
+type Job = {
   companyName: string;
   location: string;
   startDate: JobDate;
