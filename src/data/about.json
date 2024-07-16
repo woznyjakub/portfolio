@@ -5,6 +5,18 @@
     "pageTitle": "About",
     "jobs": [
       {
+        "companyName": "Pragmatic Coders",
+        "location": "Cracow, Poland",
+        "startDate": {
+          "label": "April 2022",
+          "value": "2022-04-01"
+        },
+        "endDate": {
+          "label": "January 2023",
+          "value": "2023-01-31"
+        }
+      },
+      {
         "companyName": "Future Processing",
         "location": "Gliwice, Poland",
         "startDate": {
@@ -12,8 +24,8 @@
           "value": "2021-04-01"
         },
         "endDate": {
-          "label": "Present",
-          "value": "current"
+          "label": "March 2022",
+          "value": "2022-03-31"
         }
       },
       {
