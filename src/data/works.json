@@ -9,7 +9,7 @@
       {
         "title": "This page",
         "description": "Static page which is used as my card.",
-        "technologies": "TypeScript, React, GatsbyJS, Styled Components and GraphQL",
+        "technologies": "TypeScript, React, GatsbyJS and Styled Components",
         "releaseDate": "November 2020",
         "imageName": "portfolio.jpg",
         "links": [

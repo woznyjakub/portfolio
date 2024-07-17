@@ -18,6 +18,7 @@ export const query = graphql`
         jobs {
           companyName
           location
+          role
           startDate {
             label
             value

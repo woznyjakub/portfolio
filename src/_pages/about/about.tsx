@@ -27,9 +27,9 @@ const AboutPage = ({ data }: AboutPageProps) => {
                 <BasicText as="p" fontSize="larger">
                   Hi, nice to see you here!
                 </BasicText>
-                <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in full-stack web development.</BasicText>
+                <BasicText as="p">My name is Jakub Woźny and I'm a programmer specialized in web development.</BasicText>
                 <BasicText as="p">
-                  I can create fully functional web applications and websites, working on both the front-end and back-end sides while adhering to the latest
+                  I can create fully functional web applications and websites, working on both the frontend and backend sides while adhering to the latest
                   standards and best practices and paying close attention to detail.
                 </BasicText>
                 <BasicText as="p" gutter="bottom">
@@ -40,20 +40,26 @@ const AboutPage = ({ data }: AboutPageProps) => {
                   Experience
                 </Heading>
                 <ul>
-                  {content.jobs.map(({ companyName, location, startDate, endDate }) => {
+                  {content.jobs.map(({ companyName, location, role, startDate, endDate }) => {
                     return (
                       <li key={`${companyName}_${startDate}`}>
-                        <BasicText as="p" gutter="bottom" font={Font.SECONDARY}>
-                          {`${companyName} `}
-                          <BasicText as="small" fontSize="smaller" gutter={null} font={Font.PRIMARY}>
+                        <BasicText as="p" gutter="bottom">
+                          <BasicText as="span" fontSize="larger" gutter={null} font={Font.SECONDARY}>
+                            {companyName}
+                          </BasicText>{' '}
+                          <BasicText as="small" fontSize="smaller" gutter={null}>
                             ({location})
                           </BasicText>
                           <br />
-                          <BasicText as="time" dateTime={startDate.value} title={startDate.value} font={Font.PRIMARY}>
+                          <BasicText as="span" fontSize="smaller" gutter={null}>
+                            {role}
+                          </BasicText>
+                          <br />
+                          <BasicText as="time" dateTime={startDate.value} title={startDate.value}>
                             {startDate.label}
                           </BasicText>
                           {' - '}
-                          <BasicText as="time" dateTime={endDate.value} title={endDate.value} font={Font.PRIMARY}>
+                          <BasicText as="time" dateTime={endDate.value} title={endDate.value}>
                             {endDate.label}
                           </BasicText>
                         </BasicText>

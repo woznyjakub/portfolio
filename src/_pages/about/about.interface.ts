@@ -10,6 +10,7 @@ type JobDate<T = string> = {
 type Job = {
   companyName: string;
   location: string;
+  role: string;
   startDate: JobDate;
   endDate: JobDate<CurrentDatePlaceholder>;
 };
