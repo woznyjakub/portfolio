@@ -30,20 +30,10 @@ Build and serve production package:
 yarn serve
 ```
 
-Deploy on GH Pages on this repo route:
+Deployment via GH Pages on GitHub user main route:
 
 ```bash
-yarn deploy:repo-route
-```
-
-Deploy on GH Pages on user main route:
-
-1. Clone `{{username}}.github.io` repository
-2. Pull projects latest version from this repo (e. g. `git pull https://github.com/woznyjakub/portfolio master`)
-3. Run deploy command:
-
-```bash
-yarn deploy:main-route
+yarn deploy
 ```
 
 This project was bootstraped with Gatsby Default Starter.

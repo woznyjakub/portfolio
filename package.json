@@ -41,8 +41,7 @@
     "serve": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy:repo-route": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
-    "deploy:main-route": "gatsby clean && gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public --repo https://github.com/woznyjakub/woznyjakub.github.io -b master"
   },
   "repository": {
     "type": "git",
