@@ -8,7 +8,7 @@ export const query = graphql`
       content {
         mainTitle
         emailAddress
-        mailLinkLabel
+        emailLinkLabel
         menuItems {
           label
           link

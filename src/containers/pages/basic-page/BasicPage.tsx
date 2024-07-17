@@ -15,7 +15,7 @@ const BasicPage: FC<BasicPageCmpProps> & NestedComponents = ({ children, title }
   return (
     <BasicLayout title={title} isReturnButton>
       <header>
-        <Heading as="h1" fontSize="large" gutter="bottom" centered>
+        <Heading as="h1" fontSize="large" pageTitleGutter centered>
           {title}
         </Heading>
       </header>

@@ -32,6 +32,8 @@ export const StyledHeading = styled.h2<HeadingProps>`
     }
   }}
 
+  ${({ pageTitleGutter }) => pageTitleGutter && 'margin-bottom: 1.5rem;'}
+
   ${({ centered }) => centered && 'text-align: center;'}
 
   ${media.tablet`
@@ -49,5 +51,7 @@ export const StyledHeading = styled.h2<HeadingProps>`
       }
       return `font-size: ${value};`;
     }}
+
+    ${({ pageTitleGutter }) => pageTitleGutter && 'margin-bottom: 2.5rem;'}
   `}
 `;

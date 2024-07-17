@@ -4,7 +4,7 @@
   "content": {
     "mainTitle": "Jakub Woźny\nSoftware Engineer\nportfolio",
     "emailAddress": "jakub.wozny.01@gmail.com",
-    "mailLinkLabel": "Mail me",
+    "emailLinkLabel": "Mail me",
     "menuItems": [
       { "label": "About", "link": "/about" },
       { "label": "Works", "link": "/works" },

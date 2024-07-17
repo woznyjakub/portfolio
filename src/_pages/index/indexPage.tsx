@@ -38,7 +38,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
         <footer>
           <p>
             <BasicText as="a" href={`mailto:${content.emailAddress}`} font={Font.SECONDARY} fillOnHover>
-              {content.mailLinkLabel}
+              {content.emailLinkLabel}
             </BasicText>
             <br />
             <BasicText font={Font.SECONDARY}>{content.copyrightText}</BasicText>

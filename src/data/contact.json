@@ -3,16 +3,16 @@
   "pageName": "contact",
   "content": {
     "pageTitle": "Contact",
-    "contactDatalistLabel": "Stay in touch on:",
+    "contactDatalistLabel": "Reach me via:",
     "contactData": [
       {
-        "label": "Mail",
+        "label": "E-mail",
         "href": "mailto:jakub.wozny.01@gmail.com",
         "iconName": "envelope"
       },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/jakub-wo%C5%BAny-98840b17a/",
+        "href": "https://www.linkedin.com/in/j-wozny",
         "iconName": "linked-in"
       },
       {

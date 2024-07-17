@@ -5,31 +5,33 @@
     "pageTitle": "Skills",
     "skillsGroups": [
       {
-        "name": "JavaScript",
-        "skills": ["JavaScript ES2021", "TypeScript", "React", "Redux", "NextJS", "GatsbyJS"]
-      },
-      {
-        "name": "CSS",
-        "skills": ["CSS", "Sass", "Styled Components", "Bootstrap 5", "Material UI"]
-      },
-      {
-        "name": "HTML",
-        "skills": ["Semantic HTML", "HTML preprocessors", "Accessibility (WCAG 2.1)", "Knowledge about good SEO practises"]
+        "name": "Programming languages, utils and methodologies",
+        "skills": [
+          "JavaScript - Node.js and browser API; TypeScript",
+          "Scrum, basics of Domain-driven design",
+          "Software testing using Jest & other libraries",
+          "Git, JIRA, GitHub, GitLab, Webpack, Git flow"
+        ]
       },
       {
         "name": "Backend",
         "skills": [
-          "NodeJS",
-          "ExpressJS",
-          "NestJS",
-          "RESTful APIs creation",
-          "Basic exprerience with MySQL, Postgres and MongoDB databases",
-          "TypeORM and Prisma"
+          "JavaScript libraries/frameworks: Express.js, Nest.js, Koa",
+          "AWS ecosystem",
+          "Working with microservices architecture",
+          "Working with popular ORMs and basic SQL",
+          "Understading of REST API, GraphQL, queues and WebSocket communication",
+          "Infrastructure as code: CloudFormation, Serverless framework",
+          "Basics of containerization/Docker"
         ]
       },
       {
-        "name": "Other",
-        "skills": ["Git", "Unit testing", "Webpack", "Adobe Xd, Photoshop", "JIRA, GitLab", "Git Flow"]
+        "name": "Frontend",
+        "skills": [
+          "JavaScript libraries/frameworks: React.js, React Query; basics of Next.js",
+          "CSS utils: Sass, Styled Components, Tailwind, Bootstrap 5",
+          "HTML and related good practices"
+        ]
       }
     ],
     "skillsGroupsAltText": "Something went wrong or this section is empty."

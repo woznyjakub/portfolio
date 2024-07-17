@@ -8,6 +8,7 @@ export type HeadingProps = StyledComponentProps<{
   fontSize?: FontSize;
   gutter?: Gutter;
   centered?: boolean;
+  pageTitleGutter?: boolean;
 }>;
 
 export const Heading = (props: HeadingProps) => {

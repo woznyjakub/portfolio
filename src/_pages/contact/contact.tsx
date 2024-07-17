@@ -16,7 +16,7 @@ const ContactPage = ({ data }: ContactPageProps) => {
   return (
     <BasicPage title={content.pageTitle}>
       <BasicPage.Section>
-        <Heading gutter="bottom" centered>
+        <Heading pageTitleGutter centered>
           {content.contactDatalistLabel}
         </Heading>
         <BasicList>
