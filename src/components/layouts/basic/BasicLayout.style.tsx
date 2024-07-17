@@ -6,7 +6,7 @@ export const MainWrapper = styled.div`
   background-color: ${Color.PRIMARY};
   color: ${Color.SECONDARY};
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: 100svh;
 `;
 
 export const ButtonWrapper = styled.div`

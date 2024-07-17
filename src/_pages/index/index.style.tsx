@@ -28,7 +28,6 @@ export const MainContent = styled.main`
 export const MenuWrapper = styled.section`
   display: flex;
   align-items: flex-end;
-  height: 100%;
 
   ${media.phone`
     min-height: 350px;
