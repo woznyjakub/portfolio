@@ -13,7 +13,7 @@ const SkillsPage = ({ data }: SkillsPageProps) => {
     <BasicPage title={content.pageTitle}>
       <BasicPage.Section>
         {content.skillsGroups.length ? (
-          <SkillsList>
+          <SkillsList className="text-container">
             {content.skillsGroups.map(({ name, skills }) => (
               <li key={name}>
                 <Heading gutter="bottom">{name}</Heading>

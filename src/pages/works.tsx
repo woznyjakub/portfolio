@@ -21,18 +21,39 @@ export const query = graphql`
         pageTitle
         releaseDateText
         technologyText
-        cards {
-          title
-          description
-          technologies
-          releaseDate
-          imageName
-          links {
-            label
-            url
+        cardsAltText
+        projects {
+          active {
+            title
+            description
+            cards {
+              title
+              description
+              technologies
+              releaseDate
+              imageName
+              links {
+                label
+                url
+              }
+            }
+          }
+          archived {
+            title
+            description
+            cards {
+              title
+              description
+              technologies
+              releaseDate
+              imageName
+              links {
+                label
+                url
+              }
+            }
           }
         }
-        cardsAltText
       }
     }
   }

@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { Heading } from '../../../components/typography';
 import { BasicLayout } from '../../../components/layouts';
+import styled from 'styled-components';
 
 type BasicPageCmpProps = {
   title: string;
@@ -24,8 +25,17 @@ const BasicPage: FC<BasicPageCmpProps> & NestedComponents = ({ children, title }
   );
 };
 
+const StyledSection = styled.section`
+  margin: auto;
+  width: 100%;
+
+  :not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+`;
+
 const BasicPageSection = ({ children }) => {
-  return <section className="m-auto w-100">{children}</section>;
+  return <StyledSection>{children}</StyledSection>;
 };
 
 BasicPage.Section = BasicPageSection;

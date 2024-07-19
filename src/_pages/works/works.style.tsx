@@ -21,9 +21,19 @@ export const Card = styled.li`
   grid-template-rows: auto 1fr;
 `;
 
-export const TextWrapper = styled.article`
+export const CardTextWrapper = styled.article`
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+export const SectionTextWrapper = styled.div`
+  text-align: center;
+  ${media.phone`
+    padding: 0 4rem;
+  `}
+  ${media.tablet`
+    padding-bottom: 1rem;
+  `}
 `;

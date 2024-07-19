@@ -11,7 +11,7 @@ type LinkData = {
   url: string;
 };
 
-type WorkCard = {
+export type WorkCardData = {
   title: string;
   description: string;
   technologies: string;
@@ -20,12 +20,21 @@ type WorkCard = {
   links: LinkData[];
 };
 
+type CardsSection = {
+  title: string;
+  description: string;
+  cards: WorkCardData[];
+};
+
 type TextContent = {
   pageTitle: string;
   releaseDateText: string;
   technologyText: string;
-  cards: WorkCard[];
   cardsAltText: string;
+  projects: {
+    active: CardsSection;
+    archived: CardsSection;
+  };
 };
 
 export type WorksPageData = FileGroup<GatsbyImage> & SingleDataJson<PageTextContent<TextContent>>;

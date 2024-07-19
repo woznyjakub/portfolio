@@ -45,6 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+  .text-container {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
   .layout-wrapper {
     ${'' /* this class forces the footer to be on the bottom
             even when there is not enough content to push it down */}
@@ -59,8 +64,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .stretch {
-    display: flex;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .img-fluid {

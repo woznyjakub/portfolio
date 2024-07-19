@@ -5,123 +5,148 @@
     "pageTitle": "Works",
     "releaseDateText": "Release date:",
     "technologyText": "Used technologies:",
-    "cards": [
-      {
-        "title": "This webpage",
-        "description": "A static webpage serving as my digital business card.",
-        "technologies": "TypeScript, React.js, GatsbyJS (with GraphQL) and Styled Components",
-        "releaseDate": "November 2020",
-        "imageName": "portfolio.jpg",
-        "links": [
+    "projects": {
+      "active": {
+        "title": "Current projects",
+        "description": "For now, I'm working on the following projects. They are not yet ready for public release, but you can check their repositories.",
+        "cards": [
           {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/portfolio"
+            "title": "SyncroChat",
+            "description": "An application enabling more effective work with multiple AI chats.",
+            "technologies": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker, React.js, Tailwind.css",
+            "releaseDate": "Work in progress",
+            "imageName": "placeholder.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/syncro-chat"
+              }
+            ]
           }
         ]
       },
-      {
-        "title": "Binary clock app",
-        "description": "React.js app that simulates the working mechanism of a binary clock.",
-        "technologies": "React.js, Styled Components",
-        "releaseDate": "February 2019",
-        "imageName": "clock.jpg",
-        "links": [
+      "archived": {
+        "title": "Archive",
+        "description": "Projects that showcase my skills and experience from the past years.",
+        "cards": [
           {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/binary-clock-app"
+            "title": "This webpage",
+            "description": "A static webpage serving as my digital business card.",
+            "technologies": "TypeScript, React.js, GatsbyJS (with GraphQL) and Styled Components",
+            "releaseDate": "November 2020",
+            "imageName": "portfolio.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/portfolio"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/binary-clock-app"
-          }
-        ]
-      },
-      {
-        "title": "Challenge 37",
-        "description": "A static webpage created to explore GatsbyJS and advanced CSS techniques.",
-        "technologies": "GatsbyJS, React.js and Styled Components",
-        "releaseDate": "January 2019",
-        "imageName": "challenge37.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/challenge37-gatsbyjs-version"
+            "title": "Binary clock app",
+            "description": "React.js app that simulates the working mechanism of a binary clock.",
+            "technologies": "React.js, Styled Components",
+            "releaseDate": "February 2019",
+            "imageName": "clock.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/binary-clock-app"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/binary-clock-app"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/challenge37-gatsbyjs-version"
-          }
-        ]
-      },
-      {
-        "title": "My first portfolio website",
-        "description": "A static webpage showcasing my early projects. This site played a crucial role in securing my first job in the industry!",
-        "technologies": "GatsbyJS, React.js, Styled Components",
-        "releaseDate": "February 2019",
-        "imageName": "portfolio-old-1.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/portfolio-1"
+            "title": "Challenge 37",
+            "description": "A static webpage created to explore GatsbyJS and advanced CSS techniques.",
+            "technologies": "GatsbyJS, React.js and Styled Components",
+            "releaseDate": "January 2019",
+            "imageName": "challenge37.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/challenge37-gatsbyjs-version"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/challenge37-gatsbyjs-version"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/portfolio-1"
-          }
-        ]
-      },
-      {
-        "title": "Challenge 35",
-        "description": "A static page project that helped me learn HTML and CSS basics, and resolving basic JS development problems.",
-        "technologies": "HTML, Sass and jQuery",
-        "releaseDate": "October 2018",
-        "imageName": "challenge35.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/challenge35"
+            "title": "My first portfolio website",
+            "description": "A static webpage showcasing my early projects. This site played a crucial role in securing my first job in the industry!",
+            "technologies": "GatsbyJS, React.js, Styled Components",
+            "releaseDate": "February 2019",
+            "imageName": "portfolio-old-1.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/portfolio-1"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/portfolio-1"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/challenge35"
-          }
-        ]
-      },
-      {
-        "title": "Waxom",
-        "description": "A static page created for Webpack, HTML and CSS training.",
-        "technologies": "HTML, Sass, vanilla JS and Webpack",
-        "releaseDate": "November 2018",
-        "imageName": "waxom.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/waxom"
+            "title": "Challenge 35",
+            "description": "A static page project that helped me learn HTML and CSS basics, and resolving basic JS development problems.",
+            "technologies": "HTML, Sass and jQuery",
+            "releaseDate": "October 2018",
+            "imageName": "challenge35.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/challenge35"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/challenge35"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/waxom"
-          }
-        ]
-      },
-      {
-        "title": "Challenge 22",
-        "description": "A static page made for HTML and CSS training.",
-        "technologies": "HTML, Sass and vanilla JS",
-        "releaseDate": "October 2018",
-        "imageName": "challenge22.jpg",
-        "links": [
-          {
-            "label": "Repository",
-            "url": "https://github.com/woznyjakub/challenge22"
+            "title": "Waxom",
+            "description": "A static page created for Webpack, HTML and CSS training.",
+            "technologies": "HTML, Sass, vanilla JS and Webpack",
+            "releaseDate": "November 2018",
+            "imageName": "waxom.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/waxom"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/waxom"
+              }
+            ]
           },
           {
-            "label": "Preview",
-            "url": "https://woznyjakub.github.io/challenge22"
+            "title": "Challenge 22",
+            "description": "A static page made for HTML and CSS training.",
+            "technologies": "HTML, Sass and vanilla JS",
+            "releaseDate": "October 2018",
+            "imageName": "challenge22.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/challenge22"
+              },
+              {
+                "label": "Preview",
+                "url": "https://woznyjakub.github.io/challenge22"
+              }
+            ]
           }
         ]
       }
-    ],
+    },
     "cardsAltText": "Something went wrong or this section is empty."
   }
 }
