@@ -9,7 +9,7 @@
         "skills": [
           "JavaScript - Node.js and browser API; TypeScript",
           "Scrum, basics of Domain-driven design",
-          "Software testing using Jest & other libraries",
+          "Software testing using Vitest, Jest & other libraries",
           "Git, JIRA, GitHub, GitLab, Webpack, Git flow"
         ]
       },
@@ -21,15 +21,15 @@
           "Working with microservices architecture",
           "Working with popular ORMs and basic SQL",
           "Understading of REST API, GraphQL, queues and WebSocket communication",
-          "Infrastructure as code: CloudFormation, Serverless framework",
-          "Basics of containerization/Docker"
+          "Infrastructure as code: AWS CDK, CloudFormation",
+          "Docker, CI configuration"
         ]
       },
       {
         "name": "Frontend",
         "skills": [
-          "JavaScript libraries/frameworks: React.js, React Query; basics of Next.js",
-          "CSS utils: Sass, Styled Components, Tailwind CSS, Bootstrap 5",
+          "JavaScript libraries/frameworks: React.js, React Query; Next.js (SSG)",
+          "CSS utils: Sass, Styled Components, Tailwind CSS, MUI, Bootstrap 5",
           "HTML and related good practices"
         ]
       }
