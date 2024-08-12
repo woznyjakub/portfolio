@@ -9,6 +9,7 @@ export type WorkImage = SingleFileFromGroup<
 type LinkData = {
   label: string;
   url: string;
+  disabled?: true;
 };
 
 export type WorkCardData = {

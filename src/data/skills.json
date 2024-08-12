@@ -29,7 +29,7 @@
         "name": "Frontend",
         "skills": [
           "JavaScript libraries/frameworks: React.js, React Query; basics of Next.js",
-          "CSS utils: Sass, Styled Components, Tailwind, Bootstrap 5",
+          "CSS utils: Sass, Styled Components, Tailwind CSS, Bootstrap 5",
           "HTML and related good practices"
         ]
       }

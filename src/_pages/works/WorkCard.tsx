@@ -41,21 +41,25 @@ export const WorkCard = ({
         </BasicText>
       )}
       <div style={{ marginTop: 'auto' }}>
-        {links?.map(({ label, url }, i, array) => (
-          <BasicText
-            as="a"
-            className="underline"
-            href={url || null}
-            key={label}
-            target="_blank"
-            rel="noopener noreferrer"
-            gutter={i < array.length - 1 ? 'right' : null}
-            font={Font.SECONDARY}
-            moveUnderlineOnHover
-          >
-            {label}
-          </BasicText>
-        ))}
+        {links?.map(
+          ({ label, url, disabled }, i, array) =>
+            // This old gatsby version doesn't allow empty arrays in static data json files (build crushes)
+            !disabled && (
+              <BasicText
+                as="a"
+                className="underline"
+                href={url || null}
+                key={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                gutter={i < array.length - 1 ? 'right' : null}
+                font={Font.SECONDARY}
+                moveUnderlineOnHover
+              >
+                {label}
+              </BasicText>
+            ),
+        )}
       </div>
     </CardTextWrapper>
   </Card>

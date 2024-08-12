@@ -11,13 +11,27 @@
         "description": "For now, I'm working on the following projects. They are not yet ready for public release, but you can check their repositories.",
         "cards": [
           {
+            "title": "Nest & React Monorepo rich starter",
+            "description": "Comprehensive project starter with common modules and configurations. Created manually for training purposes.",
+            "technologies": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker, Nginx, React.js, Tailwind CSS, Vitest",
+            "releaseDate": "Work in progress",
+            "imageName": "nest-react-rich-starter.jpg",
+            "links": [
+              {
+                "label": "Repository",
+                "url": "https://github.com/woznyjakub/nest-react-monorepo-rich-starter"
+              }
+            ]
+          },
+          {
             "title": "SyncroChat",
             "description": "An application enabling more effective work with multiple AI chats.",
-            "technologies": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker, React.js, Tailwind.css",
+            "technologies": "Node.js, TypeScript, Nest.js, PostgreSQL, Docker, React.js, Tailwind CSS",
             "releaseDate": "Work in progress",
             "imageName": "placeholder.jpg",
             "links": [
               {
+                "disabled": true,
                 "label": "Repository",
                 "url": "https://github.com/woznyjakub/syncro-chat"
               }
