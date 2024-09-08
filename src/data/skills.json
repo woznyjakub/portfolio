@@ -8,8 +8,10 @@
         "name": "Programming languages, utils and methodologies",
         "skills": [
           "JavaScript - Node.js and browser API; TypeScript",
+          "Software testing using Vitest, Jest and other libraries",
           "Scrum, basics of Domain-driven design",
-          "Software testing using Vitest, Jest & other libraries",
+          "Third-party APIs and tools integration",
+          "Ability to code manually and verify AI-generated code",
           "Git, JIRA, GitHub, GitLab, Webpack, Git flow"
         ]
       },
@@ -17,20 +19,23 @@
         "name": "Backend",
         "skills": [
           "JavaScript libraries/frameworks: Express.js, Nest.js, Koa",
-          "AWS ecosystem",
+          "AWS cloud provider ecosystem",
           "Working with microservices architecture",
-          "Working with popular ORMs and basic SQL",
-          "Understading of REST API, GraphQL, queues and WebSocket communication",
+          "Familiarity with various architectural patterns",
+          "Working with relational and non-relational databases (e.g., PostgreSQL, MySQL, DynamoDB, Redis) and popular ORMs",
+          "Understanding of REST API, GraphQL, queue-based and WebSocket communication",
           "Infrastructure as code: AWS CDK, CloudFormation",
-          "Docker, CI configuration"
+          "Docker, docker-compose, CI configuration"
         ]
       },
       {
         "name": "Frontend",
         "skills": [
-          "JavaScript libraries/frameworks: React.js, React Query; Next.js (SSG)",
-          "CSS utils: Sass, Styled Components, Tailwind CSS, MUI, Bootstrap 5",
-          "HTML and related good practices"
+          "JavaScript libraries/frameworks: React.js, React Query; Next.js (Basics)",
+          "CSS utilities: Sass, Styled Components, Tailwind CSS, MUI, Bootstrap 5",
+          "Responsive Web Design (RWD), Mobile First",
+          "Semantic HTML and related best practices",
+          "HTML template engines: Astro and Handlebars.js"
         ]
       }
     ],
